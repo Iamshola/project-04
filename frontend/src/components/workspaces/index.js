@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Card from './Card'
 
 
 class WorkspacesIndex extends React.Component{
@@ -22,18 +24,22 @@ class WorkspacesIndex extends React.Component{
 
 
   render() {
-    console.log(this.state.workspaces)
     if(!this.state.workspaces) return null
     return(
       <section className="section">
         <div className="container">
           <p>Hiey there </p>
+          <div className="columns is-multiline">
+            {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
+            {this.state.workspaces.map(workspaces =>
+              <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
+                <Link to={`/workspaces/${workspaces.id}`}>
+                  <Card {...workspaces} />
+                </Link>
+              </div>
+            )}
 
-          {this.state.workspaces.map(workspace =>
-            <div key={workspace._id} >
-              <p>{workspace.name}, {workspace.address_line_1}</p>
-            </div>
-          )}
+          </div>
 
         </div>
       </section>

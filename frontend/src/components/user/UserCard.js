@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Card = ({ name, city, postcode, image}) => {
+const UserCard = ({ username, image}) => {
 
 
   return(
@@ -15,13 +15,13 @@ const Card = ({ name, city, postcode, image}) => {
 
 
       <div className="card-content">
-        <p className="title is-5">{name}</p>
+        <p className="title is-5">{username}</p>
 
         <br />
         <br />
 
         <hr/>
-        <p className="text is-12">{city}, {postcode}</p>
+
       </div>
     </div>
 
@@ -29,4 +29,4 @@ const Card = ({ name, city, postcode, image}) => {
   )
 }
 
-export default Card
+export default UserCard

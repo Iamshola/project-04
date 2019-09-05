@@ -30,18 +30,16 @@ class Navbar extends React.Component{
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <div className="navbar-start">
-            <Link to= "/workspaces" className="navbar-item"> Spaces </Link>
-            <Link to= "/users" className="navbar-item"> Users </Link>
 
-          </div>
 
           <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''} ` }>
             <div className="navbar-end">
+              <Link to= "/workspaces" className="navbar-item"> Spaces </Link>
+              <Link to= "/users" className="navbar-item"> Users </Link>
               <Link to= "/register" className="navbar-item"> Register </Link>
               <Link to= "/login" className="navbar-item"> Login </Link>
-
             </div>
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, & modern CSS framework based on Flexbox" width="42" height="12"/>
           </div>
         </div>
       </nav>
