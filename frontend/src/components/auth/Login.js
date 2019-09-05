@@ -43,12 +43,10 @@ class Login extends React.Component {
   render() {
     console.log(this.state)
     return (
-
-      <section className="hero is-light">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="column is-4 is-offset-4">
-
+      <section className="section">
+        <div className="columns">
+          <div className="column is-6">
+            <section className="section">
 
               <h3 className="title is-1 is-italic" > Login </h3>
               <p className="subtitle has-text-black">Please login to proceed.</p>
@@ -97,15 +95,15 @@ class Login extends React.Component {
                     <button className="submit">Submit</button>
                   </div>
 
-
-
                 </form>
               </div>
-            </div>
+            </section>
+          </div>
+          <div>
+            <img className="login-logo" src="https://unsplash.it/2000/1000" />
+            <img className="login-logo" src="https://unsplash.it/2000/1000" />
           </div>
         </div>
-
-
       </section>
     )
   }

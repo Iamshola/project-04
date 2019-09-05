@@ -28,9 +28,7 @@ class Register extends React.Component {
     axios.post('/api/register', this.state.formData)
       .then(res => {
         toast.success(res.data.message)
-        this.props.history.push({
-          pathname: '/register/',
-          state: res.data.user
+        this.props.history.push({  pathname: 'api/register/', state: res.data.user
         })
       })
       .catch(err => this.setState({ errors: err.response.data.errors }))
@@ -38,13 +36,11 @@ class Register extends React.Component {
 
   render() {
     return (
-      <section className="hero is-light">
-        <div className="hero-body">
-          <div className="container">
-            <div className="column is-4 is-offset-4">
-
-
-              <h3 className="title is-1 is-italic" > Register </h3>
+      <section className="section">
+        <div className="columns">
+          <div className="column is-6">
+            <section className="section">
+              <h3 className="title is-1" > Register </h3>
               <p className="subtitle has-text-black">Register here to get exclusives!</p>
 
               <div className="box is-light">
@@ -94,7 +90,7 @@ class Register extends React.Component {
                         <input
                           className="input is-rounded"
                           type="password"
-                          name="passwordConfirmation"
+                          name="password_confirmation"
                           placeholder="eg: ••••••••"
                           onChange={this.handleChange}
                         />
@@ -117,12 +113,16 @@ class Register extends React.Component {
 
                 </form>
               </div>
-            </div>
+            </section>
+          </div>
+          <div>
+            <img className="login-logo" src="https://unsplash.it/2000/1000" />
+            <img className="login-logo" src="https://unsplash.it/2000/1000" />
           </div>
         </div>
-
-
       </section>
+
+
     )
   }
 }
