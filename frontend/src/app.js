@@ -8,6 +8,11 @@ import './style.scss'
 import Navbar from './components/common/Navbar.js'
 import Home from './components/pages/Home.js'
 import WorkspacesIndex from './components/workspaces/Index.js'
+
+
+import UserIndex from './components/user/UserIndex.js'
+
+
 import Footer from './components/common/Footer.js'
 
 import Login from './components/auth/Login.js'
@@ -42,6 +47,7 @@ class App extends React.Component {
         <Navbar />
 
         <Route exact path="/workspaces" component={WorkspacesIndex} />
+        <Route exact path="/users" component={UserIndex} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/" component={Home} />
