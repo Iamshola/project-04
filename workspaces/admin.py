@@ -6,4 +6,3 @@ from .models import Workspace, Genre, Comment
 admin.site.register(Workspace)
 admin.site.register(Genre)
 admin.site.register(Comment)
-admin.site.register(User)

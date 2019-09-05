@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 import './style.scss'
+import Navbar from './components/common/Navbar.js'
+import WorkspacesIndex from './components/workspaces/Index.js'
+
 
 
 class App extends React.Component {
@@ -24,14 +27,16 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.workspaces)
-    return(
-      <section className="section">
-        <div className="container">
-          <p>Hiey there </p>
-          <p>{this.state.workspaces.name}</p>
 
-        </div>
-      </section>
+    if(!this.state.workspaces) return null
+    return(
+      <div>
+        <Navbar/>
+        <section className="section">
+
+          <WorkspacesIndex />
+        </section>
+      </div>
 
     )
   }
