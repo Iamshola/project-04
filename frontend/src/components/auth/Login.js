@@ -48,10 +48,10 @@ class Login extends React.Component {
           <div className="column is-6">
             <section className="section">
 
-              <h3 className="title is-1 is-italic" > Login </h3>
-              <p className="subtitle has-text-black">Please login to proceed.</p>
-
               <div className="box">
+                <h3 className="title is-1 is-italic" > Login </h3>
+                <p className="subtitle has-text-black">Please login to proceed.</p>
+
                 <form onSubmit={this.handleSubmit}>
 
                   <div className="field">

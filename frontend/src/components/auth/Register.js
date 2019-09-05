@@ -40,10 +40,10 @@ class Register extends React.Component {
         <div className="columns">
           <div className="column is-6">
             <section className="section">
-              <h3 className="title is-1" > Register </h3>
-              <p className="subtitle has-text-black">Register here to get exclusives!</p>
-
               <div className="box is-light">
+                <h3 className="title is-1" > Register </h3>
+                <p className="subtitle has-text-black">Register here to get exclusives!</p>
+
                 <form onSubmit={this.handleSubmit}>
                   <div className="column">
                     <div className="field">
@@ -120,8 +120,6 @@ class Register extends React.Component {
           </div>
         </div>
       </section>
-
-
     )
   }
 }
