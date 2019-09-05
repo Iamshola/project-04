@@ -1,16 +1,20 @@
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .permissions import IsOwnerOrReadOnly
 
 from .models import Workspace
-from .serializers import WorkspaceSerializer
+from .serializers import WorkspaceSerializer, PopulatedWorkspaceSerializer
 
 # Create your views here.
 class WorkspaceList(APIView):
 
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
     def get(self, _request):
         workspaces = Workspace.objects.all()
-        serializer = WorkspaceSerializer(workspaces, many=True)
+        serializer = PopulatedWorkspaceSerializer(workspaces, many=True)
         return Response(serializer.data)
 
     def post(self, request):
@@ -18,15 +22,18 @@ class WorkspaceList(APIView):
         serializer = WorkspaceSerializer(data=request.data)
         if serializer.is_valid():
             # auto sets user to be logged in user
-            serializer.save(user=request.user)
+            serializer.save()
+            workspace = serializer.instance
+            serializer = PopulatedWorkspaceSerializer(workspace)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
 
 class WorkspaceDetail(APIView):
 
+    permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_movie(self, pk):
+    def get_workspace(self, pk):
         try:
             workspace = Workspace.objects.get(pk=pk)
         except Workspace.DoesNotExist:
@@ -35,13 +42,13 @@ class WorkspaceDetail(APIView):
         return workspace
 
     def get(self, _request, pk):
-        workspace = self.get_movie(pk)
+        workspace = self.get_workspace(pk)
 
-        serializer = WorkspaceSerializer(workspace)
+        serializer = PopulatedWorkspaceSerializer(workspace)
         return Response(serializer.data)
 
     def put(self, request, pk):
-        workspace = self.get_movie(pk)
+        workspace = self.get_workspace(pk)
 
         serializer = WorkspaceSerializer(workspace, data=request.data)
         if serializer.is_valid():
@@ -51,6 +58,6 @@ class WorkspaceDetail(APIView):
         return Response(serializer.errors, status=422)
 
     def delete(self, _request, pk):
-        workspace = self.get_movie(pk)
+        workspace = self.get_workspace(pk)
         workspace.delete()
         return Response(status=204)

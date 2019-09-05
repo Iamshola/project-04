@@ -3,26 +3,39 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 import './style.scss'
 
+
 class App extends React.Component {
 
-  componentDidMount(){
-    axios.get('/api/workspaces')
-      .then(res => {
-        this.setState({ workspaces: res.data })
-      })
+  constructor() {
+    super()
+    this.state = {
+      workspaces: []
+    }
 
   }
 
-  render(){
-    console.log(this.state)
+  componentDidMount() {
+    axios.get('/api/workspaces')
+      .then(res => {
+        this.setState({workspaces: res.data})
+      })
+  }
+
+
+  render() {
     return(
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <h1>hello There</h1>
-      </nav>
+      <section className="section">
+        <div className="container">
+          <p>Hiey there </p>
+        </div>
+      </section>
+
     )
   }
 
 }
+
+
 
 ReactDOM.render(
   <App/>,

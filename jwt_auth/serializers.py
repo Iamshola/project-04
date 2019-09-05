@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User
 import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
+from workspaces.models import User
 
 class UserSerializer(serializers.ModelSerializer):
     # write only means it will not be returned and will not be seen

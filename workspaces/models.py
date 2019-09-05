@@ -3,14 +3,29 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class Workspace(models.Model):
 
+class Genre(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.name}'
+
+class Comment(models.Model):
+    title = models.CharField(max_length=20)
+    content = models.TextField()
+    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.title} - {self.user}'
+
+
+class Workspace(models.Model):
     name = models.CharField(max_length=50)
     address_line_1 = models.CharField(max_length=50)
     address_line_2 = models.CharField(max_length=50)
     city = models.CharField(max_length=20)
     postcode = models.CharField(max_length=10)
-    description = models.CharField(max_length=300)
+    description = models.TextField()
     opening_times_mon = models.CharField(max_length=50)
     opening_times_tue = models.CharField(max_length=50)
     opening_times_wed = models.CharField(max_length=50)
@@ -20,8 +35,9 @@ class Workspace(models.Model):
     opening_times_sun = models.CharField(max_length=50)
 
     image = models.CharField(max_length=200)
-
-    user = models.ForeignKey(User, related_name='movies', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='workspace', on_delete=models.CASCADE)
+    genres = models.ManyToManyField(Genre, related_name='workspace', blank=True)
+    comments = models.ManyToManyField(Comment, related_name='workspace', blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.city}'
