@@ -43,17 +43,6 @@ const Home = ()=> {
           </div>
         </section>
       </LazyHero>
-
-
-      <footer className="footer">
-        <div className="content has-text-centered">
-          <p>
-            <strong>Beer</strong> by <a href="https://github.com/Iamshola">  Shola </a>
-          </p>
-        </div>
-      </footer>
-
-
     </div>
   )
 }
