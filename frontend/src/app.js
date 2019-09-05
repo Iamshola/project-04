@@ -17,16 +17,19 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('/api/workspaces')
       .then(res => {
-        this.setState({workspaces: res.data})
+        this.setState({ workspaces: res.data})
       })
   }
 
 
   render() {
+    console.log(this.state.workspaces)
     return(
       <section className="section">
         <div className="container">
           <p>Hiey there </p>
+          <p>{this.state.workspaces.name}</p>
+
         </div>
       </section>
 
