@@ -29,3 +29,7 @@ class CommentSerializer(serializers.ModelSerializer):
 class PopulatedWorkspaceSerializer(WorkspaceSerializer):
     genres = GenreSerializer(many=True)
     comments = CommentSerializer(many=True)
+
+
+class PopulatedUserSerializer(UserSerializer):
+    workspaces = PopulatedWorkspaceSerializer(many=True)

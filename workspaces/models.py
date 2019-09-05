@@ -35,9 +35,9 @@ class Workspace(models.Model):
     opening_times_sun = models.CharField(max_length=50)
 
     image = models.CharField(max_length=200)
-    user = models.ForeignKey(User, related_name='workspace', on_delete=models.CASCADE)
-    genres = models.ManyToManyField(Genre, related_name='workspace', blank=True)
-    comments = models.ManyToManyField(Comment, related_name='workspace', blank=True)
+    user = models.ForeignKey(User, related_name='workspaces', on_delete=models.CASCADE)
+    genres = models.ManyToManyField(Genre, related_name='workspaces', blank=True)
+    comments = models.ManyToManyField(Comment, related_name='workspaces', blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.city}'

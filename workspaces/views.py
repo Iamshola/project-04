@@ -2,10 +2,12 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from jwt_auth.models import User
+from jwt_auth.serializers import UserSerializer
 from .permissions import IsOwnerOrReadOnly
 
 from .models import Workspace
-from .serializers import WorkspaceSerializer, PopulatedWorkspaceSerializer
+from .serializers import WorkspaceSerializer, PopulatedUserSerializer, PopulatedWorkspaceSerializer
 
 # Create your views here.
 class WorkspaceList(APIView):
@@ -61,3 +63,30 @@ class WorkspaceDetail(APIView):
         workspace = self.get_workspace(pk)
         workspace.delete()
         return Response(status=204)
+
+class ProfileList(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get(self, _request):
+        user = User.objects.all()
+        serializer = PopulatedUserSerializer(user, many=True)
+        return Response(serializer.data)
+
+class ProfileDetail(APIView):
+
+    permission_classes = (IsOwnerOrReadOnly,)
+
+    def get_workspace(self, pk):
+        try:
+            user = User.objects.get(pk=pk)
+        except Workspace.DoesNotExist:
+            raise Http404
+
+        return user
+
+    def get(self, _request, pk):
+        user = self.get_workspace(pk)
+
+        serializer = PopulatedUserSerializer(user)
+        return Response(serializer.data)
