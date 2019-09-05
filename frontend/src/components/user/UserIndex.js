@@ -5,7 +5,6 @@ import axios from 'axios'
 import UserCard from './UserCard'
 import NotFound from '../common/NotFound'
 
-
 class UserIndex extends React.Component{
 
 
@@ -14,7 +13,6 @@ class UserIndex extends React.Component{
     this.state = {
       users: []
     }
-
   }
 
   componentDidMount() {
@@ -24,22 +22,21 @@ class UserIndex extends React.Component{
       })
   }
 
-
   render() {
     console.log(this.state.users)
     if(!this.state.users) return <NotFound/>
     return(
       <section className="section">
         <div className="container">
-          <p>Hiey there </p>
-          {this.state.users.map(user =>
-            <div key={user.id} className="column is-half-tablet is-one-quarter-desktop">
-              <Link to={`/users/${user.id}`}>
-                <UserCard {...user} />
-              </Link>
-            </div>
-          )}
-
+          <div className="columns is-multiline">
+            {this.state.users.map(user =>
+              <div key={user.id} className="column is-half-tablet is-one-quarter-desktop">
+                <Link to={`/users/${user.id}`}>
+                  <UserCard {...user} />
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 

@@ -105,7 +105,6 @@ class Register extends React.Component {
                     </div>
 
                     <br />
-
                     <div className="has-text-centered">
                       <button className="submit">Submit</button>
                     </div>
