@@ -10,6 +10,7 @@ import NotFound from './components/common/NotFound.js'
 import Home from './components/pages/Home.js'
 import WorkspacesIndex from './components/workspaces/Index.js'
 import WorkspacesShow from './components/workspaces/Show.js'
+import WorkspacesNew from './components/workspaces/New.js'
 
 
 import UserIndex from './components/user/UserIndex.js'
@@ -49,6 +50,7 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Route path="/notfound" component={NotFound} />
+        <Route path="/workspaces/new" component={WorkspacesNew} />
         <Route path="/workspaces/:id" component={WorkspacesShow} />
         <Route exact path="/workspaces" component={WorkspacesIndex} />
         <Route exact path="/users/:id" component={UserShow} />

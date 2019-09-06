@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Comment from '../common/Comment'
+import Auth from '../../lib/Auth'
 
 class Show extends React.Component{
 
@@ -44,10 +45,9 @@ class Show extends React.Component{
                         {this.state.workspace.comments.map(comment =>
                           <Comment
                             className="comment"
-                            key={comment._id}
+                            key={comment.id}
                             {...comment}
                             handleDeleteComment={this.handleDeleteComment} />
-
                         )}
                       </article>
                     </div>
@@ -104,11 +104,24 @@ class Show extends React.Component{
                     {this.state.workspace.comments.map(comment =>
                       <Comment
                         className="comment"
-                        key={comment._id}
+                        key={comment.id}
                         {...comment}
                         handleDeleteComment={this.handleDeleteComment} />
 
                     )}
+
+                    {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
+                      <div className="field">
+                        <textarea
+                          name="content"
+                          className="textarea"
+                          placeholder="Add a comment..."
+                          onChange={this.handleChangeContent}
+                          value={this.state.formData.content}
+                        />
+                      </div>
+                      <button className="button"> Submit</button>
+                    </form>}
                   </article>
                 </div>
               </div>

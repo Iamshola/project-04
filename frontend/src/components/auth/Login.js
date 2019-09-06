@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
+import Auth from '../../lib/Auth'
 
 class Login extends React.Component {
 
@@ -26,7 +27,8 @@ class Login extends React.Component {
 
     axios.post('/api/login/', this.state.formData)
       .then(res => {
-
+        Auth.setToken(res.data.token)
+        Auth.setUser(res.data.user)
         toast.success(res.data.message)
         this.props.history.push({
           pathname: '/workspaces/',
@@ -34,9 +36,11 @@ class Login extends React.Component {
         })
       })
       .catch(() => {
-
+        Auth.removeToken()
+        Auth.removeUser()
         this.setState({ error: 'Invalid credentials' })
       })
+
   }
 
   render() {

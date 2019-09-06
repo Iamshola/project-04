@@ -29,7 +29,11 @@ class CommentSerializer(serializers.ModelSerializer):
 class PopulatedWorkspaceSerializer(WorkspaceSerializer):
     genres = GenreSerializer(many=True)
     comments = CommentSerializer(many=True)
+    user = UserSerializer()
 
 
 class PopulatedUserSerializer(UserSerializer):
     workspaces = PopulatedWorkspaceSerializer(many=True)
+
+    class Meta(UserSerializer.Meta):
+        fields = ('id', 'username', 'email', 'image', 'linked_In_Link', 'user_city', 'interest',)

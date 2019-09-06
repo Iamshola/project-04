@@ -1,6 +1,6 @@
 from django.conf import settings
 from rest_framework.authentication import BasicAuthentication
-from rest_framework.exceptions import AuthenticationFailed
+from rest_framework.exceptions import PermissionDenied
 
 import jwt
 from .models import User
@@ -16,7 +16,7 @@ class JWTAuthentication(BasicAuthentication):
             return None
 
         if not header.startswith('Bearer'):
-            raise AuthenticationFailed({'message': 'Invalid Authorization header'})
+            raise PermissionDenied({'message': 'Invalid Authorization header'})
 
         token = header.replace('Bearer ', '')
 
@@ -25,9 +25,9 @@ class JWTAuthentication(BasicAuthentication):
             user = User.objects.get(pk=payload.get('sub'))
 
         except jwt.exceptions.InvalidTokenError:
-            raise AuthenticationFailed({'message': 'Invalid Token'})
+            raise PermissionDenied({'message': 'Invalid Token'})
 
         except User.DoesNotExist:
-            raise AuthenticationFailed({'message': 'Invalid Subject'})
+            raise PermissionDenied({'message': 'Invalid Subject'})
 
         return (user, token)

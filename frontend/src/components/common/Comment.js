@@ -2,7 +2,7 @@ import React from  'react'
 
 
 
-const Comment = ({ user, content, _id, handleDeleteComment}) => {
+const Comment = ({ user, content, id, handleDeleteComment}) => {
   return (
     <section className="section1 comment">
       <div className="columns comment">
@@ -34,7 +34,7 @@ const Comment = ({ user, content, _id, handleDeleteComment}) => {
 
         <div className="column comment">
           <div className="content">
-            <button className="delete" id={_id} onClick={handleDeleteComment}></button>
+            <button className="delete" id={id} onClick={handleDeleteComment}></button>
             <br />
             <br />
           </div>
