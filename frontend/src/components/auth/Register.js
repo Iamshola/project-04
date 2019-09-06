@@ -28,7 +28,7 @@ class Register extends React.Component {
     axios.post('/api/register', this.state.formData)
       .then(res => {
         toast.success(res.data.message)
-        this.props.history.push({  pathname: 'api/register/', state: res.data.user
+        this.props.history.push({  pathname: '/api/register/', state: res.data.user
         })
       })
       .catch(err => this.setState({ errors: err.response.data.errors }))
@@ -103,7 +103,6 @@ class Register extends React.Component {
                     <div className="has-text-centered">
                       <Link to="/login" className="">Already a member? Sign in! </Link>
                     </div>
-
                     <br />
                     <div className="has-text-centered">
                       <button className="submit">Submit</button>

@@ -34,7 +34,7 @@ class Workspace(models.Model):
     opening_times_sat = models.CharField(max_length=50)
     opening_times_sun = models.CharField(max_length=50)
 
-    image = models.CharField(max_length=200)
+    image = models.CharField(max_length=200, blank=True)
     user = models.ForeignKey(User, related_name='workspaces', on_delete=models.CASCADE)
     genres = models.ManyToManyField(Genre, related_name='workspaces', blank=True)
     comments = models.ManyToManyField(Comment, related_name='workspaces', blank=True)

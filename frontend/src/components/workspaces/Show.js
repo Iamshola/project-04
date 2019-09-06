@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 
-
 class Show extends React.Component{
 
   constructor(){
@@ -33,7 +32,7 @@ class Show extends React.Component{
             </div>
           </div>
         </section>
-        
+
         <h2>Opening Times:</h2>
         <table className="table">
           <thead>
