@@ -25,7 +25,7 @@ class Register extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/register', this.state.formData)
+    axios.post('/api/register/', this.state.formData)
       .then(res => {
         toast.success(res.data.message)
         this.props.history.push({  pathname: '/api/register/', state: res.data.user

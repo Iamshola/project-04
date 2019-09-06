@@ -27,4 +27,4 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         # add in extra fields here...
-        fields = ('id', 'username', 'email', 'password', 'password_confirmation', 'image', 'workspaces',)
+        fields = ('id', 'username', 'email', 'password', 'password_confirmation', 'image', 'linked_In_Link', 'user_city', 'interest', 'workspaces')

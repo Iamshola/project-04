@@ -24,12 +24,12 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('/api/login', this.state.formData)
+    axios.post('/api/login/', this.state.formData)
       .then(res => {
 
         toast.success(res.data.message)
         this.props.history.push({
-          pathname: '/workspace',
+          pathname: '/workspaces/',
           state: res.data.user
         })
       })
@@ -37,7 +37,6 @@ class Login extends React.Component {
 
         this.setState({ error: 'Invalid credentials' })
       })
-
   }
 
   render() {
