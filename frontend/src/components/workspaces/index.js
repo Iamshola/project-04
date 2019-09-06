@@ -28,7 +28,6 @@ class WorkspacesIndex extends React.Component{
     return(
       <section className="section">
         <div className="container">
-          <p>Hiey there </p>
           <div className="columns is-multiline">
             {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
             {this.state.workspaces.map(workspaces =>
