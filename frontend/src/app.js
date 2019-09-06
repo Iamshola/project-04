@@ -50,8 +50,8 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Route path="/notfound" component={NotFound} />
-        <Route path="/workspaces/new" component={WorkspacesNew} />
         <Route path="/workspaces/:id" component={WorkspacesShow} />
+        <Route path="/workspaces/new" component={WorkspacesNew} />
         <Route exact path="/workspaces" component={WorkspacesIndex} />
         <Route exact path="/users/:id" component={UserShow} />
         <Route exact path="/users" component={UserIndex} />
