@@ -13,7 +13,7 @@ class ShowUser extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/users/${this.props.match.params.id}`)
+    axios.get(`/api/workspaces/${this.props.match.params.id}`)
       .then(res => this.setState({ user: res.data }))
   }
 

@@ -17,7 +17,7 @@ import axios from 'axios'
 //   }
 // }
 
-class WorkspacesNew  extends React.Component {
+class WorkspacesNew extends React.Component {
 
   constructor() {
     super()
@@ -26,6 +26,8 @@ class WorkspacesNew  extends React.Component {
       errors: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChangeNormal = this.handleChangeNormal.bind(this)
+
   }
 
   handleSubmit(e) {
@@ -42,14 +44,9 @@ class WorkspacesNew  extends React.Component {
     this.setState({ formData })
   }
 
-  handleChange(selectedOption, data) {
-    const formData = { ...this.state.formData, [data.name]: selectedOption.value }
-    this.setState({ formData })
-  }
-
 
   render() {
-    console.log('heyy')
+    console.log(this.state.errors)
     return (
       <section className="hero is-light">
         <div className="hero-body">
@@ -75,7 +72,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Address Line 1</label>
                     <input
                       className="input"
-                      name="addressLine1"
+                      name="address_line_1"
                       placeholder="eg: LoveExp Cafe"
                       onChange={this.handleChangeNormal}
                     />
@@ -85,7 +82,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Address Line 2</label>
                     <input
                       className="input"
-                      name="addressLine2"
+                      name="address_line_2"
                       placeholder="eg: Love cafe street"
                       onChange={this.handleChangeNormal}
                     />
@@ -95,7 +92,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">City</label>
                     <input
                       className="input"
-                      name="addressCity"
+                      name="city"
                       placeholder="eg: London"
                       onChange={this.handleChangeNormal}
                     />
@@ -105,7 +102,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Post Code</label>
                     <input
                       className="input"
-                      name="addressPostCode"
+                      name="postcode"
                       placeholder="SE16 6YY"
                       onChange={this.handleChangeNormal}
                     />
@@ -126,8 +123,8 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Monday</label>
                     <input
                       className="input"
-                      type="number"
-                      name="opening_times_tue"
+                      type="text"
+                      name="opening_times_mon"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
                     />
@@ -137,7 +134,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Tuesday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_tue"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -149,7 +146,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Wednesday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_wed"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -160,7 +157,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Thursday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_thur"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -171,7 +168,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Friday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_fri"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -182,7 +179,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Opening Times - Saturday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_sat"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -190,10 +187,10 @@ class WorkspacesNew  extends React.Component {
                     {this.state.errors.opening_times_sat && <small className="help is-danger">{this.state.errors.opening_times_sat}</small>}
                   </div>
                   <div className="field">
-                    <label className="label">Opening Times - Saturday</label>
+                    <label className="label">Opening Times - Sunday</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="opening_times_sun"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}
@@ -204,7 +201,7 @@ class WorkspacesNew  extends React.Component {
                     <label className="label">Genre</label>
                     <input
                       className="input"
-                      type="number"
+                      type="text"
                       name="genre"
                       placeholder= "+442076507775"
                       onChange={this.handleChangeNormal}

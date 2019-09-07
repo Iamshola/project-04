@@ -12,7 +12,13 @@ class Show extends React.Component{
       formData: {}
     }
 
+    this.handleChangeContent = this.handleChangeContent.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+
   }
+
   componentDidMount() {
     axios
       .get(`api/workspaces/${this.props.match.params.id}`)
@@ -23,11 +29,6 @@ class Show extends React.Component{
 
   handleChangeContent(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
-    this.setState({ formData })
-  }
-
-  handleChangeRating(e) {
-    const formData = { ...this.state.formData, rating: e }
     this.setState({ formData })
   }
 

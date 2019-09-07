@@ -16,14 +16,14 @@ class UserIndex extends React.Component{
   }
 
   componentDidMount() {
-    axios.get('/api/users/')
+    axios.get('/api/workspaces/')
       .then(res => {
-        this.setState({ users: res.data})
+        this.setState({ users: res.data.user})
       })
   }
 
   render() {
-    console.log(this.state.users)
+    console.log(this.state.users, 'hey')
     if(!this.state.users) return <NotFound/>
     return(
       <section className="section">
@@ -36,6 +36,7 @@ class UserIndex extends React.Component{
                 </Link>
               </div>
             )}
+
           </div>
         </div>
       </section>
