@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { HashRouter, Route} from 'react-router-dom'
@@ -50,8 +50,8 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Route path="/notfound" component={NotFound} />
-        <Route path="/workspaces/:id" component={WorkspacesShow} />
         <Route path="/workspaces/new" component={WorkspacesNew} />
+        <Route path="/workspaces/:id" component={WorkspacesShow} />
         <Route exact path="/workspaces" component={WorkspacesIndex} />
         <Route exact path="/users/:id" component={UserShow} />
         <Route exact path="/users" component={UserIndex} />

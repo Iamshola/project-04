@@ -1,5 +1,21 @@
 import React from 'react'
-
+import Auth from '../../lib/Auth'
+import axios from 'axios'
+// import ReactFilestack from 'filestack-react'
+//
+// const options = {
+//   accept: 'image/*',
+//   options: {
+//     resize: {
+//       width: 100
+//     }
+//   },
+//   transformations: {
+//     crop: true,
+//     circle: true,
+//     rotate: true
+//   }
+// }
 
 class WorkspacesNew  extends React.Component {
 
@@ -9,11 +25,31 @@ class WorkspacesNew  extends React.Component {
       formData: {},
       errors: {}
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    axios.post('/api/workspaces/', this.state.formData, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/workspaces/'))
+      .catch(err => this.setState({ errors: err.response.data}))
+  }
+
+  handleChangeNormal(e) {
+    const formData = { ...this.state.formData, [e.target.name]: e.target.value }
+    this.setState({ formData })
+  }
+
+  handleChange(selectedOption, data) {
+    const formData = { ...this.state.formData, [data.name]: selectedOption.value }
+    this.setState({ formData })
+  }
+
 
   render() {
     console.log('heyy')
-
     return (
       <section className="hero is-light">
         <div className="hero-body">
@@ -21,7 +57,7 @@ class WorkspacesNew  extends React.Component {
             <div className="column is-4 is-offset-4">
 
               <h3> New Space </h3>
-              <p className="subtitle">Tell us about your fav</p>
+              <p className="subtitle">Lets Spread the word!</p>
               <div className="box is-light">
                 <form onSubmit={this.handleSubmit}>
                   <div className="field">
@@ -165,17 +201,6 @@ class WorkspacesNew  extends React.Component {
                     {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
                   </div>
                   <div className="field">
-                    <label className="label">Image</label>
-                    <input
-                      className="input"
-                      type="number"
-                      name="image"
-                      placeholder= "+442076507775"
-                      onChange={this.handleChangeNormal}
-                    />
-                    {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
-                  </div>
-                  <div className="field">
                     <label className="label">Genre</label>
                     <input
                       className="input"
@@ -199,3 +224,19 @@ class WorkspacesNew  extends React.Component {
 }
 
 export default WorkspacesNew
+
+
+// <div className="field">
+//   <label className="label">Image</label>
+//   <ReactFilestack
+//     mode="transform"
+//     apikey={fileloaderKey}
+//     buttonText="Upload Photo"
+//     buttonClass="button"
+//     className="upload-image"
+//     options={options}
+//     onSuccess={(result) => this.handleUploadImages(result)}
+//     preload={true}
+//   />
+//   {this.state.formData.image && <img src={this.state.formData.image} />}
+// </div>
