@@ -44,7 +44,6 @@ class WorkspacesNew extends React.Component {
     this.setState({ formData })
   }
 
-
   render() {
     console.log(this.state.errors)
     return (
@@ -197,6 +196,18 @@ class WorkspacesNew extends React.Component {
                     />
                     {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
                   </div>
+                  <div className="field">
+                    <label className="label">Link</label>
+                    <input
+                      className="input"
+                      type="text"
+                      name="link"
+                      placeholder= "This could be social media, website etc"
+                      onChange={this.handleChangeNormal}
+                    />
+                    {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
+                  </div>
+
                   <div className="field">
                     <label className="label">Genre</label>
                     <input

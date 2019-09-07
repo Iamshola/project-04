@@ -1,8 +1,8 @@
 import React from  'react'
+import Auth from '../../lib/Auth'
 
 
-
-const Comment = ({ user, content, id, handleDeleteComment}) => {
+const Comment = ({ user, content, id, createdAt, handleDeleteComment}) => {
   return (
     <section className="section1 comment">
       <div className="columns comment">
@@ -22,7 +22,7 @@ const Comment = ({ user, content, id, handleDeleteComment}) => {
             <div>
 
               {' '}
-              <small>{(new Date()).toLocaleDateString()}</small>
+              <small>{(new Date(createdAt)).toLocaleDateString()}</small>
               <br/>
               <div className="subtitle comment">
                 {content}
@@ -34,7 +34,12 @@ const Comment = ({ user, content, id, handleDeleteComment}) => {
 
         <div className="column comment">
           <div className="content">
-            <button className="delete" id={id} onClick={handleDeleteComment}></button>
+            {Auth.isAuthenticated() && <div className="media-right">
+              <button className="delete" id={id} onClick={handleDeleteComment}></button>
+              <br />
+              <br />
+            </div>}
+
             <br />
             <br />
           </div>

@@ -46,63 +46,81 @@ class Login extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <section className="section">
-        <div className="columns">
-          <div className="column is-6">
-            <section className="section">
+      <section className="login is-fullheight">
+        <div className="login-body">
+          <div className="column">
+            <div className="container v-middle">
+              <div className="columns login-page">
+                <div className="column is-5 login-sidebar is-hidden-mobile">
+                  <div className="login-gradient-background">
+                    <h1>Login</h1>
+                  </div>
+                </div>
 
-              <div className="box">
-                <h3 className="title is-1 is-italic" > Login </h3>
-                <p className="subtitle has-text-black">Please login to proceed.</p>
+                <div className="column is-7 login-form-wrapper">
+                  <div className="column is-12 field-box">
+                    <div className="column is-7 is-offset-1">
+                      <h1 className="login-heading">Welcome Back Site</h1>
+                      <p className="login-subheading">Fill out thisto access super awesome imaginary control panel</p>
 
-                <form onSubmit={this.handleSubmit}>
+                      <form onSubmit={this.handleSubmit}>
+                        <div className="field">
+                          <p className="control has-icons-left has-icons-right">
+                            <input
+                              className="input is-rounded"
+                              type="email"
+                              name="email"
+                              placeholder="eg: example@example.co.uk"
+                              onChange={this.handleChange}
+                            />
+                            <span className="icon is-medium is-left">
+                              <i className="fa fa-envelope"></i>
+                            </span>
+                            <span className="icon is-small is-right">
+                              <i className="fa fa-check"></i>
+                            </span>
+                          </p>
+                        </div>
 
-                  <div className="field">
-                    <label className="label">Email </label>
-                    <div className="control">
-                      <input
-                        className="input is-rounded"
-                        type="email"
-                        name="email"
-                        placeholder="eg: example@example.co.uk"
-                        onChange={this.handleChange}
-                      />
+
+                        <div className="field">
+                          <p className="control has-icons-left has-icons-right">
+                            <input
+                              className="input is-rounded"
+                              type="password"
+                              name="password"
+                              placeholder="eg: ••••••••"
+                              onChange={this.handleChange}
+                            />
+                            <span className="icon is-medium is-left">
+                              <i className="fa fa-lock"></i>
+                            </span>
+                            <span className="icon is-small is-right">
+                              <i className="fa fa-eye"></i>
+                            </span>
+                          </p>
+                        </div>
+
+                        {this.state.error && <small className="help is-danger">{this.state.error}</small>}
+                        <div className="field is-grouped is-grouped-centered login-btn-group">
+                          <p className="control">
+                            <button className="login-btn">
+                          Login
+                            </button>
+                          </p>
+                          <p className="control">
+                            <a className="forgot-link" >Forgot Password</a>
+                          </p>
+                        </div>
+
+                      </form>
                     </div>
                   </div>
 
-                  <div className="field">
-                    <label className="label">Password</label>
-                    <div className="control">
-                      <input
-                        className="input is-rounded"
-                        type="password"
-                        name="password"
-                        placeholder="eg: ••••••••"
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                  </div>
 
-                  {this.state.error && <small className="help is-danger">{this.state.error}</small>}
-
-
-                  <div className="has-text-centered">
-                    <Link to="/register" className="">Not a user? Sign Up </Link>
-                  </div>
-
-                  <br />
-
-                  <div className="column has-text-centered">
-                    <button className="submit">Submit</button>
-                  </div>
-
-                </form>
+                </div>
               </div>
-            </section>
-          </div>
-          <div>
-            <img className="login-logo" src="https://unsplash.it/2000/1000" />
-            <img className="login-logo" src="https://unsplash.it/2000/1000" />
+            </div>
           </div>
         </div>
       </section>

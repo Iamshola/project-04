@@ -38,7 +38,7 @@ class Show extends React.Component{
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(res => this.setState({ workspace: res.data, formData: { content: '', rating: 5 } }))
+      .then(res => this.setState({ workspace: res.data }))
   }
 
   handleDelete(e) {
@@ -49,6 +49,8 @@ class Show extends React.Component{
     })
       .then(() => this.props.history.push('/workspaces/'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
+
+    console.log(e.target.value)
   }
 
 
@@ -59,8 +61,10 @@ class Show extends React.Component{
       .then(res => this.setState({ workspace: res.data }))
   }
 
+
   render(){
     console.log('formData')
+
     if(!this.state.workspace) return null
     return(
       <div className="container">
@@ -69,6 +73,7 @@ class Show extends React.Component{
             <section className="hero is-medium">
               <div className="hero-body">
                 <h1 className="title">  {this.state.workspace.name} </h1>
+                <h2 className="subtitle">  {this.state.workspace.city} </h2>
                 <div className="subtitle is-6">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
@@ -118,29 +123,38 @@ class Show extends React.Component{
                       </tr>
                     </tbody>
                   </table>
-                  <article className="comments tile is-child notification">
-                    {this.state.workspace.comments.map(comment =>
-                      <Comment
-                        className="comment"
-                        key={comment.id}
-                        {...comment}
-                        handleDeleteComment={this.handleDeleteComment} />
-                    )}
-                    {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
-                      <div className="field">
-                        <textarea
-                          name="content"
-                          className="textarea"
-                          placeholder="Add a comment..."
-                          value={this.state.formData.content}
-                        />
-                      </div>
-                      <button className="button"> Submit</button>
-                    </form>}
-                  </article>
-
+                  <div>
+                    <p> Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
+                  </div>
                 </div>
+
+
+                <article className="comments tile is-child notification">
+                  {this.state.workspace.comments.map(comment =>
+                    <Comment
+                      className="comment"
+                      key={comment.id}
+                      {...comment}
+                      handleDeleteComment={this.handleDeleteComment} />
+                  )}
+                  {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
+                    <div className="field">
+                      <textarea
+                        name="content"
+                        className="textarea"
+                        placeholder="Add a comment..."
+                        value={this.state.formData.content}
+                      />
+                    </div>
+                    <button className="button"> Submit</button>
+                  </form>}
+                </article>
+
               </div>
+
             </section>
           </div>
         </div>
