@@ -29,6 +29,7 @@ class Navbar extends React.Component{
     this.setState({navbarOpen: !this.state.navbarOpen})
 
   }
+
   toggleDropdown() {
     this.setState({ dropdownOpen: !this.state.dropdownOpen})
   }
@@ -43,7 +44,6 @@ class Navbar extends React.Component{
   }
 
   render(){
-
     return(
       <nav className="navbar navbar-main is-fixed-top is-transparent">
         <div className="container">
@@ -79,12 +79,23 @@ class Navbar extends React.Component{
                 <div className={`dropdown is-right ${this.state.dropdownOpen ? 'is-active' : ''}`}>
                   <div className="dropdown-trigger">
                     <button className="navIcon" aria-haspopup="true" aria-controls="dropdown-menu" onClick={this.toggleDropdown}>
+                      <span className="icon is-small">
+                        <img
+                          src={`${Auth.getUser().image}`}
+                          aria-hidden="true"
+                        />
+                      </span>
                     </button>
                   </div>
-                  <div className="" id="dropdown-menu" role="menu">
-                    <a className=""  onClick={this.logout}>
-                    Logout
-                    </a>
+                  <div className="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div className="dropdown-content">
+                      <Link to={`/users/${Auth.getUser().id}`} className="dropdown-item">
+                      My Profile
+                      </Link>
+                      <a className="dropdown-item"  onClick={this.logout}>
+                      Logout
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>}

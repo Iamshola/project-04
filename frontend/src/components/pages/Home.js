@@ -44,7 +44,33 @@ const Home = ()=> {
           </div>
         </section>
       </LazyHero>
-      < Footer />
+
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <h4 className="subtitle">CONTACT US:</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+            <ul>
+              <li>A :  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </li>
+              <li>P :  123 456 7890 </li>
+              <li>E :  info@travel.com </li>
+            </ul>
+          </div>
+          <div className="column">
+            <p></p>
+          </div>
+          <div className="column">
+            <h4 className="subtitle">NEWSLETTER:</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+            <input/>
+            <button>Submit</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <hr /> 
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -44,7 +44,7 @@ class Register extends React.Component {
               <div className="columns login-page">
                 <div className="column is-5 login-sidebar is-hidden-mobile">
                   <div className="login-gradient-background">
-                    <h1>Login</h1>
+                    <h1>Register</h1>
                   </div>
                 </div>
                 <div className="column is-7 login-form-wrapper">
