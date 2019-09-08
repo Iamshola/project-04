@@ -18,6 +18,13 @@ class Comment(models.Model):
     def __str__(self):
         return f'{self.title} - {self.user}'
 
+class Bookmark(models.Model):
+    saved = models.BooleanField(default=True)
+    user = models.ForeignKey(User, related_name='bookmarks', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user}'
+
 
 class Workspace(models.Model):
     name = models.CharField(max_length=50)
@@ -39,6 +46,7 @@ class Workspace(models.Model):
     user = models.ForeignKey(User, related_name='workspaces', on_delete=models.CASCADE, null=True)
     genres = models.ManyToManyField(Genre, related_name='workspaces', blank=True)
     comments = models.ManyToManyField(Comment, related_name='workspaces', blank=True)
+    bookmarks = models.ManyToManyField(Bookmark, related_name='workspaces', blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.city}'

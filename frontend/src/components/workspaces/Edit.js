@@ -216,6 +216,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="link"
+                        value={this.state.formData.link || ''}
                         placeholder= "This could be social media, website etc"
                         onChange={this.handleChangeNormal}
                       />

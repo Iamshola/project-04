@@ -18,7 +18,7 @@ import WorkspacesEdit from './components/workspaces/Edit.js'
 
 import UserIndex from './components/user/UserIndex.js'
 import UserShow from './components/user/UserShow.js'
-
+import UserEdit from './components/user/UserEdit.js'
 
 import Footer from './components/common/Footer.js'
 
@@ -61,6 +61,7 @@ class App extends React.Component {
           <Route path="/workspaces/:id" component={WorkspacesShow} />
           <Route exact path="/workspaces" component={WorkspacesIndex} />
 
+          <SecureRoute path="/users/:id/edit" component={UserEdit} />
           <Route exact path="/users/:id" component={UserShow} />
           <Route exact path="/users" component={UserIndex} />
 

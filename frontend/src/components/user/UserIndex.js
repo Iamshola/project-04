@@ -16,7 +16,7 @@ class UserIndex extends React.Component{
   }
 
   componentDidMount() {
-    axios.get('/api/workspaces/')
+    axios.get('/api/users/')
       .then(res => {
         this.setState({ users: res.data})
       })

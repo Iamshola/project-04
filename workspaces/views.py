@@ -73,6 +73,18 @@ class ProfileList(APIView):
         serializer = PopulatedUserSerializer(user, many=True)
         return Response(serializer.data)
 
+    def post(self, request):
+        # deserialiser the data
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            # auto sets user to be logged in user
+            serializer.save()
+            workspace = serializer.instance
+            serializer = PopulatedUserSerializer(workspace)
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
+
 class ProfileDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
@@ -90,3 +102,13 @@ class ProfileDetail(APIView):
 
         serializer = PopulatedUserSerializer(user)
         return Response(serializer.data)
+
+    def put(self, request, pk):
+        user = self.get_workspace(pk)
+
+        serializer = PopulatedUserSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)

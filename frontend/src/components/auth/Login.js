@@ -60,7 +60,7 @@ class Login extends React.Component {
                 <div className="column is-7 login-form-wrapper">
                   <div className="column is-12 field-box">
                     <div className="column is-7 is-offset-1">
-                      <h1 className="login-heading">Welcome Back Site</h1>
+                      <h1 className="login-heading">Welcome Back</h1>
                       <p className="login-subheading">Fill out thisto access super awesome imaginary control panel</p>
 
                       <form onSubmit={this.handleSubmit}>

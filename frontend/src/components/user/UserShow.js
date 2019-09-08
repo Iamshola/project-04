@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import Auth from '../../lib/Auth'
+import { Link } from 'react-router-dom'
 
 class ShowUser extends React.Component {
 
@@ -7,18 +9,24 @@ class ShowUser extends React.Component {
     super()
 
     this.state = {
-      user: {}
+      user: {},
+      bookmarks: []
     }
 
   }
 
   componentDidMount() {
-    axios.get(`/api/workspaces/${this.props.match.params.id}`)
-      .then(res => this.setState({ user: res.data }))
+    axios.get(`api/users/${this.props.match.params.id}`, {
+      headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => {
+        this.setState({ user: res.data })
+      })
+      .catch(err => console.error(err))
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.user)
     return(
       <section className="hero is-light">
         <div className="hero-body">
@@ -34,12 +42,19 @@ class ShowUser extends React.Component {
 
                   <div className="content">
                     <h2>{this.state.user.username}</h2>
+                    <h2>{this.state.user.user_city}</h2>
                   </div>
+
+                  {Auth.isAuthenticated() && <div className="buttons">
+                    <Link className=" button edit" to={`/users/${this.state.user.id}/edit`}>Edit</Link>
+                  </div>}
+
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </section>
     )
   }
