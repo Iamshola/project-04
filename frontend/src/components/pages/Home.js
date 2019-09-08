@@ -1,5 +1,6 @@
 import React from 'react'
 import LazyHero from 'react-lazy-hero'
+import Footer from '../common/Footer'
 
 const Home = ()=> {
   return(
@@ -43,6 +44,7 @@ const Home = ()=> {
           </div>
         </section>
       </LazyHero>
+      < Footer />
     </div>
   )
 }

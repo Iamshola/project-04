@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
+import Select from 'react-select'
 
 // const options = {
 //   accept: 'image/*',
@@ -10,6 +11,18 @@ import Auth from '../../lib/Auth'
 //     rotate: true
 //   }
 // }
+
+const genreOptions = [
+  { value: '', label: 'All' },
+  { value: 'Animal Friendly', label: 'Animal Friendly' },
+  { value: 'Quiet Section', label: 'Quiet Section' },
+  { value: 'Meeting Tables', label: 'Meeting Tables' },
+  { value: 'Wifi', label: 'Wifi' },
+  { value: 'Music', label: 'Music' },
+  { value: 'Food and Drinks Permitted', label: 'Food and Drinks Permitted' },
+  { value: 'Free', label: 'Free' },
+  { value: 'Wheelchair accessible', label: 'Wheelchair accessible' }
+]
 
 class WorkspacesEdit extends React.Component {
 
@@ -23,6 +36,7 @@ class WorkspacesEdit extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeNormal = this.handleChangeNormal.bind(this)
+    this.handleMultiChange = this.handleMultiChange.bind(this)
 
   }
 
@@ -41,12 +55,18 @@ class WorkspacesEdit extends React.Component {
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
+  handleMultiChange(selectedOptions, data) {
+    const formData = { ...this.state.formData, [data.name]: selectedOptions.map(selectedOption => selectedOption.value)}
+    this.setState({ formData })
+  }
+
   componentDidMount() {
     axios.get(`/api/workspaces/${this.props.match.params.id}`)
       .then(res => this.setState({ formData: res.data }))
   }
 
   render() {
+    const selectedGenre = (this.state.formData.genre || []).map(genre => ({ label: genre, value: genre }))
     return (
       <section className="hero is-light">
         <div className="hero-body">
@@ -222,14 +242,15 @@ class WorkspacesEdit extends React.Component {
                       />
                       {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
                     </div>
+
                     <div className="field">
                       <label className="label">Genre</label>
-                      <input
-                        className="input"
-                        type="text"
+                      <Select
+                        isMulti
+                        value={selectedGenre}
                         name="genre"
-                        value={this.state.formData.genre || ''}
-                        onChange={this.handleChangeNormal}
+                        options={genreOptions}
+                        onChange={this.handleMultiChange}
                       />
                       {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
                     </div>

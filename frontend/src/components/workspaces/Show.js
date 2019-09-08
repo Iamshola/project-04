@@ -91,7 +91,6 @@ class Show extends React.Component{
               {Auth.isAuthenticated() && <div className="buttons">
                 <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit`}>Edit</Link>
                 <Link className="button erase" onClick={this.handleDelete}>Delete</Link>
-
               </div>}
 
               <div className="column">
@@ -134,12 +133,6 @@ class Show extends React.Component{
                     </tr>
                   </tbody>
                 </table>
-                <div>
-                  <p> Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                  sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.</p>
-                </div>
               </div>
 
 
@@ -167,7 +160,7 @@ class Show extends React.Component{
                 </div>
               </div>
 
-              <div className="container">
+              <div className="column">
                 <h2 className="title is-6 pool-heading">Nearby</h2>
                 <hr className="show-hr"/>
 

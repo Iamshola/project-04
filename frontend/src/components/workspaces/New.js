@@ -1,6 +1,21 @@
 import React from 'react'
 import Auth from '../../lib/Auth'
 import axios from 'axios'
+import Select from 'react-select'
+
+
+const genreOptions = [
+  { value: '', label: 'All' },
+  { value: 'Animal Friendly', label: 'Animal Friendly' },
+  { value: 'Quiet Section', label: 'Quiet Section' },
+  { value: 'Meeting Tables', label: 'Meeting Tables' },
+  { value: 'Wifi', label: 'Wifi' },
+  { value: 'Music', label: 'Music' },
+  { value: 'Food and Drinks Permitted', label: 'Food and Drinks Permitted' },
+  { value: 'Free', label: 'Free' },
+  { value: 'Wheelchair accessible', label: 'Wheelchair accessible' }
+]
+
 
 class WorkspacesNew extends React.Component {
 
@@ -195,15 +210,15 @@ class WorkspacesNew extends React.Component {
 
                   <div className="field">
                     <label className="label">Genre</label>
-                    <input
-                      className="input"
-                      type="text"
+                    <Select
+                      isMulti
                       name="genre"
-                      placeholder= "+442076507775"
-                      onChange={this.handleChangeNormal}
+                      options={genreOptions}
+                      onChange={this.handleMultiChange}
                     />
                     {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
                   </div>
+
                   <button className="submit">Submit</button>
                 </form>
               </div>
