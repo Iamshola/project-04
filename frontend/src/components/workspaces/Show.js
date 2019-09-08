@@ -147,8 +147,7 @@ class Show extends React.Component{
                 {this.state.workspace.comments.map(comment =>
                   <Comment
                     className="comment"
-                    key={comment.id}
-                    {...comment}
+                    key={comment.id}{...comment}
                     handleDeleteComment={this.handleDeleteComment} />
                 )}
 

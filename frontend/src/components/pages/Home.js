@@ -10,7 +10,7 @@ const Home = ()=> {
         minHeight={'85vh'}
         parallaxOffset={250}
       >
-        <h1 className="title is-1">Space</h1>
+        <h1 className="title is-1">Space.</h1>
         <h2 className="subtitle is-3">Making Space for Budding Entrepreneurs </h2>
 
 
