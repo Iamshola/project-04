@@ -82,35 +82,43 @@ class WorkspacesIndex extends React.Component{
             </div>
             <hr />
           </div>
-          <div className="navbar-item">
-            <div className="field">
-              <label className="label has-text-left">Activity Type</label>
-              <Select
-                name="genre"
-                className="filter"
-                options={genreOptions}
-                defaultValue={genreOptions[0]}
-                onChange={selected => this.handleFilter(selected, 'genre')}
-                value={genreOptions.find(option => option.value === this.state.genre)}
-              />
-            </div>
-            <br />
-            <br />
-            <div className="field">
-              <label className="label has-text-left">Search your favourite space</label>
-              <input placeholder="Search your favourite space" className="input" onKeyUp={this.handleKeyUp}/>
-            </div>
-
-            <div className="field">
-              <label className="label has-text-left"> Alphabetical Order:  </label>
-              <div>
-                <select onChange={this.handleChange}>
-                  <option value="name|asc">A-Z </option>
-                  <option value="name|desc">Z-A </option>
-                </select>
+          <div className="columns">
+            <div className="column">
+              <div className="navbar-item">
+                <div className="field">
+                  <label className="label has-text-left">Activity Type</label>
+                  <Select
+                    name="genre"
+                    className="filter"
+                    options={genreOptions}
+                    defaultValue={genreOptions[0]}
+                    onChange={selected => this.handleFilter(selected, 'genre')}
+                    value={genreOptions.find(option => option.value === this.state.genre)}
+                  />
+                </div>
+                <br />
+                <br />
+                <div className="column">
+                  <div className="field">
+                    <label className="label has-text-left">Search your favourite space</label>
+                    <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
+                  </div>
+                </div>
+                <div className="column">
+                  <div className="field">
+                    <label className="label has-text-left"> Alphabetical Order:  </label>
+                    <div className="column">
+                      <select onChange={this.handleChange}>
+                        <option value="name|asc">A-Z </option>
+                        <option value="name|desc">Z-A </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
 
           <div className="columns is-multiline">
             {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}

@@ -1,22 +1,14 @@
 import React from 'react'
 
-
-
-
-const Bookmark = ({ liked, handleBookmark }) => {
-  const label = liked ? 'yass' : 'mope'
-
+const Bookmark = ({ bookmarked, handleBookmark }) => {
+  const label = bookmarked ? 'hi' : 'bye'
 
   return (
     <div>
 
-      <button
-        onClick={handleBookmark}
-        className= "bookmark">
-        {label}
-      </button>
+      <button onClick={handleBookmark} className= "bookmark">  {label} </button>
     </div>
   )
 }
-// 300 people have liked this
+// 300 people have bookmarked this
 export default Bookmark

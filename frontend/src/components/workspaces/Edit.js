@@ -68,17 +68,23 @@ class WorkspacesEdit extends React.Component {
   render() {
     const selectedGenre = (this.state.formData.genre || []).map(genre => ({ label: genre, value: genre }))
     return (
-      <section className="hero is-light">
+      <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-4 is-offset-4">
+            <div className="box is-light">
 
-                <h3 className="title is-2">We all make mistakes...</h3>
+              <form onSubmit={this.handleSubmit}>
+                <h3 className="title is-2">Edit</h3>
+                <div className="columns">
+                  <div className="column is-4">
+                    <div className="box is-light">
+                      <h2>You are Editiing </h2>
+                      <p>Add Snippet of the card here</p>
+                    </div>
 
-                <div className="box is-light">
 
-                  <form onSubmit={this.handleSubmit}>
+                  </div>
+                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Name</label>
                       <input
@@ -152,7 +158,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_mon"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_mon || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -164,19 +170,22 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_tue"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_tue || ''}
                         onChange={this.handleChangeNormal}
                       />
                       {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
                     </div>
+                  </div>
+
+                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Opening Times - Wednesday</label>
                       <input
                         className="input"
                         type="text"
                         name="opening_times_wed"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_wed || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -188,7 +197,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_thur"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_thur || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -200,7 +209,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_fri"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_fri || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -212,7 +221,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_sat"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_sat || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -224,7 +233,7 @@ class WorkspacesEdit extends React.Component {
                         className="input"
                         type="text"
                         name="opening_times_sun"
-                        placeholder= "+442076507775"
+                        placeholder= "08:00 - 22:30"
                         value={this.state.formData.opening_times_sun || ''}
                         onChange={this.handleChangeNormal}
                       />
@@ -254,10 +263,14 @@ class WorkspacesEdit extends React.Component {
                       />
                       {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
                     </div>
-                    <button className="submit">Submit</button>
-                  </form>
+
+                  </div>
                 </div>
-              </div>
+                <button className="login-btn">
+                Submit
+                </button>
+
+              </form>
             </div>
           </div>
         </div>

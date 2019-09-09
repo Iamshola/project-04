@@ -3,7 +3,7 @@ import axios from 'axios'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
-// import Bookmark from '../common/Bookmark'
+import Bookmark from '../common/Bookmark'
 
 class Show extends React.Component{
 
@@ -39,7 +39,7 @@ class Show extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.post(`/api/workspaces/${this.props.match.params.id}/comments/`, this.state.formData,
+    axios.post(`/workspaces/${this.props.match.params.id}/comments/`, this.state.formData,
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
@@ -67,31 +67,40 @@ class Show extends React.Component{
   }
 
   handleBookmark() {
-    axios.post(`/api/workspaces/${this.props.match.params.id}/bookmark`, null, {
+    axios.get(`/api/workspaces/${this.props.match.params.id}/bookmark/`, null, {
       headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
     })
       .then(res => this.setState({ workspace: res.data }))
   }
 
-  isBookmarked(marks) {
-    return marks.includes(Auth.getPayload().sub)
+  isBookmarked(bookmarks) {
+    return bookmarks.includes(Auth.getPayload().sub)
   }
 
 
   render(){
     if(!this.state.workspace) return null
     return(
-      <div className="columns">
-        <div className="column">
-          <section className="hero is-medium">
-            <div className="hero-body">
-              <h1 className="title">  {this.state.workspace.name} </h1>
-              <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
-              <div className="subtitle is-6">{this.state.workspace.description}  </div>
-              {Auth.isAuthenticated() && <div className="buttons">
-                <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit`}>Edit</Link>
-                <Link className="button erase" onClick={this.handleDelete}>Delete</Link>
-              </div>}
+      <div className="container">
+        <div className="columns">
+          <div className="column">
+            <section className="hero is-medium">
+              <div className="hero-body">
+                <h1 className="title">  {this.state.workspace.name} </h1>
+                <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
+                <div className="subtitle is-6">{this.state.workspace.description}  </div>
+                <div className="subtitle is-6">{this.state.workspace.genres}  </div>
+                {Auth.isAuthenticated() && <div className="buttons">
+                  <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit`}>Edit</Link>
+                  <Link className="button erase" onClick={this.handleDelete}>Delete</Link>
+                  <Bookmark
+                    bookmarked={this.isBookmarked(this.state.workspace.bookmarks)}
+                    handleBookmark={this.handleBookmark}
+                    className="button"
+                  />
+                  <p className="subtitle">{this.state.workspace.bookmarks.length} bookmarks </p>
+                </div>}
+              </div>
 
               <div className="column">
                 <h2 className="title is-4">Opening Times:</h2>
@@ -135,7 +144,6 @@ class Show extends React.Component{
                 </table>
               </div>
 
-
               <div className="column">
                 {this.state.workspace.comments.map(comment =>
                   <Comment
@@ -157,6 +165,7 @@ class Show extends React.Component{
                     </div>
                     <button className="button"> Submit</button>
                   </form>}
+
                 </div>
               </div>
 
@@ -167,35 +176,17 @@ class Show extends React.Component{
 
 
               </div>
-            </div>
 
-          </section>
+
+            </section>
+          </div>
         </div>
+
       </div>
+
 
     )
   }
 }
 
 export default Show
-
-
-// handleBookmark() {
-//   axios.post(`/api/workspaces/${this.props.match.params.id}/bookmark`, null, {
-//     headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
-//   })
-//     .then(res => this.setState({ workspace: res.data }))
-// }
-//
-// isBookmarked(marks) {
-//   return marks.includes(Auth.getPayload().sub)
-// }
-//
-// div className="columns is-multiline">
-//   {Auth.isAuthenticated() && <div className="buttons">
-//     <Bookmark
-//       liked={this.isLiked(this.state.workspace.bookmarks)}
-//       handleBookmark={this.handleBookmark}
-//     />
-//     <p className="subtitle">{this.state.worspace.bookmarks.length} like </p>
-//   </div>}

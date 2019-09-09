@@ -28,7 +28,7 @@ class ShowUser extends React.Component {
   render() {
     console.log(this.state.user)
     return(
-      <section className="hero is-light">
+      <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="column is-4 is-offset-4">

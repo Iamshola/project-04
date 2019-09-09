@@ -6,8 +6,8 @@ from jwt_auth.models import User
 from jwt_auth.serializers import UserSerializer
 from .permissions import IsOwnerOrReadOnly
 
-from .models import Workspace
-from .serializers import WorkspaceSerializer, PopulatedUserSerializer, PopulatedWorkspaceSerializer
+from .models import Workspace, Comment, Bookmark
+from .serializers import WorkspaceSerializer, PopulatedUserSerializer, PopulatedWorkspaceSerializer, CommentSerializer, BookmarkSerializer
 
 # Create your views here.
 class WorkspaceList(APIView):
@@ -30,7 +30,6 @@ class WorkspaceList(APIView):
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
-
 class WorkspaceDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
@@ -63,7 +62,6 @@ class WorkspaceDetail(APIView):
         workspace = self.get_workspace(pk)
         workspace.delete()
         return Response(status=204)
-
 class ProfileList(APIView):
 
     permission_classes = (IsAuthenticatedOrReadOnly,)
@@ -84,7 +82,6 @@ class ProfileList(APIView):
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
-
 class ProfileDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
@@ -112,3 +109,47 @@ class ProfileDetail(APIView):
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
+
+class CommentList(APIView):
+    def post(self, request):
+        # deserialiser the data
+        serializer = CommentSerializer(data=request.data)
+        if serializer.is_valid():
+            # auto sets user to be logged in user
+            serializer.save()
+            workspace = serializer.instance
+            serializer = PopulatedWorkspaceSerializer(workspace)
+            return Response(serializer.data, status=201)
+
+        return Response(serializer.errors, status=422)
+
+
+class CommentDetail(APIView):
+    def get_comment(self, pk):
+        try:
+            comment = Comment.objects.get(pk=pk)
+        except Comment.DoesNotExist:
+            raise Http404
+
+        return comment
+
+
+    def delete(self, _request, pk):
+        comment = self.get_comment(pk)
+        comment.delete()
+        return Response(status=204)
+
+class BookmarkList(APIView):
+    def get_bookmark(self, pk):
+        try:
+            bookmark = Bookmark.objects.get(pk=pk)
+        except Bookmark.DoesNotExist:
+            raise Http404
+
+        return bookmark
+
+    def get(self, _request, pk):
+        bookmark = self.get_bookmark(pk)
+
+        serializer = PopulatedWorkspaceSerializer(bookmark)
+        return Response(serializer.data)

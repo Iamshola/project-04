@@ -36,23 +36,30 @@ class UserEdit extends React.Component {
       .then(res => this.setState({ formData: res.data }))
   }
 
-
-
   render() {
     console.log(this.state.formData)
     console.log(this.state.errors, 'errors')
     return (
-      <section className="hero is-light">
+      <section className="hero is-light user_edit">
         <div className="hero-body">
           <div className="container has-text-centered">
+            <h3 className="title is-2">My Profile</h3>
             <div className="columns">
-              <div className="column is-4 is-offset-4">
-
-                <h3 className="title is-2">Tell us more about yourself</h3>
-
+              <div className="column">
                 <div className="box is-light">
+                  <h1 className="title is-2">{this.state.formData.username}</h1>
+                  <figure className="image is-128x128">
+                    <img src="https://bulma.io/images/placeholders/128x128.png"/>
+                  </figure>
+                </div>
+              </div>
+            </div>
 
-                  <form onSubmit={this.handleSubmit}>
+            <div className="box is-light">
+
+              <form onSubmit={this.handleSubmit}>
+                <div className="columns">
+                  <div className="column is-4">
                     <div className="field">
                       <label className="label">City</label>
                       <input
@@ -75,6 +82,9 @@ class UserEdit extends React.Component {
                       />
                       {this.state.errors.interest && <small className="help is-danger">{this.state.errors.interest}</small>}
                     </div>
+                  </div>
+
+                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Linkedin Link</label>
                       <input
@@ -87,9 +97,9 @@ class UserEdit extends React.Component {
                       {this.state.errors.linked_In_Link && <small className="help is-danger">{this.state.errors.linked_In_Link}</small>}
                     </div>
                     <button className="submit">Submit</button>
-                  </form>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
