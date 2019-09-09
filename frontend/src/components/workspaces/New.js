@@ -2,6 +2,9 @@ import React from 'react'
 import Auth from '../../lib/Auth'
 import axios from 'axios'
 import Select from 'react-select'
+import ReactFilestack from 'filestack-react'
+
+const FilestackToken = process.env.FilestackToken
 
 
 const genreOptions = [
@@ -17,7 +20,19 @@ const genreOptions = [
   { value: 'Shower', label: 'Shower' }
 
 ]
-
+const options = {
+  accept: 'image/*',
+  options: {
+    resize: {
+      width: 100
+    }
+  },
+  transformations: {
+    crop: true,
+    circle: true,
+    rotate: true
+  }
+}
 
 class WorkspacesNew extends React.Component {
 
@@ -43,6 +58,11 @@ class WorkspacesNew extends React.Component {
 
   handleChangeNormal(e) {
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
+    this.setState({ formData })
+  }
+
+  handleUploadImages(result) {
+    const formData = {...this.state.formData, image: result.filesUploaded[0].url}
     this.setState({ formData })
   }
 
@@ -230,12 +250,25 @@ class WorkspacesNew extends React.Component {
                       {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
                     </div>
 
+                    <div className="field">
+                      <label className="label">Image</label>
+                      <ReactFilestack
+                        mode="transform"
+                        apikey={FilestackToken}
+                        buttonText="Upload Photo"
+                        buttonClass="button"
+                        className="upload-image"
+                        options={options}
+                        onSuccess={(result) => this.handleUploadImages(result)}
+                        preload={true}
+                      />
+                      {this.state.formData.image && <img src={this.state.formData.image} />}
+                    </div>
+
                   </div>
                 </div>
 
-                <button className="login-btn">
-                Submit
-                </button>
+                <button className="login-btn">Submit</button>
               </form>
             </div>
           </div>

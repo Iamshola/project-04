@@ -3,6 +3,7 @@ import Auth from '../../lib/Auth'
 
 
 const Comment = ({ user, content, id, createdAt, handleDeleteComment}) => {
+  // console.log(Comment.content)
   return (
     <section className="section1 comment">
       <div className="columns comment">

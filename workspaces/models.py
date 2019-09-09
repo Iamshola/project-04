@@ -10,22 +10,6 @@ class Genre(models.Model):
     def __str__(self):
         return f'{self.name}'
 
-class Comment(models.Model):
-    title = models.CharField(max_length=20)
-    content = models.TextField()
-    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.title} - {self.user}'
-
-class Bookmark(models.Model):
-    saved = models.BooleanField(default=True)
-    user = models.ForeignKey(User, related_name='bookmarks', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.user}'
-
-
 class Workspace(models.Model):
     name = models.CharField(max_length=50)
     address_line_1 = models.CharField(max_length=50)
@@ -45,8 +29,14 @@ class Workspace(models.Model):
     image = models.CharField(max_length=200, blank=True)
     user = models.ForeignKey(User, related_name='workspaces', on_delete=models.CASCADE, null=True)
     genres = models.ManyToManyField(Genre, related_name='workspaces', blank=True)
-    comments = models.ManyToManyField(Comment, related_name='workspaces', blank=True)
-    bookmarks = models.ManyToManyField(Bookmark, related_name='workspaces', blank=True)
+    # bookmark = models.ManyToManyField(User, related_name='workspaces_bo', blank=True)
 
     def __str__(self):
         return f'{self.name} - {self.city}'
+
+
+class Comment(models.Model):
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
+    workspace = models.ForeignKey(Workspace, related_name='comments', on_delete=models.CASCADE)

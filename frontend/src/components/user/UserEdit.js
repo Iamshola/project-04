@@ -45,7 +45,7 @@ class UserEdit extends React.Component {
           <div className="container has-text-centered">
             <h3 className="title is-2">My Profile</h3>
             <div className="columns">
-              <div className="column">
+              <div className="column is-6 is-offset-3">
                 <div className="box is-light">
                   <h1 className="title is-2">{this.state.formData.username}</h1>
                   <figure className="image is-128x128">
@@ -59,7 +59,7 @@ class UserEdit extends React.Component {
 
               <form onSubmit={this.handleSubmit}>
                 <div className="columns">
-                  <div className="column is-4">
+                  <div className="column is-6 is-offset-3">
                     <div className="field">
                       <label className="label">City</label>
                       <input
@@ -82,9 +82,7 @@ class UserEdit extends React.Component {
                       />
                       {this.state.errors.interest && <small className="help is-danger">{this.state.errors.interest}</small>}
                     </div>
-                  </div>
 
-                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Linkedin Link</label>
                       <input
@@ -96,9 +94,11 @@ class UserEdit extends React.Component {
                       />
                       {this.state.errors.linked_In_Link && <small className="help is-danger">{this.state.errors.linked_In_Link}</small>}
                     </div>
-                    <button className="submit">Submit</button>
+                    <button className="login-btn">Submit</button>
                   </div>
                 </div>
+
+
               </form>
             </div>
           </div>

@@ -2,15 +2,18 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import Select from 'react-select'
+import ReactFilestack from 'filestack-react'
 
-// const options = {
-//   accept: 'image/*',
-//   transformations: {
-//     crop: true,
-//     circle: true,
-//     rotate: true
-//   }
-// }
+const filestackToken = process.env.filestackToken
+
+const options = {
+  accept: 'image/*',
+  transformations: {
+    crop: true,
+    circle: true,
+    rotate: true
+  }
+}
 
 const genreOptions = [
   { value: '', label: 'All' },
@@ -51,12 +54,17 @@ class WorkspacesEdit extends React.Component {
     axios.put(`/api/workspaces/${this.props.match.params.id}/`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push(`/workspaces/${this.props.match.params.id}/`))
+      .then(() => this.props.history.push(`/workspaces/${this.props.match.params.id}`))
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
   handleMultiChange(selectedOptions, data) {
     const formData = { ...this.state.formData, [data.name]: selectedOptions.map(selectedOption => selectedOption.value)}
+    this.setState({ formData })
+  }
+
+  handleUploadImages(result) {
+    const formData = {...this.state.formData, image: result.filesUploaded[0].url}
     this.setState({ formData })
   }
 
@@ -71,18 +79,24 @@ class WorkspacesEdit extends React.Component {
       <section className="hero">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <div className="box is-light">
+            <div className="box is-light edit-page">
 
               <form onSubmit={this.handleSubmit}>
                 <h3 className="title is-2">Edit</h3>
                 <div className="columns">
                   <div className="column is-4">
                     <div className="box is-light">
-                      <h2>You are Editiing </h2>
-                      <p>Add Snippet of the card here</p>
+                      <h1>Preview:</h1>
+                      <h3>See Your Changes</h3>
+                      <figure className="image display">
+                        <img src={this.state.formData.image} alt="Placeholder image" />
+                      </figure>
+                      <hr />
+                      <p>{this.state.formData.city}, {this.state.formData.postcode}</p>
+                      <hr />
+                      <p>Link: {this.state.formData.link}</p>
+                      <hr />
                     </div>
-
-
                   </div>
                   <div className="column is-4">
                     <div className="field">
@@ -153,32 +167,56 @@ class WorkspacesEdit extends React.Component {
                       {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
                     </div>
                     <div className="field">
-                      <label className="label">Opening Times - Monday</label>
+                      <label className="label">Link</label>
                       <input
                         className="input"
                         type="text"
-                        name="opening_times_mon"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_mon || ''}
+                        name="link"
+                        value={this.state.formData.link || ''}
+                        placeholder= "This could be social media, website etc"
                         onChange={this.handleChangeNormal}
                       />
-                      {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
+                      {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
                     </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Tuesday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_tue"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_tue || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
-                    </div>
-                  </div>
 
-                  <div className="column is-4">
+                    <div className="field">
+                      <label className="label">Genre</label>
+                      <Select
+                        isMulti
+                        value={selectedGenre}
+                        name="genre"
+                        options={genreOptions}
+                        onChange={this.handleMultiChange}
+                      />
+                      {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
+                    </div>
+                    </div>
+                    <div className="column is-4">
+                      <div className="field">
+                        <label className="label">Opening Times - Monday</label>
+                        <input
+                          className="input"
+                          type="text"
+                          name="opening_times_mon"
+                          placeholder= "08:00 - 22:30"
+                          value={this.state.formData.opening_times_mon || ''}
+                          onChange={this.handleChangeNormal}
+                        />
+                        {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
+                      </div>
+                      <div className="field">
+                        <label className="label">Opening Times - Tuesday</label>
+                        <input
+                          className="input"
+                          type="text"
+                          name="opening_times_tue"
+                          placeholder= "08:00 - 22:30"
+                          value={this.state.formData.opening_times_tue || ''}
+                          onChange={this.handleChangeNormal}
+                        />
+                        {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
+                      </div>
+
                     <div className="field">
                       <label className="label">Opening Times - Wednesday</label>
                       <input
@@ -240,32 +278,24 @@ class WorkspacesEdit extends React.Component {
                       {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
                     </div>
                     <div className="field">
-                      <label className="label">Link</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="link"
-                        value={this.state.formData.link || ''}
-                        placeholder= "This could be social media, website etc"
-                        onChange={this.handleChangeNormal}
+                      <label className="label">Image</label>
+                      <ReactFilestack
+                        mode="transform"
+                        apikey={filestackToken}
+                        buttonText="Upload Photo"
+                        buttonClass="button"
+                        className="upload-image"
+                        options={options}
+                        onSuccess={(result) => this.handleUploadImages(result)}
+                        preload={true}
                       />
-                      {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
+                      {this.state.formData.image && <img src={this.state.formData.image} />}
                     </div>
-
-                    <div className="field">
-                      <label className="label">Genre</label>
-                      <Select
-                        isMulti
-                        value={selectedGenre}
-                        name="genre"
-                        options={genreOptions}
-                        onChange={this.handleMultiChange}
-                      />
-                      {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
-                    </div>
-
                   </div>
+
+
                 </div>
+
                 <button className="login-btn">
                 Submit
                 </button>
