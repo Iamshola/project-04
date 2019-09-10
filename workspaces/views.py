@@ -24,8 +24,8 @@ class WorkspaceList(APIView):
         serializer = WorkspaceSerializer(data=request.data)
         if serializer.is_valid():
             # auto sets user to be logged in user
-            workspace = serializer.instance
-            serializer = PopulatedWorkspaceSerializer(workspace)
+            serializer.save(user=request.user)
+            serializer = PopulatedWorkspaceSerializer(serializer.instance)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)

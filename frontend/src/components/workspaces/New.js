@@ -44,6 +44,7 @@ class WorkspacesNew extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeNormal = this.handleChangeNormal.bind(this)
+    this.handleMultiChange = this.handleMultiChange.bind(this)
 
   }
 
@@ -54,6 +55,12 @@ class WorkspacesNew extends React.Component {
     })
       .then(() => this.props.history.push('/workspaces/'))
       .catch(err => this.setState({ errors: err.response.data}))
+  }
+
+  handleMultiChange(selectedOptions, data) {
+    const options = selectedOptions.map(selectedOption => selectedOption.value)
+    const formData = { ...this.state.formData, [data.name]: options}
+    this.setState({ formData })
   }
 
   handleChangeNormal(e) {
@@ -257,7 +264,7 @@ class WorkspacesNew extends React.Component {
                         apikey={FilestackToken}
                         buttonText="Upload Photo"
                         buttonClass="button"
-                        className="upload-image"
+                        className="MultifileUpload"
                         options={options}
                         onSuccess={(result) => this.handleUploadImages(result)}
                         preload={true}

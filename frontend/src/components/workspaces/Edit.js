@@ -4,7 +4,7 @@ import Auth from '../../lib/Auth'
 import Select from 'react-select'
 import ReactFilestack from 'filestack-react'
 
-const filestackToken = process.env.filestackToken
+const FilestackToken = process.env.filestackToken
 
 const options = {
   accept: 'image/*',
@@ -54,7 +54,7 @@ class WorkspacesEdit extends React.Component {
     axios.put(`/api/workspaces/${this.props.match.params.id}/`, this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push(`/workspaces/${this.props.match.params.id}`))
+      .then(() => this.props.history.push(`/workspaces/${this.props.match.params.id}/`))
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
@@ -281,7 +281,7 @@ class WorkspacesEdit extends React.Component {
                       <label className="label">Image</label>
                       <ReactFilestack
                         mode="transform"
-                        apikey={filestackToken}
+                        apikey={FilestackToken}
                         buttonText="Upload Photo"
                         buttonClass="button"
                         className="upload-image"

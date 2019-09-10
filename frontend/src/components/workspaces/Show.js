@@ -3,30 +3,49 @@ import axios from 'axios'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
+import Card from './Card'
+import Promise from 'bluebird'
+
 
 // import Bookmark from '../common/Bookmark'
 
 class Show extends React.Component{
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       formData: {},
-      workspaces: []
+      workspaces: [],
+      workspace: null,
+      data: null,
+      errors: {}
     }
     this.handleChangeContent = this.handleChangeContent.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleDeleteComment = this.handleDeleteComment.bind(this)
+    this.handleNearby = this.handleNearby.bind(this)
     // this.handleBookmark = this.handleBookmark.bind(this)
   }
 
+
+  getWorkspaces() {
+    Promise.props({
+      workspace: axios.get(`/api/workspaces/${this.props.match.params.id}/ `).then(res => res.data),
+      workspaces: axios.get('/api/workspaces/').then(res => res.data)
+    })
+      .then(res => this.setState({ workspace: res.workspace, workspaces: res.workspaces }))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
+  }
+
   componentDidMount() {
-    axios
-      .get(`/api/workspaces/${this.props.match.params.id}/`)
-      .then(res => {
-        this.setState({ workspace: res.data })
-      })
+    this.getWorkspaces()
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.pathname !== this.props.location.pathname) {
+      this.getWorkspaces()
+    }
   }
 
   handleChangeContent(e) {
@@ -39,7 +58,7 @@ class Show extends React.Component{
       {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .then(res => this.setState({ workspace: res.data }))
+      .then(() => this.getWorkspaces())
   }
   handleDelete(e) {
     e.preventDefault()
@@ -55,45 +74,44 @@ class Show extends React.Component{
     axios.delete(`/api/workspaces/${this.props.match.params.id}/comments/${e.target.id}/`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(res => this.setState({ workspace: res.data}))
+      .then(() => this.getWorkspaces())
   }
 
   handleChange(e){
     this.setState({ workspaces: e.target.value})
   }
 
+  handleNearby(){
+    const nearbyWorkspaces = this.state.workspaces.filter(workspace => workspace.city === this.state.workspaces.city && workspace.name !== this.state.workspaces.name)
 
-  // handleBookmark() {
-  //   axios.get(`/api/workspaces/${this.props.match.params.id}/bookmark/`, null, {
-  //     headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(res => this.setState({ workspace: res.data }))
-  // }
-  //
-  // isBookmarked(bookmark) {
-  //   return bookmark.includes(Auth.getPayload().sub)
-  // }
+    return nearbyWorkspaces
 
+  }
 
   render(){
+    console.log(this.state.workspace)
     console.log(this.state.workspaces)
-    if(!this.state.workspace) return null
 
-    const nearbyWorkspaces = this.state.workspaces.filter(workspace => workspace.city === this.state.workspaces.city)
+    if(!this.state.workspace) return null
 
     return(
       <div className="container">
-        <section className="hero is-medium">
-          <div className="hero-body">
-            <h1 className="title">  {this.state.workspace.name} </h1>
-            <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
-            <div className="subtitle is-6">{this.state.workspace.description}  </div>
-            <div className="subtitle is-6">{this.state.workspace.genres}  </div>
-            {Auth.isAuthenticated() && <div className="buttons">
-              <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
-              <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
-            </div>}
-          </div>
+        <section className="box showPage">
+          <h1 className="title">  {this.state.workspace.name} </h1>
+          <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
+          <div className="subtitle is-6">{this.state.workspace.link}  </div>
+          <div className="subtitle is-6">{this.state.workspace.description}  </div>
+
+          {this.state.workspace.genres.map(workspace =>
+            <li key={workspace.id}
+              className="subtitle is-6">
+              {workspace.name}  </li>
+          )}
+
+          {Auth.isAuthenticated() && Auth.isCurrentUser(this.state.workspace.user) && <div className="buttons">
+            <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
+            <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
+          </div>}
 
 
           <div className="columns">
@@ -104,6 +122,7 @@ class Show extends React.Component{
                 </figure>
               </div>
             </div>
+
 
             <div className="column is-3">
               <h2 className="title is-4">Opening Times:</h2>
@@ -146,20 +165,23 @@ class Show extends React.Component{
                 </tbody>
               </table>
             </div>
+
+
             <div className="column is-2 nearby">
-              <h2 className="title is-6 heading">Nearby</h2>
+              <h2 className="title is-6 heading">Nearby Workspaces</h2>
               <hr className="show-hr"/>
-              {nearbyWorkspaces.map(workspace =>
-                <div key={workspace.id} className="column is-half-tablet is-one-quarter-desktop">
-                  <Link to={`/workspaces/${workspace.id}`}>
-                    <h1>Hey there</h1>
-                  </Link>
-                </div>
+              {this.handleNearby().map(workspace =>
+                <Link to={`/workspaces/${workspace.id}`} key={workspace.id} >
+                  <figure className="image is-16by9">
+                    <img src={workspace.image} alt={workspace.name}/>
+                  </figure>
+                </Link>
               )}
             </div>
+
           </div>
           <div className="columns">
-            <div className="column is-4">
+            <div className="column is-6">
               <div className="tile is-parent">
                 <article className="comments tile is-child notification">
                   {this.state.workspace.comments.map(comment =>
@@ -169,31 +191,22 @@ class Show extends React.Component{
                       {...comment}
                       handleDeleteComment={this.handleDeleteComment} />
                   )}
-
-                  <div className="column is-6">
-                    {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
-                      <div className="field">
-                        <textarea
-                          name="content"
-                          className="textarea"
-                          placeholder="Add a comment..."
-                          onChange={this.handleChangeContent}
-                          value={this.state.formData.content}
-                        />
-                      </div>
-                      <button className="button"> Submit</button>
-                    </form>}
-                  </div>
+                  {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
+                    <div className="field">
+                      <textarea
+                        name="content"
+                        className="textarea"
+                        placeholder="Add a comment..."
+                        onChange={this.handleChangeContent}
+                        value={this.state.formData.content}
+                      />
+                    </div>
+                    <button className="button"> Submit</button>
+                  </form>}
                 </article>
               </div>
             </div>
           </div>
-
-
-
-
-
-
         </section>
       </div>
 
@@ -202,9 +215,3 @@ class Show extends React.Component{
 }
 
 export default Show
-
-// <Bookmark
-//   bookmarked={this.isBookmarked(this.state.workspace.bookmark)}
-//   handleBookmark={this.handleBookmark}
-//   className="button"
-// />

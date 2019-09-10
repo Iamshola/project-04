@@ -5,8 +5,6 @@ import Card from './Card'
 import Select from 'react-select'
 import _ from 'lodash'
 
-
-
 const genreOptions = [
   { value: '', label: 'All' },
   { value: 'Animal Friendly', label: 'Animal Friendly' },
@@ -19,6 +17,11 @@ const genreOptions = [
   { value: 'Wheelchair accessible', label: 'Wheelchair accessible' }
 ]
 
+const orderOption = [
+  { value: 'name|asc', label: 'A-Z' },
+  { value: 'name|desc', label: 'Z-A' }
+]
+
 class WorkspacesIndex extends React.Component{
 
 
@@ -27,13 +30,13 @@ class WorkspacesIndex extends React.Component{
     this.state = {
       workspaces: [],
       searchTerm: '',
-      sortTerm: 'name|asc'
+      sortTerm: 'name|asc',
+      genre: ''
     }
-
     this.handleFilter = this.handleFilter.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleChange = this.handleChange.bind(this)
-
+    this.handleFilter = this.handleFilter.bind(this)
   }
 
   componentDidMount() {
@@ -46,8 +49,9 @@ class WorkspacesIndex extends React.Component{
   handleKeyUp(e){
     this.setState({ searchTerm: e.target.value})
   }
-  handleChange(e){
-    this.setState({ sortTerm: e.target.value})
+
+  handleChange(selected) {
+    this.setState({ sortTerm: selected.value })
   }
 
 
@@ -60,7 +64,7 @@ class WorkspacesIndex extends React.Component{
     const [field, order] = this.state.sortTerm.split('|')
 
     const filterWorkspaces = _.filter(this.state.workspaces, workspace => {
-      return re.test(workspace.name) && (this.state.genre ? workspace.genre.includes(this.state.genre) : true)
+      return re.test(workspace.name) && (this.state.workspaces.genre ? workspace.genre.includes(this.state.workspaces.genre) : true)
     })
     const sortedWorkspaces = _.orderBy(filterWorkspaces, [field], [order])
 
@@ -86,14 +90,14 @@ class WorkspacesIndex extends React.Component{
             <div className="column">
               <div className="navbar-item">
                 <div className="field">
-                  <label className="label has-text-left">Activity Type</label>
+                  <label className="label has-text-left">Genre Type</label>
                   <Select
                     name="genre"
                     className="filter"
                     options={genreOptions}
                     defaultValue={genreOptions[0]}
                     onChange={selected => this.handleFilter(selected, 'genre')}
-                    value={genreOptions.find(option => option.value === this.state.genre)}
+                    value={genreOptions.find(option => option.value === this.state.workspaces.genre)}
                   />
                 </div>
                 <br />
@@ -106,32 +110,35 @@ class WorkspacesIndex extends React.Component{
                 </div>
                 <div className="column">
                   <div className="field">
-                    <label className="label has-text-left"> Alphabetical Order:  </label>
-                    <div className="column">
-                      <select onChange={this.handleChange}>
-                        <option value="name|asc">A-Z </option>
-                        <option value="name|desc">Z-A </option>
-                      </select>
-                    </div>
+                    <label className="label has-text-left">Alphabetical Order</label>
+                    <Select
+                      name="genre"
+                      className="filter"
+                      options={orderOption}
+                      defaultValue={orderOption[0]}
+                      onChange={this.handleChange}
+                      value={orderOption.find(option => option.value === this.state.sortTerm)}
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
-          <div className="columns is-multiline">
-            {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
-            {this.filterWorkspaces().map(workspaces =>
-              <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
-                <Link to={`/workspaces/${workspaces.id}`}>
-                  <Card {...workspaces} />
-                </Link>
-              </div>
-            )}
-
-          </div>
         </div>
+
+
+        <div className="columns is-multiline">
+          {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
+          {this.filterWorkspaces().map(workspaces =>
+            <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
+              <Link to={`/workspaces/${workspaces.id}`}>
+                <Card {...workspaces} />
+              </Link>
+            </div>
+          )}
+
+        </div>
+
       </section>
 
     )
