@@ -8,7 +8,7 @@ const Card = ({ name, city, postcode, image}) => {
     <div className="card">
 
       <div className="card-image">
-        <figure className="image is-4by3">
+        <figure className="image is-3by2">
           <img src={image} alt={name} />
         </figure>
       </div>
@@ -21,7 +21,7 @@ const Card = ({ name, city, postcode, image}) => {
         <br />
 
         <hr/>
-        <p className="text is-12">{city}, {postcode}</p>
+        <p className="text is-12">{city}, <br />{postcode}</p>
       </div>
     </div>
 

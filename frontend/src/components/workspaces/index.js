@@ -64,7 +64,7 @@ class WorkspacesIndex extends React.Component{
     const [field, order] = this.state.sortTerm.split('|')
 
     const filtered = _.filter(this.state.workspaces, workspace => {
-      return re.test(workspace.name) && (this.state.genres.name ? workspace.genres.name.includes(this.state.genres.name) : true)
+      return re.test(workspace.name)
     })
     return _.orderBy(filtered, [field], [order])
 
@@ -74,7 +74,7 @@ class WorkspacesIndex extends React.Component{
 
   render() {
     if(!this.state.workspaces) return null
-    console.log(this.state.workspaces)
+    console.log(this.state.workspaces.genres)
     return(
       <section className="section">
         <div className="container">
@@ -85,57 +85,42 @@ class WorkspacesIndex extends React.Component{
             </div>
             <hr />
           </div>
-          <div className="columns">
-            <div className="column">
-              <div className="navbar-item">
+          <div className="container">
+            <div className="columns">
+              <div className="column">
                 <div className="field">
-                  <label className="label has-text-left">Genre Type</label>
+                  <label className="label has-text-left">Search your favourite space</label>
+                  <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
+                </div>
+              </div>
+              <div className="column">
+                <div className="field">
+                  <label className="label has-text-left">Alphabetical Order</label>
                   <Select
-                    name="genres"
+                    name="order"
                     className="filter"
-                    options={genreOptions}
-                    defaultValue={genreOptions[0]}
-                    onChange={selected => this.handleFilter(selected, 'genre')}
-                    value={genreOptions.find(option => option.value === this.state.workspaces.genres)}
+                    options={orderOption}
+                    defaultValue={orderOption[0]}
+                    onChange={this.handleChange}
+                    value={orderOption.find(option => option.value === this.state.sortTerm)}
                   />
-                </div>
-                <br />
-                <br />
-                <div className="column">
-                  <div className="field">
-                    <label className="label has-text-left">Search your favourite space</label>
-                    <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="field">
-                    <label className="label has-text-left">Alphabetical Order</label>
-                    <Select
-                      name="order"
-                      className="filter"
-                      options={orderOption}
-                      defaultValue={orderOption[0]}
-                      onChange={this.handleChange}
-                      value={orderOption.find(option => option.value === this.state.sortTerm)}
-                    />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
 
-        <div className="columns is-multiline">
-          {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
-          {this.filterWorkspaces().map(workspaces =>
-            <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
-              <Link to={`/workspaces/${workspaces.id}`}>
-                <Card {...workspaces} />
-              </Link>
-            </div>
-          )}
+          <div className="columns is-multiline">
+            {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
+            {this.filterWorkspaces().map(workspaces =>
+              <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
+                <Link to={`/workspaces/${workspaces.id}`}>
+                  <Card {...workspaces} />
+                </Link>
+              </div>
+            )}
 
+          </div>
         </div>
 
       </section>

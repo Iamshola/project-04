@@ -34,7 +34,7 @@ class Show extends React.Component{
       workspaces: axios.get('/api/workspaces/').then(res => res.data)
     })
 
-      .then(res2 => this.setState({ workspace: res2.workspace, workspaces: res2.workspaces }))
+      .then(res2 => this.setState({ workspace: res2.workspace, workspaces: res2.workspaces, formData: { content: '' }  }))
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
@@ -69,6 +69,7 @@ class Show extends React.Component{
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
       .then(() => this.getWorkspaces())
+
   }
   handleDelete(e) {
     e.preventDefault()
@@ -185,8 +186,9 @@ class Show extends React.Component{
           </div>
           <div className="columns">
             <div className="column is-6">
+              <h2 className="title is-3">Comments</h2>
               <div className="tile is-parent">
-                <article className="comments tile is-child notification">
+                <div className="box tile is-child">
                   {this.state.workspace.comments.map(comment =>
                     <Comment
                       className="comment"
@@ -206,7 +208,7 @@ class Show extends React.Component{
                     </div>
                     <button className="button"> Submit</button>
                   </form>}
-                </article>
+                </div>
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ const options = {
 }
 
 const genreOptions = [
-  { label: 'All', value: '' },
+  { label: 'All', value: 8 },
   { label: 'Animal Friendly', value: 1 },
   { label: 'Quiet Section', value: 2 },
   { label: 'Meeting Tables', value: 3  },

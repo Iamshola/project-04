@@ -89,7 +89,7 @@ class Navbar extends React.Component{
                   </div>
                   <div className="dropdown-menu" id="dropdown-menu" role="menu">
                     <div className="dropdown-content">
-                      <Link to={`/users/${Auth.getUser().id}`} className="dropdown-item">
+                      <Link to={`/users/${Auth.getUser()}/`} className="dropdown-item">
                       My Profile
                       </Link>
                       <a className="dropdown-item"  onClick={this.logout}>

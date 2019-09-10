@@ -36,10 +36,12 @@ class Register extends React.Component {
   }
 
   render() {
+    console.log(this.state.workspaces)
+    console.log(this.state.formData)
     return (
       <section className="login is-fullheight">
         <div className="login-body">
-          <div className="column">
+          <div className="column is-white">
             <div className="container v-middle">
               <div className="columns login-page">
                 <div className="column is-5 login-sidebar is-hidden-mobile">
@@ -120,6 +122,24 @@ class Register extends React.Component {
                               onChange={this.handleChange}
                             />
                             {this.state.errors.password_confirmation && <small className="help is-danger">{this.state.errors.password_confirmation}</small>}
+                            <span className="icon is-medium is-left">
+                              <i className="fa fa-lock"></i>
+                            </span>
+                            <span className="icon is-small is-right">
+                              <i className="fa fa-eye"></i>
+                            </span>
+                          </p>
+                        </div>
+                        <div className="field">
+                          <p className="control has-icons-left has-icons-right">
+                            <input
+                              className="input is-rounded"
+                              type="input"
+                              name="image"
+                              placeholder="eg: philip1992@email.co.uk"
+                              onChange={this.handleChange}
+                            />
+                            {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
                             <span className="icon is-medium is-left">
                               <i className="fa fa-lock"></i>
                             </span>

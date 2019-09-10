@@ -76,7 +76,8 @@ class WorkspacesNew extends React.Component {
 
   render() {
     console.log(this.state.errors)
-      const selectedGenres = (this.state.formData.genres || []).map(genre => ({ label: genre.name, value: genre.id }))
+
+    const selectedGenres = (this.state.formData.genres || []).map(genre => ({ label: genre.name, value: genre.id }))
     return (
       <section className="hero">
         <div className="hero-body">

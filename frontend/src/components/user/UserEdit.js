@@ -32,7 +32,7 @@ class UserEdit extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/users/${this.props.match.params.id}`)
+    axios.get(`/api/users/${this.props.match.params.id}/`)
       .then(res => this.setState({ formData: res.data }))
   }
 

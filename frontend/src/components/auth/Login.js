@@ -48,7 +48,7 @@ class Login extends React.Component {
     return (
       <section className="login is-fullheight">
         <div className="login-body">
-          <div className="column">
+          <div className="column is-white">
             <div className="container v-middle">
               <div className="columns login-page">
                 <div className="column is-5 login-sidebar is-hidden-mobile">
