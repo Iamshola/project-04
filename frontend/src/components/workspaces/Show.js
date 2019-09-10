@@ -169,7 +169,7 @@ class Show extends React.Component{
             </div>
 
 
-            <div className="column is-2 nearby">
+            <div className="column is-3 nearby">
               <h2 className="title is-6 heading">Nearby Workspaces</h2>
               <hr className="show-hr"/>
               {this.handleNearby().map(workspace =>
@@ -178,7 +178,7 @@ class Show extends React.Component{
                     <img src={workspace.image} alt={workspace.name}/>
                   </figure>
                   <p>{workspace.name}</p>
-                </Link> 
+                </Link>
               )}
             </div>
 

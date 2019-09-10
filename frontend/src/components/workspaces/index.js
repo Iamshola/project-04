@@ -31,7 +31,7 @@ class WorkspacesIndex extends React.Component{
       workspaces: [],
       searchTerm: '',
       sortTerm: 'name|asc',
-      genre: ''
+      genres: ''
     }
     this.handleFilter = this.handleFilter.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
@@ -64,18 +64,17 @@ class WorkspacesIndex extends React.Component{
     const [field, order] = this.state.sortTerm.split('|')
 
     const filtered = _.filter(this.state.workspaces, workspace => {
-      return re.test(workspace.name) && (this.state.workspaces.genre ? workspace.genre.includes(this.state.workspaces.genre) : true)
+      return re.test(workspace.name) && (this.state.genres.name ? workspace.genres.name.includes(this.state.genres.name) : true)
     })
-    const sortedWorkspaces = _.orderBy(filtered, [field], [order])
+    return _.orderBy(filtered, [field], [order])
 
-    return sortedWorkspaces
   }
 
 
 
   render() {
     if(!this.state.workspaces) return null
-    console.log(this.filterWorkspaces)
+    console.log(this.state.workspaces)
     return(
       <section className="section">
         <div className="container">
@@ -92,12 +91,12 @@ class WorkspacesIndex extends React.Component{
                 <div className="field">
                   <label className="label has-text-left">Genre Type</label>
                   <Select
-                    name="genre"
+                    name="genres"
                     className="filter"
                     options={genreOptions}
                     defaultValue={genreOptions[0]}
                     onChange={selected => this.handleFilter(selected, 'genre')}
-                    value={genreOptions.find(option => option.value === this.state.workspaces.genre)}
+                    value={genreOptions.find(option => option.value === this.state.workspaces.genres)}
                   />
                 </div>
                 <br />
@@ -112,7 +111,7 @@ class WorkspacesIndex extends React.Component{
                   <div className="field">
                     <label className="label has-text-left">Alphabetical Order</label>
                     <Select
-                      name="genre"
+                      name="order"
                       className="filter"
                       options={orderOption}
                       defaultValue={orderOption[0]}

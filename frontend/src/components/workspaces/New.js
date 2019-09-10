@@ -8,18 +8,16 @@ const FilestackToken = process.env.FilestackToken
 
 
 const genreOptions = [
-  { value: '', label: 'All' },
-  { value: 'Animal Friendly', label: 'Animal Friendly' },
-  { value: 'Quiet Section', label: 'Quiet Section' },
-  { value: 'Meeting Tables', label: 'Meeting Tables' },
-  { value: 'Wifi', label: 'Wifi' },
-  { value: 'Music', label: 'Music' },
-  { value: 'Food and Drinks Permitted', label: 'Food and Drinks Permitted' },
-  { value: 'Free', label: 'Free' },
-  { value: 'Wheelchair accessible', label: 'Wheelchair accessible' },
-  { value: 'Shower', label: 'Shower' }
-
+  { label: 'All', value: '' },
+  { label: 'Animal Friendly', value: 1 },
+  { label: 'Quiet Section', value: 2 },
+  { label: 'Meeting Tables', value: 3  },
+  { label: 'Wifi', value: 4 },
+  { label: 'Food and Drinks Permitted', value: 5 },
+  { label: 'Free',  value: 6 },
+  { label: 'Wheelchair accessible', value: 7 }
 ]
+
 const options = {
   accept: 'image/*',
   options: {
@@ -45,12 +43,15 @@ class WorkspacesNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeNormal = this.handleChangeNormal.bind(this)
     this.handleMultiChange = this.handleMultiChange.bind(this)
-
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.post('/api/workspaces/', this.state.formData, {
+
+    const data = { ...this.state.formData, genres: this.state.formData.genres.map(genre => genre.id) }
+    console.log(data)
+
+    axios.post('/api/workspaces/', data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/workspaces/'))
@@ -58,7 +59,7 @@ class WorkspacesNew extends React.Component {
   }
 
   handleMultiChange(selectedOptions, data) {
-    const options = selectedOptions.map(selectedOption => selectedOption.value)
+    const options = selectedOptions.map(option => ({ name: option.label, id: option.value }))
     const formData = { ...this.state.formData, [data.name]: options}
     this.setState({ formData })
   }
@@ -75,6 +76,7 @@ class WorkspacesNew extends React.Component {
 
   render() {
     console.log(this.state.errors)
+      const selectedGenres = (this.state.formData.genres || []).map(genre => ({ label: genre.name, value: genre.id }))
     return (
       <section className="hero">
         <div className="hero-body">
@@ -250,7 +252,8 @@ class WorkspacesNew extends React.Component {
                       <label className="label">Genre</label>
                       <Select
                         isMulti
-                        name="genre"
+                        value={selectedGenres}
+                        name="genres"
                         options={genreOptions}
                         onChange={this.handleMultiChange}
                       />

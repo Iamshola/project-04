@@ -16,15 +16,14 @@ const options = {
 }
 
 const genreOptions = [
-  { value: '', label: 'All' },
-  { value: 'Animal Friendly', label: 'Animal Friendly' },
-  { value: 'Quiet Section', label: 'Quiet Section' },
-  { value: 'Meeting Tables', label: 'Meeting Tables' },
-  { value: 'Wifi', label: 'Wifi' },
-  { value: 'Music', label: 'Music' },
-  { value: 'Food and Drinks Permitted', label: 'Food and Drinks Permitted' },
-  { value: 'Free', label: 'Free' },
-  { value: 'Wheelchair accessible', label: 'Wheelchair accessible' }
+  { label: 'All', value: '' },
+  { label: 'Animal Friendly', value: 1 },
+  { label: 'Quiet Section', value: 2 },
+  { label: 'Meeting Tables', value: 3  },
+  { label: 'Wifi', value: 4 },
+  { label: 'Food and Drinks Permitted', value: 5 },
+  { label: 'Free',  value: 6 },
+  { label: 'Wheelchair accessible', value: 7 }
 ]
 
 class WorkspacesEdit extends React.Component {
@@ -51,7 +50,10 @@ class WorkspacesEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
 
-    axios.put(`/api/workspaces/${this.props.match.params.id}/`, this.state.formData, {
+    const data = { ...this.state.formData, genres: this.state.formData.genres.map(genre => genre.id) }
+    console.log(data)
+
+    axios.put(`/api/workspaces/${this.props.match.params.id}/`, data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push(`/workspaces/${this.props.match.params.id}/`))
@@ -59,7 +61,8 @@ class WorkspacesEdit extends React.Component {
   }
 
   handleMultiChange(selectedOptions, data) {
-    const formData = { ...this.state.formData, [data.name]: selectedOptions.map(selectedOption => selectedOption.value)}
+    const options = selectedOptions.map(option => ({ name: option.label, id: option.value }))
+    const formData = { ...this.state.formData, [data.name]: options}
     this.setState({ formData })
   }
 
@@ -74,7 +77,10 @@ class WorkspacesEdit extends React.Component {
   }
 
   render() {
-    const selectedGenre = (this.state.formData.genre || []).map(genre => ({ label: genre, value: genre }))
+    console.log(this.state.formData)
+    const selectedGenres = (this.state.formData.genres || []).map(genre => ({ label: genre.name, value: genre.id }))
+
+
     return (
       <section className="hero">
         <div className="hero-body">
@@ -183,39 +189,39 @@ class WorkspacesEdit extends React.Component {
                       <label className="label">Genre</label>
                       <Select
                         isMulti
-                        value={selectedGenre}
-                        name="genre"
+                        value={selectedGenres}
+                        name="genres"
                         options={genreOptions}
                         onChange={this.handleMultiChange}
                       />
-                      {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
+                      {this.state.errors.genres && <small className="help is-danger">{this.state.errors.genres}</small>}
                     </div>
+                  </div>
+                  <div className="column is-4">
+                    <div className="field">
+                      <label className="label">Opening Times - Monday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="opening_times_mon"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.opening_times_mon || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
                     </div>
-                    <div className="column is-4">
-                      <div className="field">
-                        <label className="label">Opening Times - Monday</label>
-                        <input
-                          className="input"
-                          type="text"
-                          name="opening_times_mon"
-                          placeholder= "08:00 - 22:30"
-                          value={this.state.formData.opening_times_mon || ''}
-                          onChange={this.handleChangeNormal}
-                        />
-                        {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
-                      </div>
-                      <div className="field">
-                        <label className="label">Opening Times - Tuesday</label>
-                        <input
-                          className="input"
-                          type="text"
-                          name="opening_times_tue"
-                          placeholder= "08:00 - 22:30"
-                          value={this.state.formData.opening_times_tue || ''}
-                          onChange={this.handleChangeNormal}
-                        />
-                        {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
-                      </div>
+                    <div className="field">
+                      <label className="label">Opening Times - Tuesday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="opening_times_tue"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.opening_times_tue || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
+                    </div>
 
                     <div className="field">
                       <label className="label">Opening Times - Wednesday</label>
