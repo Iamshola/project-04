@@ -3,7 +3,6 @@ import axios from 'axios'
 import Comment from '../common/Comment'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
-import Card from './Card'
 import Promise from 'bluebird'
 
 
@@ -34,8 +33,9 @@ class Show extends React.Component{
       workspace: axios.get(`/api/workspaces/${this.props.match.params.id}/ `).then(res => res.data),
       workspaces: axios.get('/api/workspaces/').then(res => res.data)
     })
-      .then(res => this.setState({ workspace: res.workspace, workspaces: res.workspaces }))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+
+      .then(res2 => this.setState({ workspace: res2.workspace, workspaces: res2.workspaces }))
+      .catch(err => this.setState({ errors: err.response.data }))
   }
 
   componentDidMount() {
@@ -43,9 +43,19 @@ class Show extends React.Component{
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps.location.pathname !== this.props.location.pathname) {
-      this.getWorkspaces()
+    if(prevProps.match.params.id !== this.props.match.params.id) {
+      axios.get(`/api/workspaces/${this.props.match.params.id}/`)
+        .then(res => {
+          this.setState({ workspace: res.data})
+        })
     }
+  }
+
+  handleNearby(){
+    const nearbyWorkspaces = this.state.workspaces.filter(workspace => workspace.city === this.state.workspace.city && workspace.name !== this.state.workspace.name )
+
+    return nearbyWorkspaces
+
   }
 
   handleChangeContent(e) {
@@ -81,12 +91,6 @@ class Show extends React.Component{
     this.setState({ workspaces: e.target.value})
   }
 
-  handleNearby(){
-    const nearbyWorkspaces = this.state.workspaces.filter(workspace => workspace.city === this.state.workspaces.city && workspace.name !== this.state.workspaces.name)
-
-    return nearbyWorkspaces
-
-  }
 
   render(){
     console.log(this.state.workspace)
@@ -108,11 +112,10 @@ class Show extends React.Component{
               {workspace.name}  </li>
           )}
 
-          {Auth.isAuthenticated() && Auth.isCurrentUser(this.state.workspace.user) && <div className="buttons">
+          {Auth.isAuthenticated()&& <div className="buttons">
             <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
             <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
           </div>}
-
 
           <div className="columns">
             <div className="column is-5">
@@ -122,7 +125,6 @@ class Show extends React.Component{
                 </figure>
               </div>
             </div>
-
 
             <div className="column is-3">
               <h2 className="title is-4">Opening Times:</h2>
@@ -171,11 +173,12 @@ class Show extends React.Component{
               <h2 className="title is-6 heading">Nearby Workspaces</h2>
               <hr className="show-hr"/>
               {this.handleNearby().map(workspace =>
-                <Link to={`/workspaces/${workspace.id}`} key={workspace.id} >
+                <Link to={`/workspaces/${workspace.id}/`} key={workspace.id} >
                   <figure className="image is-16by9">
                     <img src={workspace.image} alt={workspace.name}/>
                   </figure>
-                </Link>
+                  <p>{workspace.name}</p>
+                </Link> 
               )}
             </div>
 

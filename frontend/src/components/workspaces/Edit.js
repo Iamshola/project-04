@@ -4,7 +4,7 @@ import Auth from '../../lib/Auth'
 import Select from 'react-select'
 import ReactFilestack from 'filestack-react'
 
-const FilestackToken = process.env.filestackToken
+const FilestackToken = process.env.FilestackToken
 
 const options = {
   accept: 'image/*',

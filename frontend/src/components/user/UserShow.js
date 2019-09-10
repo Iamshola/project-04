@@ -25,8 +25,13 @@ class ShowUser extends React.Component {
       .catch(err => console.error(err))
   }
 
+  getNoWorkspaces(){
+
+  }
+
   render() {
-    console.log(this.state.user)
+    console.log(this.state.user, 'users here')
+
     return(
       <section className="hero">
         <div className="hero-body">
@@ -43,6 +48,7 @@ class ShowUser extends React.Component {
                   <div className="content">
                     <h2>{this.state.user.username}</h2>
                     <h2>{this.state.user.user_city}</h2>
+                    
                   </div>
 
                   {Auth.isAuthenticated() && <div className="buttons">

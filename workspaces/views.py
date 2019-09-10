@@ -85,22 +85,22 @@ class ProfileDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
 
-    def get_workspace(self, pk):
+    def get_user(self, pk):
         try:
             user = User.objects.get(pk=pk)
-        except Workspace.DoesNotExist:
+        except User.DoesNotExist:
             raise Http404
 
         return user
 
     def get(self, _request, pk):
-        user = self.get_workspace(pk)
+        user = self.get_user(pk)
 
         serializer = PopulatedUserSerializer(user)
         return Response(serializer.data)
 
     def put(self, request, pk):
-        user = self.get_workspace(pk)
+        user = self.get_user(pk)
 
         serializer = PopulatedUserSerializer(user, data=request.data)
         if serializer.is_valid():

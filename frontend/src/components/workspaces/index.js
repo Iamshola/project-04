@@ -63,10 +63,10 @@ class WorkspacesIndex extends React.Component{
     const re = new RegExp(this.state.searchTerm, 'i')
     const [field, order] = this.state.sortTerm.split('|')
 
-    const filterWorkspaces = _.filter(this.state.workspaces, workspace => {
+    const filtered = _.filter(this.state.workspaces, workspace => {
       return re.test(workspace.name) && (this.state.workspaces.genre ? workspace.genre.includes(this.state.workspaces.genre) : true)
     })
-    const sortedWorkspaces = _.orderBy(filterWorkspaces, [field], [order])
+    const sortedWorkspaces = _.orderBy(filtered, [field], [order])
 
     return sortedWorkspaces
   }
