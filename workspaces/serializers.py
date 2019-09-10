@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from jwt_auth.serializers import UserSerializer
 from .models import Workspace, Genre, Comment
+from jwt_auth.models import User
 
 class WorkspaceSerializer(serializers.ModelSerializer):
 
@@ -43,6 +44,12 @@ class PopulatedWorkspaceSerializer(WorkspaceSerializer):
     class Meta(WorkspaceSerializer.Meta):
         fields = '__all__'
 
+class PopulatedUserEditSerializer(serializers.ModelSerializer):
+    workspaces = PopulatedWorkspaceSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'image', 'linked_In_Link', 'user_city', 'interest', 'workspaces',)
 
 class PopulatedUserSerializer(UserSerializer):
     workspaces = PopulatedWorkspaceSerializer(many=True, read_only=True)

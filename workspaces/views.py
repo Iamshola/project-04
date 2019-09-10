@@ -7,7 +7,7 @@ from jwt_auth.serializers import UserSerializer
 from .permissions import IsOwnerOrReadOnly
 
 from .models import Workspace, Comment
-from .serializers import WorkspaceSerializer, PopulatedUserSerializer, PopulatedWorkspaceSerializer, CommentSerializer
+from .serializers import WorkspaceSerializer, PopulatedUserSerializer, PopulatedWorkspaceSerializer, CommentSerializer, PopulatedUserEditSerializer
 
 # Create your views here.
 class WorkspaceList(APIView):
@@ -75,12 +75,12 @@ class ProfileList(APIView):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             # auto sets user to be logged in user
+            serializer = PopulatedUserSerializer()
             serializer.save()
-            workspace = serializer.instance
-            serializer = PopulatedUserSerializer(workspace)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)
+
 class ProfileDetail(APIView):
 
     permission_classes = (IsOwnerOrReadOnly,)
@@ -102,9 +102,9 @@ class ProfileDetail(APIView):
     def put(self, request, pk):
         user = self.get_user(pk)
 
-        serializer = PopulatedUserSerializer(user, data=request.data)
+        serializer = PopulatedUserEditSerializer(user, data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(user=request.user)
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=422)

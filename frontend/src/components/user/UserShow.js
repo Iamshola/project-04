@@ -36,7 +36,7 @@ class ShowUser extends React.Component {
                   <div className="login-gradient-background">
                     <h1>{this.state.user.username}</h1>
                     <figure className="image is-1by1">
-                      <img src="https://bulma.io/images/placeholders/128x128.png"/>
+                      <img src={this.state.user.image} alt={this.state.user.username}/>
                     </figure>
                   </div>
                 </div>

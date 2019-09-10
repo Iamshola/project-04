@@ -2,7 +2,7 @@ import React from  'react'
 import Auth from '../../lib/Auth'
 
 
-const Comment = ({ user, content, id, createdAt, handleDeleteComment}) => {
+const Comment = ({ user, content, id, created_at, handleDeleteComment}) => {
   // console.log(Comment.content)
   return (
     <section className="section1 comment">
@@ -23,7 +23,7 @@ const Comment = ({ user, content, id, createdAt, handleDeleteComment}) => {
             <div>
 
               {' '}
-              <small>{(new Date(createdAt)).toLocaleDateString()}</small>
+              <small>{(new Date(created_at)).toLocaleDateString()}</small>
               <br/>
               <div className="subtitle comment">
                 {content}

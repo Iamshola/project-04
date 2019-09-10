@@ -102,21 +102,38 @@ class Show extends React.Component{
     return(
       <div className="container">
         <section className="box showPage">
-          <h1 className="title">  {this.state.workspace.name} </h1>
-          <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
-          <div className="subtitle is-6">{this.state.workspace.link}  </div>
-          <div className="subtitle is-6">{this.state.workspace.description}  </div>
 
-          {this.state.workspace.genres.map(workspace =>
-            <li key={workspace.id}
-              className="subtitle is-6">
-              {workspace.name}  </li>
-          )}
+          <div className="columns">
+            <div className="column">
+              <h1 className="title">  {this.state.workspace.name} </h1>
+              <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
+              <a href={this.state.workspace.link}><p className="subtitle is-6">{this.state.workspace.name} link  </p></a>
+              <div className="subtitle is-6">{this.state.workspace.description}  </div>
 
-          {Auth.isAuthenticated()&& <div className="buttons">
-            <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
-            <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
-          </div>}
+              {this.state.workspace.genres.map(workspace =>
+                <li key={workspace.id}
+                  className="subtitle is-6">
+                  {workspace.name}  </li>
+              )}
+
+              {Auth.isAuthenticated()&& <div className="buttons">
+                <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
+                <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
+              </div>}
+            </div>
+            <div className="column is-3 nearby">
+              <h2 className="title is-6 heading">Nearby Workspaces</h2>
+              <hr className="show-hr"/>
+              {this.handleNearby().map(workspace =>
+                <Link to={`/workspaces/${workspace.id}/`} key={workspace.id} >
+                  <figure className="image is-16by9">
+                    <img src={workspace.image} alt={workspace.name}/>
+                  </figure>
+                  <p>{workspace.name}</p>
+                </Link>
+              )}
+            </div>
+          </div>
 
           <div className="columns">
             <div className="column is-5">
@@ -170,18 +187,6 @@ class Show extends React.Component{
             </div>
 
 
-            <div className="column is-3 nearby">
-              <h2 className="title is-6 heading">Nearby Workspaces</h2>
-              <hr className="show-hr"/>
-              {this.handleNearby().map(workspace =>
-                <Link to={`/workspaces/${workspace.id}/`} key={workspace.id} >
-                  <figure className="image is-16by9">
-                    <img src={workspace.image} alt={workspace.name}/>
-                  </figure>
-                  <p>{workspace.name}</p>
-                </Link>
-              )}
-            </div>
 
           </div>
           <div className="columns">

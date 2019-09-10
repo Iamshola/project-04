@@ -2,6 +2,18 @@ import React from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
+import ReactFilestack from 'filestack-react'
+
+const FilestackToken = process.env.FilestackToken
+
+const options = {
+  accept: 'image/*',
+  transformations: {
+    crop: true,
+    circle: true,
+    rotate: true
+  }
+}
 
 class Register extends React.Component {
 
@@ -21,6 +33,7 @@ class Register extends React.Component {
     const formData = { ...this.state.formData, [e.target.name]: e.target.value }
     const errors = { ...this.state.errors, [e.target.name]: '' }
     this.setState({ formData, errors })
+    console.log(this.state.formData)
   }
 
   handleSubmit(e) {
@@ -35,9 +48,13 @@ class Register extends React.Component {
       .catch(err => this.setState({ errors: err.response.data }))
   }
 
+  handleUploadImages(result) {
+    const formData = {...this.state.formData, image: result.filesUploaded[0].url}
+    this.setState({ formData })
+    console.log('hello', this.state.formData)
+  }
+
   render() {
-    console.log(this.state.workspaces)
-    console.log(this.state.formData)
     return (
       <section className="login is-fullheight">
         <div className="login-body">
@@ -130,24 +147,25 @@ class Register extends React.Component {
                             </span>
                           </p>
                         </div>
-                        <div className="field">
-                          <p className="control has-icons-left has-icons-right">
-                            <input
-                              className="input is-rounded"
-                              type="input"
-                              name="image"
-                              placeholder="eg: philip1992@email.co.uk"
-                              onChange={this.handleChange}
-                            />
-                            {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
-                            <span className="icon is-medium is-left">
-                              <i className="fa fa-lock"></i>
-                            </span>
-                            <span className="icon is-small is-right">
-                              <i className="fa fa-eye"></i>
-                            </span>
-                          </p>
+                        <br />
+                        <div className="field center">
+                          <p className="">Upload Profile Pic</p>
+                          <ReactFilestack
+                            mode="transform"
+                            apikey={FilestackToken}
+                            buttonText="Upload Photo"
+                            buttonClass="button"
+                            className="upload-image"
+                            options={options}
+                            onSuccess={(result) => this.handleUploadImages(result)}
+                            preload={true}
+                          />
+                          {this.state.formData.image && <img src={this.state.formData.image} />}
                         </div>
+
+                        <br />
+                        <br />
+
                         <div className="field is-grouped is-grouped-centered login-btn-group">
                           <p className="control">
                             <button className="login-btn">
@@ -159,6 +177,9 @@ class Register extends React.Component {
                           </p>
                         </div>
                       </form>
+                      <hr />
+
+                      <p>Dont worry you can complete your profile later!</p>
                     </div>
                   </div>
 

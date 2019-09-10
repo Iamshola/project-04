@@ -5,17 +5,6 @@ import Card from './Card'
 import Select from 'react-select'
 import _ from 'lodash'
 
-const genreOptions = [
-  { value: '', label: 'All' },
-  { value: 'Animal Friendly', label: 'Animal Friendly' },
-  { value: 'Quiet Section', label: 'Quiet Section' },
-  { value: 'Meeting Tables', label: 'Meeting Tables' },
-  { value: 'Wifi', label: 'Wifi' },
-  { value: 'Music', label: 'Music' },
-  { value: 'Food and Drinks Permitted', label: 'Food and Drinks Permitted' },
-  { value: 'Free', label: 'Free' },
-  { value: 'Wheelchair accessible', label: 'Wheelchair accessible' }
-]
 
 const orderOption = [
   { value: 'name|asc', label: 'A-Z' },
@@ -87,13 +76,13 @@ class WorkspacesIndex extends React.Component{
           </div>
           <div className="container">
             <div className="columns">
-              <div className="column">
+              <div className="column is-2">
+
                 <div className="field">
                   <label className="label has-text-left">Search your favourite space</label>
                   <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
                 </div>
-              </div>
-              <div className="column">
+
                 <div className="field">
                   <label className="label has-text-left">Alphabetical Order</label>
                   <Select
@@ -107,21 +96,20 @@ class WorkspacesIndex extends React.Component{
                 </div>
               </div>
             </div>
-          </div>
+            <div className="columns is-multiline">
+              {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
+              {this.filterWorkspaces().map(workspaces =>
+                <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
+                  <Link to={`/workspaces/${workspaces.id}`}>
+                    <Card {...workspaces} />
+                  </Link>
+                </div>
+              )}
 
-
-          <div className="columns is-multiline">
-            {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
-            {this.filterWorkspaces().map(workspaces =>
-              <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
-                <Link to={`/workspaces/${workspaces.id}`}>
-                  <Card {...workspaces} />
-                </Link>
-              </div>
-            )}
-
+            </div>
           </div>
         </div>
+
 
       </section>
 
