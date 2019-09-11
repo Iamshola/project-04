@@ -219,7 +219,7 @@ class Show extends React.Component{
           </div>
 
 
-          <h2 className="title is-5 heading">Look For Similar Spaces?</h2>
+          <h2 className="title is-5 heading">Looking For Similar Spaces?</h2>
           <hr />
           <div className="columns is-multiline">
             <hr className="show-hr"/>

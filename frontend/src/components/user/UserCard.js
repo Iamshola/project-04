@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const UserCard = ({ username, image}) => {
+const UserCard = ({ username, image, user_city, email}) => {
 
 
   return(
@@ -16,11 +16,9 @@ const UserCard = ({ username, image}) => {
 
       <div className="card-content">
         <p className="title is-5">{username}</p>
-
-        <br />
-        <br />
-
         <hr/>
+        <p className="title is-5">{user_city}</p>
+        <p className="title is-5">{email}</p>
 
       </div>
     </div>
