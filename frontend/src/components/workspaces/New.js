@@ -81,11 +81,13 @@ class WorkspacesNew extends React.Component {
     return (
       <section className="hero">
         <div className="hero-body">
-        <hr />
+          <hr />
           <div className="container has-text-centered">
             <div className="box is-light">
               <form onSubmit={this.handleSubmit}>
-                <h3 className="title"> New Space </h3>
+                <h1 className="title is-3 heading"> New Space </h1>
+                <hr />
+                <br />
 
                 <div className="columns">
                   <div className="column is-4">
@@ -94,7 +96,7 @@ class WorkspacesNew extends React.Component {
                       <input
                         className="input"
                         name="name"
-                        placeholder="eg: LoveExp Cafe"
+                        placeholder="eg: Work Cafe"
                         onChange={this.handleChangeNormal}
                       />
                       {this.state.errors.name && <small className="help is-danger">{this.state.errors.name}</small>}
@@ -105,7 +107,7 @@ class WorkspacesNew extends React.Component {
                       <input
                         className="input"
                         name="address_line_1"
-                        placeholder="eg: LoveExp Cafe"
+                        placeholder="eg: Work Cafe str"
                         onChange={this.handleChangeNormal}
                       />
                       {this.state.errors.address_line_1 && <small className="help is-danger">{this.state.errors.address_line_1}</small>}
@@ -115,7 +117,7 @@ class WorkspacesNew extends React.Component {
                       <input
                         className="input"
                         name="address_line_2"
-                        placeholder="eg: Love cafe street"
+                        placeholder="eg: Workington"
                         onChange={this.handleChangeNormal}
                       />
                       {this.state.errors.address_line_2 && <small className="help is-danger">{this.state.errors.address_line_2}</small>}
@@ -150,6 +152,16 @@ class WorkspacesNew extends React.Component {
                         onChange={this.handleChangeNormal}
                       />
                       {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Genre</label>
+                      <Select
+                        isMulti
+                        name="genres"
+                        options={genreOptions}
+                        onChange={this.handleMultiChange}
+                      />
+                      {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
                     </div>
                   </div>
                   <div className="column is-4">
@@ -325,18 +337,6 @@ class WorkspacesNew extends React.Component {
                       />
                       {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
                     </div>
-
-                    <div className="field">
-                      <label className="label">Genre</label>
-                      <Select
-                        isMulti
-                        name="genres"
-                        options={genreOptions}
-                        onChange={this.handleMultiChange}
-                      />
-                      {this.state.errors.genre && <small className="help is-danger">{this.state.errors.genre}</small>}
-                    </div>
-
                     <div className="field">
                       <label className="label">Image</label>
                       <ReactFilestack

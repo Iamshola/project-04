@@ -91,20 +91,6 @@ class WorkspacesEdit extends React.Component {
                 <h3 className="title is-2">Edit</h3>
                 <div className="columns">
                   <div className="column is-4">
-                    <div className="box is-light">
-                      <h1>Preview:</h1>
-                      <h3>See Your Changes</h3>
-                      <figure className="image display">
-                        <img src={this.state.formData.image} alt="Placeholder image" />
-                      </figure>
-                      <hr />
-                      <p>{this.state.formData.city}, {this.state.formData.postcode}</p>
-                      <hr />
-                      <p>Link: {this.state.formData.link}</p>
-                      <hr />
-                    </div>
-                  </div>
-                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Name</label>
                       <input
@@ -283,6 +269,94 @@ class WorkspacesEdit extends React.Component {
                       />
                       {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
                     </div>
+                  </div>
+
+                  <div className="column is-4">
+                    <div className="field">
+                      <label className="label">Closing Times - Monday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_mon"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_mon || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_mon && <small className="help is-danger">{this.state.errors.closing_times_mon}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Tuesday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_tue"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_tue || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_tue && <small className="help is-danger">{this.state.errors.closing_times_tue}</small>}
+                    </div>
+
+                    <div className="field">
+                      <label className="label">Closing Times - Wednesday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_wed"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_wed || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_wed && <small className="help is-danger">{this.state.errors.closing_times_wed}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Thursday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_thur"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_thur || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_thur && <small className="help is-danger">{this.state.errors.closing_times_thur}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Friday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_fri"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_fri || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_fri && <small className="help is-danger">{this.state.errors.closing_times_fri}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Saturday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_sat"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_sat || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_sat && <small className="help is-danger">{this.state.errors.closing_times_sat}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Sunday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_sun"
+                        placeholder= "08:00 - 22:30"
+                        value={this.state.formData.closing_times_sun || ''}
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_sun && <small className="help is-danger">{this.state.errors.closing_times_sun}</small>}
+                    </div>
                     <div className="field">
                       <label className="label">Image</label>
                       <ReactFilestack
@@ -305,6 +379,7 @@ class WorkspacesEdit extends React.Component {
                 <button className="login-btn">
                 Submit
                 </button>
+
 
               </form>
             </div>

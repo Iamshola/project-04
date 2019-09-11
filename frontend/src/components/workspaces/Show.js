@@ -126,12 +126,15 @@ class Show extends React.Component{
               )}
 
               {Auth.isAuthenticated()&& <div className="buttons">
-                <Link className=" button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
+                <Link className="button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
                 <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
-                <button onClick={this.handleBookmark} className="button is-light is-small">Bookmark this location</button>
+                <button onClick={this.handleBookmark} className="button">Bookmark this location</button>
 
               </div>}
+
+              <hr />
             </div>
+
 
             <div className="columns">
               <div className="column">
@@ -186,6 +189,12 @@ class Show extends React.Component{
                 </figure>
               </div>
             </div>
+
+
+
+
+
+
           </div>
 
           <div className="columns">

@@ -26,7 +26,6 @@ class WorkspacesIndex extends React.Component{
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleFilter = this.handleFilter.bind(this)
-    this.handleRadio = this.handleRadio.bind(this)
   }
 
   componentDidMount() {
@@ -44,9 +43,6 @@ class WorkspacesIndex extends React.Component{
     this.setState({ sortTerm: selected.value })
   }
 
-  handleRadio(e){
-    this.setState({ sortTerm: selected.value })
-  }
 
 
   handleFilter(selected, field) {
