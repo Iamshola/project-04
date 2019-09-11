@@ -1,60 +1,25 @@
 import React from 'react'
-import LazyHero from 'react-lazy-hero'
+
 import Footer from '../common/Footer'
 
 const Home = ()=> {
   return(
     <div>
-      <LazyHero
-        imageSrc="https://unsplash.it/2000/1000"
-        color={'#CDCDCD'}
-        minHeight={'85vh'}
-        parallaxOffset={250}
-      >
-        <h1 className="title is-1">Space.</h1>
-        <h2 className="subtitle is-3">Making Space for Budding Entrepreneurs </h2>
-
-
-      </LazyHero>
-
-      <section className="hero is-medium">
+      <section className="hero is-large">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title">  About Us </h1>
-            <div className="subtitle is-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div className="columns">
+              <div className="column"></div>
+              <div className="column"></div>
+              <div className="column">
+                <h1 className="title is-1 heading">Space</h1>
+                <h1 className="subtitle is-3 heading">Making Space</h1>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <LazyHero
-        imageSrc="https://unsplash.it/2000/1000"
-        color={'#CDCDCD'}
-        minHeight={'85vh'}
-        parallaxOffset={250}
-      >
-        <section className="hero is-large">
-          <div className="hero-body">
-            <div className="container">
-              <div className="columns">
-                <div className="column">
-                  <h1 className="title">  More About Us </h1>
-                  <div className="subtitle is-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </div>
-                </div>
-                <div className="column">
-                  <h1>Click her</h1>
 
-
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-      </LazyHero>
 
 
 

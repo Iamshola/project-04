@@ -89,8 +89,7 @@ class WorkspacesNew extends React.Component {
                 <div className="columns">
                   <div className="column is-4">
                     <div className="box is-light">
-                      <h2>You are Editiing </h2>
-                      <p>Add Snippet of the card here</p>
+                      
                     </div>
                   </div>
                   <div className="column is-4">

@@ -10,7 +10,7 @@
   background: #fff;height: 80vh;
 }
 .login .login-sidebar{
-  background:  url('')center center no-repeat;
+  background:  url('./img/logo.png')center center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -25,18 +25,18 @@
 	bottom: 0;
 	left: 0;
   z-index: 1;
-	background-image: linear-gradient(to bottom right,#21AEA2,#6472A5);
+	background-image: linear-gradient(to bottom right,#bed9e0,#ff9694);
 	opacity: .8;
 }
 .login .login-sidebar .login-gradient-background{
   position: absolute;z-index: 2;
 }
 .login .login-sidebar .login-gradient-background h1{
-  font-size: 2em;font-weight: 600;text-transform: uppercase;color: #ffffff;
+  font-size: 2em;font-weight: 600;text-transform: uppercase;color: #bed9e0;
 }
 
 .login-form-wrapper .register-btn a{
-  color: #ffffff;border-radius: 18px;padding: 0.57em 2em;background: #21AEA2;
+  color: #ffffff;border-radius: 18px;padding: 0.57em 2em;background: #bed9e0;
 }
 .login-form-wrapper .register-btn a:hover{
   opacity: .8;

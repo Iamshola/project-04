@@ -179,7 +179,7 @@
     "closing_times_sat": 24,
     "closing_times_sun": 24,
     "link": "https://camdencollective.co.uk/",
-    "image": "https://images.squarespace-cdn.com/content/v1/5c812cd8d86cc958f700f15f/1555414120385-Z22845V8RQAGYPRW1ZH3/ke17ZwdGBToddI8pDm48kLjgyl-iI7LA8ff5ZU6cXEV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yi",
+    "image": "https://images.squarespace-cdn.com/content/v1/5c812cd8d86cc958f700f15f/1556704149663-3DSLP3DV5QXYY6FOID0D/ke17ZwdGBToddI8pDm48kNMIMLR5HyT8T-Jl3SGhJah7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yi",
     "user": 1,
     "genres": [
       3,
@@ -249,7 +249,7 @@
     "closing_times_sat": 17,
     "closing_times_sun": 17,
     "link": "https://www.bl.uk/visit/reading-rooms",
-    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSExIWFhUXGBgYGBcXFhgXGhgaFxgXFhgYFxoYICggGB0lGxoWITEhJSorLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGzIlHyUtLS0uLS0tLS0tLy0tLS0tLS0tLS0vLS0tLS0tL",
+    "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2011/06/BritishLibrary.jpg",
     "user": 1,
     "genres": [
       2,
@@ -318,7 +318,7 @@
     "closing_times_sat": 24,
     "closing_times_sun": 24,
     "link": "https://www.acehotel.com/london/",
-    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFRUXGB0aGBcYGBsaHhodGBgaGh0YGBgaHSggGholHxcXITEhJSkrLi4uGh8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "image": "https://q-cf.bstatic.com/images/hotel/max1024x768/117/117714822.jpg",
     "user": 1,
     "genres": [
       5
@@ -351,7 +351,7 @@
     "closing_times_sat": 0,
     "closing_times_sun": 0,
     "link": "https://thehoxton.com/",
-    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTEhUSEhMWFhUXGBcVGBgYGBcXGBgYFRcXGBcXGBUYHiggGB0lHRgVITEhJykrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy8mHyUvLS0rLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "image": "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/itemimages/50/69/506906_v7.jpeg",
     "user": 1,
     "genres": [
       3,
@@ -420,7 +420,7 @@
     "closing_times_sat": 20,
     "closing_times_sun": 20,
     "link": "http://www.pret.co.uk/en-gb",
-    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFhUWGBcbGBcVGB4XGhgWGhgYFxcXFRgYHSggGB0lHRgXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "image": "https://beinvauxhall.com/wp-content/uploads/2018/11/Pret_Vauxhall_portrait-min.jpg",
     "user": 1,
     "genres": [
       4,
@@ -700,6 +700,36 @@
       5
     ],
     "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.comment",
+  "pk": 1,
+  "fields": {
+    "content": "hey ther",
+    "created_at": "2019-09-11T11:18:31.941Z",
+    "user": 1,
+    "workspace": 2
+  }
+},
+{
+  "model": "workspaces.comment",
+  "pk": 2,
+  "fields": {
+    "content": "hheee",
+    "created_at": "2019-09-11T11:18:35.795Z",
+    "user": 1,
+    "workspace": 2
+  }
+},
+{
+  "model": "workspaces.comment",
+  "pk": 3,
+  "fields": {
+    "content": "eee",
+    "created_at": "2019-09-11T11:18:37.986Z",
+    "user": 1,
+    "workspace": 2
   }
 }
 ]

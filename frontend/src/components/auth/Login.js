@@ -53,15 +53,16 @@ class Login extends React.Component {
               <div className="columns login-page">
                 <div className="column is-5 login-sidebar is-hidden-mobile">
                   <div className="login-gradient-background">
-                    <h1>Login</h1>
+
                   </div>
                 </div>
 
                 <div className="column is-7 login-form-wrapper">
                   <div className="column is-12 field-box">
                     <div className="column is-7 is-offset-1">
-                      <h1 className="login-heading">Welcome Back</h1>
-                      <p className="login-subheading">Fill out thisto access super awesome imaginary control panel</p>
+                      <h1 className="title is-3 heading has-text-centered">Login</h1>
+                      <h1 className="login-heading has-text-centered">Welcome Back</h1>
+                      <p className="login-subheading has-text-centered">Fill out thisto access super awesome imaginary control panel</p>
 
                       <form onSubmit={this.handleSubmit}>
                         <div className="field">

@@ -36,37 +36,34 @@ class ShowUser extends React.Component {
               <div className="columns login-page">
                 <div className="column is-5 login-sidebar is-hidden-mobile">
                   <div className="login-gradient-background">
-                    <h1>{this.state.user.username}</h1>
-
-                    <figure className="image is-128x128">
-                      <img src={this.state.user.image} alt={this.state.user.username}/>
-                    </figure>
-                    {Auth.getUser() && <div className="buttons">
-                      <Link
-                        className="button"
-                        to={`/users/${this.state.user.id}/edit`}
-                      >Edit</Link>
-                    </div>}
                   </div>
-
                 </div>
 
-                <div className="column is-7 login-form-wrapper">
+                <div className="column is-6 login-form-wrapper usersShow">
                   <div className="column is-12 field-box">
-                    <div className="column is-7 is-offset-1">
-                      <h1 className="title">City: {this.state.user.user_city}</h1>
-                      <h1>Linkedin: <a href={this.state.user.linked_In_Link}> <br /> {this.state.user.linked_In_Link}</a></h1>
-                      <h1>Interest: {this.state.user.interest}</h1>
+                    <div className="column is-offset-1"><h1 className="title is-3 heading">{this.state.user.username}</h1>
+                      <h1 className="title is-6 heading">{this.state.user.user_city}</h1>
+                      <figure className="image is-128x128">
+                        <img className="is-rounded" src={this.state.user.image} alt={this.state.user.username}/>
+                      </figure>
+                      {Auth.getUser() && <div className="buttons">
+                        <Link
+                          className="button"
+                          to={`/users/${this.state.user.id}/edit`}
+                        >Edit</Link>
+                      </div>}
+                      <Link to="/workspaces/new/" className="navbar-item buttons">Any More Spaces to Recommend?</Link>
+
+                      <h1 className="title is-6 heading">Linkedin: <a href={this.state.user.linked_In_Link}> {this.state.user.username}</a></h1>
+                      <h1 className="title is-6 heading">Interests:</h1> <p>{this.state.user.interest}</p>
 
 
                       <br/>
-
-
                       <div className="column">
                         <h1 className="title is-6 heading">Workspaces Entered:</h1>
                         <div className="columns is-multiline">
                           {this.state.user.workspaces && this.state.user.workspaces.map(workspace =>
-                            <div key={workspace.id} className="column is-half-tablet is-one-quarter-desktop">
+                            <div key={workspace.id} className="column is-half-desktop is-one-quarter-desktop">
                               <Link to={`/workspaces/${workspace.id}/`} key={workspace.id} >
                                 <figure className="image is-16by9">
                                   <img src={workspace.image} alt={workspace.name}/>
@@ -75,7 +72,6 @@ class ShowUser extends React.Component {
                             </div>
                           )}
                         </div>
-                        <Link to="/workspaces/new/" className="navbar-item">Any More Spaces to Recommend?</Link>
                       </div>
                     </div>
                   </div>

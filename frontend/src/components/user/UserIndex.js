@@ -30,6 +30,7 @@ class UserIndex extends React.Component{
     return(
       <section className="section">
         <div className="container">
+          <hr />
           <div className="column">
             <div className="columns is-multiline">
               {this.state.users.map(user =>

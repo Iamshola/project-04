@@ -6,8 +6,12 @@ class About extends React.Component{
   render() {
     return(
       <div className="container">
-        <h1>About Us</h1>
-        <p>Space was birthed from a need</p>
+        <hr />
+        <div className="columns">
+          <div className="column">
+
+          </div>
+        </div>
 
       </div>
     )
