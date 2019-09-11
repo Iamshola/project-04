@@ -15,11 +15,7 @@ const Card = ({ name, city, postcode, image}) => {
 
 
       <div className="card-content">
-        <p className="title is-5">{name}</p>
-
-        <br />
-        <br />
-
+        <p className="title is-6 heading">{name}</p>
         <hr/>
         <p className="text is-12">{city}, <br />{postcode}</p>
       </div>

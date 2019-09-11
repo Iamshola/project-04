@@ -23,20 +23,24 @@ class UserIndex extends React.Component{
   }
 
   render() {
-    console.log(this.state.users, 'hey')
+    console.log(this.state.users, 'hey ther')
+
+
     if(!this.state.users) return <NotFound/>
     return(
       <section className="section">
         <div className="container">
-          <div className="columns is-multiline">
-            {this.state.users.map(user =>
-              <div key={user.id} className="column is-half-tablet is-one-quarter-desktop">
-                <Link to={`/users/${user.id}`}>
-                  <UserCard {...user} />
-                </Link>
-              </div>
-            )}
+          <div className="column">
+            <div className="columns is-multiline">
+              {this.state.users.map(user =>
+                <div key={user.id} className="column is-half-tablet is-one-quarter-desktop">
+                  <Link to={`/users/${user.id}`}>
+                    <UserCard {...user} />
+                  </Link>
+                </div>
+              )}
 
+            </div>
           </div>
         </div>
       </section>

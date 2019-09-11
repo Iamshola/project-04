@@ -53,13 +53,11 @@ class WorkspacesIndex extends React.Component{
     const [field, order] = this.state.sortTerm.split('|')
 
     const filtered = _.filter(this.state.workspaces, workspace => {
-      return re.test(workspace.name)
+      return re.test(workspace.name) && (this.state.opening_times_mon ? location.opening_times_mon.includes(this.state.opening_times_mon) : true)
+
     })
     return _.orderBy(filtered, [field], [order])
-
   }
-
-
 
   render() {
     if(!this.state.workspaces) return null
@@ -79,33 +77,73 @@ class WorkspacesIndex extends React.Component{
               <div className="column is-2">
 
                 <div className="field">
-                  <label className="label has-text-left">Search your favourite space</label>
+                  <h1 className="title is-6 heading">Your search currently matches {this.filterWorkspaces().length} workspaces</h1>
+                  <label className="label has-text-left title is-6 heading">Search your favourites</label>
+                  <hr/>
                   <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
-                </div>
 
-                <div className="field">
-                  <label className="label has-text-left">Alphabetical Order</label>
-                  <Select
-                    name="order"
-                    className="filter"
-                    options={orderOption}
-                    defaultValue={orderOption[0]}
-                    onChange={this.handleChange}
-                    value={orderOption.find(option => option.value === this.state.sortTerm)}
-                  />
+                  <div className="field">
+                    <br />
+                    <label className="label has-text-left title is-6 heading">Order</label>
+                    <hr />
+                    <Select
+                      name="order"
+                      className="filter"
+                      options={orderOption}
+                      defaultValue={orderOption[0]}
+                      onChange={this.handleChange}
+                      value={orderOption.find(option => option.value === this.state.sortTerm)}
+                    />
+                  </div>
+
+                  <div className="control">
+                    <br />
+                    <h1 className="title is-6 heading">Opening Times</h1>
+                    <hr />
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 08:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" />  09:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 10:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" />  11:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 12:00</label>
+                  </div>
+                  <br />
+                  <div className="control">
+
+                    <h1 className="title is-6 heading">Closing Times</h1>
+                    <hr />
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 08:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" />  09:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 10:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" />  11:00</label>
+                    <label className="radio">
+                      <input type="radio" name="answer" /> 12:00</label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="columns is-multiline">
-              {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
-              {this.filterWorkspaces().map(workspaces =>
-                <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
-                  <Link to={`/workspaces/${workspaces.id}`}>
-                    <Card {...workspaces} />
-                  </Link>
-                </div>
-              )}
 
+              <div className="column">
+                <div className="columns is-multiline">
+                  {!this.state.workspaces && <h2 className="title is-2">Loading...</h2>}
+                  {this.filterWorkspaces().map(workspaces =>
+
+                    <div key={workspaces.id} className="column is-half-tablet is-one-quarter-desktop">
+                      <Link to={`/workspaces/${workspaces.id}`}>
+                        <Card {...workspaces} />
+                      </Link>
+                    </div>
+                  )}
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

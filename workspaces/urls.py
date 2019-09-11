@@ -7,6 +7,6 @@ urlpatterns = [
     path('workspaces/<int:pk>/comments/', CommentList.as_view()),
     path('workspaces/<int:workspace_pk>/comments/<int:pk>/', CommentDetail.as_view()),
     path('users/', ProfileList.as_view()),
-    path('users/<int:pk>/', ProfileDetail.as_view())
+    path('users/<int:pk>/', ProfileDetail.as_view()),
 
 ]

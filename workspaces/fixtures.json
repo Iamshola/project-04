@@ -1,0 +1,705 @@
+[
+{
+  "model": "workspaces.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Animal Friendly"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Quiet Section"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Meeting Tables"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Wifi"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Food and Drinks Permitted"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 6,
+  "fields": {
+    "name": "Free"
+  }
+},
+{
+  "model": "workspaces.genre",
+  "pk": 7,
+  "fields": {
+    "name": "Wheelchair accessible"
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 1,
+  "fields": {
+    "name": "Google for Start-ups Campus",
+    "address_line_1": "4-5 Bonhill Street",
+    "address_line_2": "Shoreditch",
+    "city": "London",
+    "postcode": "EC2A 4BX",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 9,
+    "opening_times_tue": 9,
+    "opening_times_wed": 9,
+    "opening_times_thur": 9,
+    "opening_times_fri": 9,
+    "opening_times_sat": 0,
+    "opening_times_sun": 0,
+    "closing_times_mon": 20,
+    "closing_times_tue": 20,
+    "closing_times_wed": 20,
+    "closing_times_thur": 20,
+    "closing_times_fri": 20,
+    "closing_times_sat": 0,
+    "closing_times_sun": 0,
+    "link": "https://www.campus.co/london/en",
+    "image": "https://storage.googleapis.com/gweb-campus-cms.google.com.a.appspot.com/images/GFSC_London_GlobalHome.original.jpg",
+    "user": 1,
+    "genres": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 2,
+  "fields": {
+    "name": "The Brew Cafe aka The Coffice",
+    "address_line_1": "163 City Rd",
+    "address_line_2": "Hoxton",
+    "city": "London",
+    "postcode": "EC1V 1NR",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 8,
+    "opening_times_tue": 8,
+    "opening_times_wed": 8,
+    "opening_times_thur": 8,
+    "opening_times_fri": 8,
+    "opening_times_sat": 0,
+    "opening_times_sun": 0,
+    "closing_times_mon": 17,
+    "closing_times_tue": 17,
+    "closing_times_wed": 17,
+    "closing_times_thur": 17,
+    "closing_times_fri": 17,
+    "closing_times_sat": 0,
+    "closing_times_sun": 0,
+    "link": "https://www.thebrew.co.uk/community/brew-cafe",
+    "image": "https://files.elfsight.com/storage/1313fd8a-42f3-42bb-a5dd-671fa9359fc7/e377a261-f6eb-4ef9-83b6-c5fb9d227b16.jpeg",
+    "user": 1,
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 3,
+  "fields": {
+    "name": "Timberyard Squarespace",
+    "address_line_1": "7 Upper Street Martins Lane",
+    "address_line_2": "Covent Garden",
+    "city": "London",
+    "postcode": "WC2H 9DL",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 8,
+    "opening_times_tue": 8,
+    "opening_times_wed": 8,
+    "opening_times_thur": 8,
+    "opening_times_fri": 8,
+    "opening_times_sat": 9,
+    "opening_times_sun": 10,
+    "closing_times_mon": 18,
+    "closing_times_tue": 18,
+    "closing_times_wed": 18,
+    "closing_times_thur": 18,
+    "closing_times_fri": 18,
+    "closing_times_sat": 18,
+    "closing_times_sun": 18,
+    "link": "https://timberyard.squarespace.com/",
+    "image": "https://hirespace.imgix.net/spaces/132919/kph3aach5no.jpeg?h=1080&w=1920&auto=format&fit=crop&q=40",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 4,
+  "fields": {
+    "name": "Collective Auction Rooms",
+    "address_line_1": "5-7 Buck Street",
+    "address_line_2": "Camden Town",
+    "city": "London",
+    "postcode": "NW1 8NJ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 24,
+    "opening_times_tue": 24,
+    "opening_times_wed": 24,
+    "opening_times_thur": 24,
+    "opening_times_fri": 24,
+    "opening_times_sat": 24,
+    "opening_times_sun": 24,
+    "closing_times_mon": 24,
+    "closing_times_tue": 24,
+    "closing_times_wed": 24,
+    "closing_times_thur": 24,
+    "closing_times_fri": 24,
+    "closing_times_sat": 24,
+    "closing_times_sun": 24,
+    "link": "https://camdencollective.co.uk/",
+    "image": "https://images.squarespace-cdn.com/content/v1/5c812cd8d86cc958f700f15f/1555414120385-Z22845V8RQAGYPRW1ZH3/ke17ZwdGBToddI8pDm48kLjgyl-iI7LA8ff5ZU6cXEV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yi",
+    "user": 1,
+    "genres": [
+      3,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 5,
+  "fields": {
+    "name": "Starbucks Vauxhall",
+    "address_line_1": "2 South Lambeth Road",
+    "address_line_2": "Vauxhall",
+    "city": "London",
+    "postcode": "SW8 1SP",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 5,
+    "opening_times_tue": 5,
+    "opening_times_wed": 5,
+    "opening_times_thur": 5,
+    "opening_times_fri": 5,
+    "opening_times_sat": 6,
+    "opening_times_sun": 6,
+    "closing_times_mon": 22,
+    "closing_times_tue": 22,
+    "closing_times_wed": 22,
+    "closing_times_thur": 22,
+    "closing_times_fri": 22,
+    "closing_times_sat": 22,
+    "closing_times_sun": 22,
+    "link": "https://www.starbucks.co.uk/",
+    "image": "https://s3-media1.fl.yelpcdn.com/bphoto/tVMflHmBVVtektn_JXKnHA/ls.jpg",
+    "user": 1,
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 6,
+  "fields": {
+    "name": "The British Library",
+    "address_line_1": "96 Euston Rd",
+    "address_line_2": "Euston",
+    "city": "London",
+    "postcode": "NW1 2DB",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 10,
+    "opening_times_tue": 10,
+    "opening_times_wed": 10,
+    "opening_times_thur": 10,
+    "opening_times_fri": 10,
+    "opening_times_sat": 10,
+    "opening_times_sun": 11,
+    "closing_times_mon": 20,
+    "closing_times_tue": 20,
+    "closing_times_wed": 20,
+    "closing_times_thur": 20,
+    "closing_times_fri": 18,
+    "closing_times_sat": 17,
+    "closing_times_sun": 17,
+    "link": "https://www.bl.uk/visit/reading-rooms",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSExIWFhUXGBgYGBcXFhgXGhgaFxgXFhgYFxoYICggGB0lGxoWITEhJSorLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGzIlHyUtLS0uLS0tLS0tLy0tLS0tLS0tLS0vLS0tLS0tL",
+    "user": 1,
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 7,
+  "fields": {
+    "name": "Barbican",
+    "address_line_1": "Barbican Centre",
+    "address_line_2": "Silk Street",
+    "city": "London",
+    "postcode": "EC2Y 8DS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 9,
+    "opening_times_tue": 9,
+    "opening_times_wed": 9,
+    "opening_times_thur": 9,
+    "opening_times_fri": 9,
+    "opening_times_sat": 11,
+    "opening_times_sun": 11,
+    "closing_times_mon": 23,
+    "closing_times_tue": 23,
+    "closing_times_wed": 23,
+    "closing_times_thur": 23,
+    "closing_times_fri": 23,
+    "closing_times_sat": 23,
+    "closing_times_sun": 23,
+    "link": "https://www.barbican.org.uk/",
+    "image": "https://www.barbican.org.uk/sites/default/files/styles/hero_constrained_small/public/images/2017-08/DSC_0839.jpg?h=a0bac5fd&itok=UPOz9-6x",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 8,
+  "fields": {
+    "name": "Ace Hotel",
+    "address_line_1": "100 Shoreditch High St",
+    "address_line_2": "Hackney",
+    "city": "London",
+    "postcode": "E1 6JQ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 24,
+    "opening_times_tue": 24,
+    "opening_times_wed": 24,
+    "opening_times_thur": 24,
+    "opening_times_fri": 24,
+    "opening_times_sat": 24,
+    "opening_times_sun": 24,
+    "closing_times_mon": 24,
+    "closing_times_tue": 24,
+    "closing_times_wed": 24,
+    "closing_times_thur": 24,
+    "closing_times_fri": 24,
+    "closing_times_sat": 24,
+    "closing_times_sun": 24,
+    "link": "https://www.acehotel.com/london/",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFRUXGB0aGBcYGBsaHhodGBgaGh0YGBgaHSggGholHxcXITEhJSkrLi4uGh8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "user": 1,
+    "genres": [
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 9,
+  "fields": {
+    "name": "Hoxton hotel",
+    "address_line_1": "81 Great Eastern St",
+    "address_line_2": "Shoreditch",
+    "city": "London",
+    "postcode": "EC2A 3HU",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 8,
+    "opening_times_tue": 8,
+    "opening_times_wed": 8,
+    "opening_times_thur": 8,
+    "opening_times_fri": 8,
+    "opening_times_sat": 0,
+    "opening_times_sun": 0,
+    "closing_times_mon": 17,
+    "closing_times_tue": 17,
+    "closing_times_wed": 17,
+    "closing_times_thur": 17,
+    "closing_times_fri": 17,
+    "closing_times_sat": 0,
+    "closing_times_sun": 0,
+    "link": "https://thehoxton.com/",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTEhUSEhMWFhUXGBcVGBgYGBcXGBgYFRcXGBcXGBUYHiggGB0lHRgVITEhJykrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy8mHyUvLS0rLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "user": 1,
+    "genres": [
+      3,
+      4
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 10,
+  "fields": {
+    "name": "Southbank Centre",
+    "address_line_1": "Belvedere Road",
+    "address_line_2": "Waterloo",
+    "city": "London",
+    "postcode": "SE1 8XX",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 10,
+    "opening_times_tue": 10,
+    "opening_times_wed": 10,
+    "opening_times_thur": 10,
+    "opening_times_fri": 10,
+    "opening_times_sat": 10,
+    "opening_times_sun": 10,
+    "closing_times_mon": 23,
+    "closing_times_tue": 23,
+    "closing_times_wed": 23,
+    "closing_times_thur": 23,
+    "closing_times_fri": 23,
+    "closing_times_sat": 23,
+    "closing_times_sun": 23,
+    "link": "https://www.southbankcentre.co.uk/",
+    "image": "https://assets.londonist.com/uploads/2017/01/i875/24277859223_57721c107c_k.jpg",
+    "user": 1,
+    "genres": [
+      4,
+      5,
+      6
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 11,
+  "fields": {
+    "name": "Pret Vauxhall",
+    "address_line_1": "Unit 21, St George's Wharf",
+    "address_line_2": "Vauxhall",
+    "city": "London",
+    "postcode": "SW8 2JW",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 6,
+    "opening_times_tue": 6,
+    "opening_times_wed": 6,
+    "opening_times_thur": 6,
+    "opening_times_fri": 6,
+    "opening_times_sat": 6,
+    "opening_times_sun": 6,
+    "closing_times_mon": 21,
+    "closing_times_tue": 21,
+    "closing_times_wed": 21,
+    "closing_times_thur": 21,
+    "closing_times_fri": 21,
+    "closing_times_sat": 20,
+    "closing_times_sun": 20,
+    "link": "http://www.pret.co.uk/en-gb",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFhUWGBcbGBcVGB4XGhgWGhgYFxcXFRgYHSggGB0lHRgXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tL",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 12,
+  "fields": {
+    "name": "Egg Break",
+    "address_line_1": "30 Uxbridge St,",
+    "address_line_2": "Kensington",
+    "city": "London",
+    "postcode": "W8 7TA",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 8,
+    "opening_times_tue": 8,
+    "opening_times_wed": 8,
+    "opening_times_thur": 8,
+    "opening_times_fri": 8,
+    "opening_times_sat": 8,
+    "opening_times_sun": 8,
+    "closing_times_mon": 18,
+    "closing_times_tue": 18,
+    "closing_times_wed": 18,
+    "closing_times_thur": 18,
+    "closing_times_fri": 18,
+    "closing_times_sat": 18,
+    "closing_times_sun": 18,
+    "link": "http://www.eggbreak.com/",
+    "image": "https://www.foodjunkieuk.co.uk/wp-content/uploads/2019/08/3430575158831391579_IMG_2308-1024x866.jpg",
+    "user": 1,
+    "genres": [
+      3,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 13,
+  "fields": {
+    "name": "Riding House Cafe",
+    "address_line_1": "43-51 Great Titchfield St,",
+    "address_line_2": "Fitzrovia,",
+    "city": "London",
+    "postcode": "W1W 7PQ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 7,
+    "opening_times_tue": 7,
+    "opening_times_wed": 7,
+    "opening_times_thur": 7,
+    "opening_times_fri": 7,
+    "opening_times_sat": 9,
+    "opening_times_sun": 9,
+    "closing_times_mon": 1,
+    "closing_times_tue": 12,
+    "closing_times_wed": 12,
+    "closing_times_thur": 12,
+    "closing_times_fri": 12,
+    "closing_times_sat": 12,
+    "closing_times_sun": 18,
+    "link": "https://ridinghouse.cafe/",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFhUXGRcaGBgWGRgdIBsgGCAgGBsfHiAfHSogGholGyAXITEhJSkrLi4uHR8zODMtNygtLisBCgoKDg0OGxAQGzAmHyUtLS8tLS0tLS0tLS0tLS0tLS0vLS0tLS0tLS0tL",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 14,
+  "fields": {
+    "name": "Joe and Juice Euston",
+    "address_line_1": "St Pancras Station, Euston Rd",
+    "address_line_2": "Kings Cross",
+    "city": "London",
+    "postcode": "N1C 4QP",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 7,
+    "opening_times_tue": 7,
+    "opening_times_wed": 7,
+    "opening_times_thur": 7,
+    "opening_times_fri": 7,
+    "opening_times_sat": 7,
+    "opening_times_sun": 7,
+    "closing_times_mon": 21,
+    "closing_times_tue": 21,
+    "closing_times_wed": 21,
+    "closing_times_thur": 21,
+    "closing_times_fri": 21,
+    "closing_times_sat": 21,
+    "closing_times_sun": 21,
+    "link": "joejuice.com",
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/0e/4a/e9/0e/joe-the-juice.jpg",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 15,
+  "fields": {
+    "name": "BFI Southwark",
+    "address_line_1": "Belvedere Rd",
+    "address_line_2": "Lambeth",
+    "city": "London",
+    "postcode": "SE1 8XT",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 11,
+    "opening_times_tue": 11,
+    "opening_times_wed": 11,
+    "opening_times_thur": 11,
+    "opening_times_fri": 11,
+    "opening_times_sat": 11,
+    "opening_times_sun": 11,
+    "closing_times_mon": 23,
+    "closing_times_tue": 23,
+    "closing_times_wed": 23,
+    "closing_times_thur": 23,
+    "closing_times_fri": 23,
+    "closing_times_sat": 23,
+    "closing_times_sun": 23,
+    "link": "https://www.bfi.org.uk/",
+    "image": "https://www.bfi.org.uk/sites/bfi.org.uk/files/styles/full/public/image/mediatheque-2017-001-1000x750-side-on.jpg?itok=0E-vkLxx",
+    "user": 1,
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 16,
+  "fields": {
+    "name": "The Book Club",
+    "address_line_1": "100 \u2013 106, Leonard Street",
+    "address_line_2": "Shoreditch",
+    "city": "London",
+    "postcode": "C2A 4RH",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 9,
+    "opening_times_tue": 9,
+    "opening_times_wed": 9,
+    "opening_times_thur": 9,
+    "opening_times_fri": 9,
+    "opening_times_sat": 10,
+    "opening_times_sun": 10,
+    "closing_times_mon": 12,
+    "closing_times_tue": 12,
+    "closing_times_wed": 12,
+    "closing_times_thur": 2,
+    "closing_times_fri": 3,
+    "closing_times_sat": 3,
+    "closing_times_sun": 2,
+    "link": "http://www.wearetbc.com/",
+    "image": "https://i.pinimg.com/originals/f6/4d/cb/f64dcb9db8b6938a59bca90647f390d7.jpg",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 17,
+  "fields": {
+    "name": "The Ambrose Caf\u00e9 - Heal\u2019s department store",
+    "address_line_1": "196 Tottenham Court Road",
+    "address_line_2": "Bloomsbury",
+    "city": "London",
+    "postcode": "W1T 7LQ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 10,
+    "opening_times_tue": 10,
+    "opening_times_wed": 10,
+    "opening_times_thur": 10,
+    "opening_times_fri": 10,
+    "opening_times_sat": 10,
+    "opening_times_sun": 12,
+    "closing_times_mon": 19,
+    "closing_times_tue": 19,
+    "closing_times_wed": 19,
+    "closing_times_thur": 19,
+    "closing_times_fri": 20,
+    "closing_times_sat": 19,
+    "closing_times_sun": 18,
+    "link": "https://www.heals.com/heals-cafe",
+    "image": "http://cdn.ltstatic.com/2016/November/NX199766_942long.jpg",
+    "user": 1,
+    "genres": [
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 18,
+  "fields": {
+    "name": "The Counting Horse",
+    "address_line_1": "50 Cornhill",
+    "address_line_2": "City",
+    "city": "London",
+    "postcode": "EC3V 3PD",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 8,
+    "opening_times_tue": 8,
+    "opening_times_wed": 8,
+    "opening_times_thur": 8,
+    "opening_times_fri": 8,
+    "opening_times_sat": 11,
+    "opening_times_sun": 11,
+    "closing_times_mon": 23,
+    "closing_times_tue": 23,
+    "closing_times_wed": 23,
+    "closing_times_thur": 23,
+    "closing_times_fri": 23,
+    "closing_times_sat": 23,
+    "closing_times_sun": 17,
+    "link": "https://www.the-counting-house.com/",
+    "image": "https://www.the-counting-house.com/-/media/sites/microsites/c/the-counting-house-_-p023/images/counting-house-sept-2017/carousel/24-08-17_countingh__mg_0769.jpg?w=1366",
+    "user": 1,
+    "genres": [
+      5
+    ],
+    "bookmarks": []
+  }
+},
+{
+  "model": "workspaces.workspace",
+  "pk": 19,
+  "fields": {
+    "name": "The Reading Rooms - Wellcome Collection",
+    "address_line_1": "183 Euston Road",
+    "address_line_2": "Euston",
+    "city": "London",
+    "postcode": "NW1 2BE",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "opening_times_mon": 10,
+    "opening_times_tue": 10,
+    "opening_times_wed": 10,
+    "opening_times_thur": 10,
+    "opening_times_fri": 10,
+    "opening_times_sat": 10,
+    "opening_times_sun": 10,
+    "closing_times_mon": 18,
+    "closing_times_tue": 18,
+    "closing_times_wed": 21,
+    "closing_times_thur": 18,
+    "closing_times_fri": 18,
+    "closing_times_sat": 18,
+    "closing_times_sun": 18,
+    "link": "https://wellcomecollection.org/pages/Wvlk4yAAAB8A3",
+    "image": "https://iiif.wellcomecollection.org/image/prismic:6e7c6286902e25e4d5a7ed06a5383324071ffdbd_c0108488.jpg/full/2048,/0/default.jpg",
+    "user": 1,
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "bookmarks": []
+  }
+}
+]

@@ -11,6 +11,7 @@ import './style.scss'
 import Navbar from './components/common/Navbar.js'
 import NotFound from './components/common/NotFound.js'
 import Home from './components/pages/Home.js'
+import About from './components/pages/About.js'
 import WorkspacesIndex from './components/workspaces/Index.js'
 import WorkspacesShow from './components/workspaces/Show.js'
 import WorkspacesNew from './components/workspaces/New.js'
@@ -69,6 +70,7 @@ class App extends React.Component {
           <Route path="/notfound" component={NotFound} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/" component={Home} />
           <Footer />
 

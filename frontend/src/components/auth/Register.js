@@ -149,7 +149,7 @@ class Register extends React.Component {
                         </div>
                         <br />
                         <div className="field center">
-                          <p className="">Upload Profile Pic</p>
+                          <p className="">Upload Profile Picture</p>
                           <ReactFilestack
                             mode="transform"
                             apikey={FilestackToken}

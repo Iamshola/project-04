@@ -26,6 +26,7 @@ class ShowUser extends React.Component {
   render() {
     console.log(this.state.user, 'users here')
 
+
     return(
       <section className="login is-fullheight">
         <div className="login-body">
@@ -47,9 +48,15 @@ class ShowUser extends React.Component {
                       <h1 className="title">City: {this.state.user.city}</h1>
                       <h1>Linkedin:{this.state.user.linked_In_Link}</h1>
                       <h1>Interest{this.state.user.interest}</h1>
-                      <h1>Workspaces Entered: </h1>
+                      <h1>Workspaces Entered:</h1>
 
                       <br/>
+                      {Auth.getUser() && <div className="buttons">
+                        <Link
+                          className="button"
+                          to={`/profiles/${this.state.user._id}/edit`}
+                        >Edit</Link>
+                      </div> }
                       <Link to="/workspaces/new/" className="navbar-item">Any More Spaces to Recommend?</Link>
                     </div>
                   </div>
