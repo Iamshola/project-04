@@ -8,17 +8,17 @@ const UserCard = ({ username, image, user_city, email}) => {
     <div className="card">
 
       <div className="card-image">
-        <figure className="image is-4by3">
+        <figure className="image is-3by2">
           <img src={image} alt={name} />
         </figure>
       </div>
 
 
       <div className="card-content">
-        <p className="title is-5">{username}</p>
+        <p className="title is-4 heading">{username}</p>
         <hr/>
-        <p className="title is-5">{user_city}</p>
-        <p className="title is-5">{email}</p>
+        <p className="is-5">{user_city}</p>
+        <p className="is-5">{email}</p>
 
       </div>
     </div>

@@ -48,16 +48,12 @@ class ShowUser extends React.Component {
                       </figure>
                       {Auth.getUser() && <div className="buttons">
                         <Link
-                          className="button"
-                          to={`/users/${this.state.user.id}/edit`}
-                        >Edit</Link>
+                          className="button" to={`/users/${this.state.user.id}/edit`}>Edit</Link>
+                        <Link to="/workspaces/new/" className="button">Any More Spaces to Recommend?</Link>
                       </div>}
-                      <Link to="/workspaces/new/" className="navbar-item buttons">Any More Spaces to Recommend?</Link>
 
                       <h1 className="title is-6 heading">Linkedin: <a href={this.state.user.linked_In_Link}> {this.state.user.username}</a></h1>
                       <h1 className="title is-6 heading">Interests:</h1> <p>{this.state.user.interest}</p>
-
-
                       <br/>
                       <div className="column">
                         <h1 className="title is-6 heading">Workspaces Entered:</h1>

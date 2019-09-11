@@ -11,8 +11,19 @@ const orderOption = [
   { value: 'name|desc', label: 'Z-A' }
 ]
 
-class WorkspacesIndex extends React.Component{
+const genreOptions = [
+  { label: 'All', value: '' },
+  { label: 'Animal Friendly', value: 1 },
+  { label: 'Quiet Section', value: 2 },
+  { label: 'Meeting Tables', value: 3  },
+  { label: 'Wifi', value: 4 },
+  { label: 'Food and Drinks Permitted', value: 5 },
+  { label: 'Free',  value: 6 },
+  { label: 'Wheelchair accessible', value: 7 }
+]
 
+
+class WorkspacesIndex extends React.Component{
 
   constructor() {
     super()
@@ -29,7 +40,7 @@ class WorkspacesIndex extends React.Component{
   }
 
   componentDidMount() {
-    axios.get('/api/workspaces')
+    axios.get('/api/workspaces/')
       .then(res => {
         this.setState({ workspaces: res.data})
       })
@@ -43,8 +54,6 @@ class WorkspacesIndex extends React.Component{
     this.setState({ sortTerm: selected.value })
   }
 
-
-
   handleFilter(selected, field) {
     this.setState({ [field]: selected.value })
   }
@@ -53,17 +62,17 @@ class WorkspacesIndex extends React.Component{
     const re = new RegExp(this.state.searchTerm, 'i')
     const [field, order] = this.state.sortTerm.split('|')
 
-
     const filtered = _.filter(this.state.workspaces, workspace => {
-      return re.test(workspace.name) && (this.state.opening_times_mon ? location.opening_times_mon.includes(this.state.opening_times_mon) : true)
-
+      return re.test(workspace.name) && (this.state.genres ? workspace.genres.map(genre => genre.id).includes(this.state.genres) : true)
     })
+
     return _.orderBy(filtered, [field], [order])
   }
 
   render() {
+    console.log(this.state.genres)
     if(!this.state.workspaces) return null
-    console.log(this.state.workspaces.genres)
+
     return(
       <section className="section">
         <div className="container">
@@ -75,9 +84,10 @@ class WorkspacesIndex extends React.Component{
 
               <div className="field">
                 <h1 className="title is-6 heading">Your search currently matches {this.filterWorkspaces().length} workspaces</h1>
+                <hr />
                 <label className="label has-text-left title is-6 heading">Search your favourites</label>
-                <hr/>
-                <input className="input" type="text" placeholder="Search your favourite space"  onKeyUp={this.handleKeyUp}/>
+
+                <input className="input" type="text" placeholder="Favourite space?"  onKeyUp={this.handleKeyUp}/>
 
                 <div className="field">
                   <br />
@@ -92,6 +102,20 @@ class WorkspacesIndex extends React.Component{
                     value={orderOption.find(option => option.value === this.state.sortTerm)}
                   />
                 </div>
+                <hr />
+                <div className="field">
+                  <label className="label has-text-left title is-6 heading">Genre Types</label>
+                  <hr />
+                  <Select
+                    name="genres"
+                    className="filter"
+                    options={genreOptions}
+                    defaultValue={genreOptions[0]}
+                    onChange={selected => this.handleFilter(selected, 'genres')}
+                    value={genreOptions.find(option => option.name === this.state.genres)}
+                  />
+                </div>
+
               </div>
             </div>
 

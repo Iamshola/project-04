@@ -102,7 +102,7 @@ class Show extends React.Component{
 
 
   render(){
-    console.log(this.state.workspace)
+
     console.log(this.state.workspaces)
 
     if(!this.state.workspace) return null
@@ -125,7 +125,7 @@ class Show extends React.Component{
                   {workspace.name}  </li>
               )}
 
-              {Auth.isAuthenticated()&& <div className="buttons">
+              {Auth.isAuthenticated() && <div className="buttons">
                 <Link className="button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
                 <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
                 <button onClick={this.handleBookmark} className="button">Bookmark this location</button>

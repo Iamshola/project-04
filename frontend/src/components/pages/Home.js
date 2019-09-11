@@ -12,15 +12,15 @@ const Home = ()=> {
               <div className="column"></div>
               <div className="column"></div>
               <div className="column">
-                <h1 className="title is-1 heading">Space</h1>
-                <h1 className="subtitle is-3 heading">Making Space</h1>
+
+
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="hero is-large">
-        <div className="hero-body">
+      <section className="hero is-medium">
+        <div className="hero-body moreAbout">
           <div className="container">
             <h1 className="title">  More About Us </h1>
             <div className="subtitle is-6">
@@ -33,30 +33,33 @@ const Home = ()=> {
 
 
 
+      <section className="hero is-small">
+        <div className="hero-body furtherContact">
+          <div className="container ">
+            <div className="columns">
+              <div className="column">
+                <h4 className="title is-6 heading">CONTACT US:</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                <ul>
+                  <li>A :  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </li>
+                  <li>P :  123 456 7890 </li>
+                  <li>E :  info@travel.com </li>
+                </ul>
+              </div>
 
-      <div className="container">
-        <div className="columns">
-          <div className="column">
-            <h4 className="subtitle is-6 heading">CONTACT US:</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-            <ul>
-              <li>A :  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </li>
-              <li>P :  123 456 7890 </li>
-              <li>E :  info@travel.com </li>
-            </ul>
-          </div>
-
-          <div className="column">
-            <p></p>
-          </div>
-          <div className="column">
-            <h4 className="subtitle is-6 heading">NEWSLETTER:</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
-            <input/>
-            <button>Submit</button>
+              <div className="column">
+                <p></p>
+              </div>
+              <div className="column">
+                <h4 className="title is-6 heading">NEWSLETTER:</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                <input/>
+                <button>Submit</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
