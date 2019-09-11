@@ -41,8 +41,8 @@ class ShowUser extends React.Component {
 
                 <div className="column is-6 login-form-wrapper usersShow">
                   <div className="column is-12 field-box">
-                    <div className="column is-offset-1"><h1 className="title is-3 heading">{this.state.user.username}</h1>
-                      <h1 className="title is-6 heading">{this.state.user.user_city}</h1>
+                    <div className="column is-offset-1"><h1 className=" title is-4 heading has-text-centered">{this.state.user.username}, {this.state.user.user_city} </h1>
+
                       <figure className="image is-128x128">
                         <img className="is-rounded" src={this.state.user.image} alt={this.state.user.username}/>
                       </figure>

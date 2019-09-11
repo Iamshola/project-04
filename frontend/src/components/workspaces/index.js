@@ -26,6 +26,7 @@ class WorkspacesIndex extends React.Component{
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleFilter = this.handleFilter.bind(this)
+    this.handleRadio = this.handleRadio.bind(this)
   }
 
   componentDidMount() {
@@ -43,6 +44,10 @@ class WorkspacesIndex extends React.Component{
     this.setState({ sortTerm: selected.value })
   }
 
+  handleRadio(e){
+    this.setState({ sortTerm: selected.value })
+  }
+
 
   handleFilter(selected, field) {
     this.setState({ [field]: selected.value })
@@ -51,6 +56,7 @@ class WorkspacesIndex extends React.Component{
   filterWorkspaces(){
     const re = new RegExp(this.state.searchTerm, 'i')
     const [field, order] = this.state.sortTerm.split('|')
+
 
     const filtered = _.filter(this.state.workspaces, workspace => {
       return re.test(workspace.name) && (this.state.opening_times_mon ? location.opening_times_mon.includes(this.state.opening_times_mon) : true)
@@ -89,38 +95,6 @@ class WorkspacesIndex extends React.Component{
                     onChange={this.handleChange}
                     value={orderOption.find(option => option.value === this.state.sortTerm)}
                   />
-                </div>
-
-                <div className="control">
-                  <br />
-                  <h1 className="title is-6 heading">Opening Times</h1>
-                  <hr />
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 08:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" />  09:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 10:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" />  11:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 12:00</label>
-                </div>
-                <br />
-                <div className="control">
-
-                  <h1 className="title is-6 heading">Closing Times</h1>
-                  <hr />
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 08:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" />  09:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 10:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" />  11:00</label>
-                  <label className="radio">
-                    <input type="radio" name="answer" /> 12:00</label>
                 </div>
               </div>
             </div>

@@ -5,7 +5,7 @@ import Footer from '../common/Footer'
 const Home = ()=> {
   return(
     <div>
-      <section className="hero is-large">
+      <section className="hero is-large main-hero">
         <div className="hero-body">
           <div className="container">
             <div className="columns">
@@ -19,6 +19,16 @@ const Home = ()=> {
           </div>
         </div>
       </section>
+      <section className="hero is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">  More About Us </h1>
+            <div className="subtitle is-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -26,7 +36,7 @@ const Home = ()=> {
       <div className="container">
         <div className="columns">
           <div className="column">
-            <h4 className="subtitle">CONTACT US:</h4>
+            <h4 className="subtitle is-6 heading">CONTACT US:</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
             <ul>
               <li>A :  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </li>
@@ -39,7 +49,7 @@ const Home = ()=> {
             <p></p>
           </div>
           <div className="column">
-            <h4 className="subtitle">NEWSLETTER:</h4>
+            <h4 className="subtitle is-6 heading">NEWSLETTER:</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
             <input/>
             <button>Submit</button>

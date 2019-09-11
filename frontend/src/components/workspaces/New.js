@@ -43,11 +43,11 @@ class WorkspacesNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChangeNormal = this.handleChangeNormal.bind(this)
     this.handleMultiChange = this.handleMultiChange.bind(this)
+    this.handleUploadImages = this.handleUploadImages.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault()
-
     const data = { ...this.state.formData, genres: this.state.formData.genres.map(genre => genre.id) }
     console.log(data)
 
@@ -81,17 +81,13 @@ class WorkspacesNew extends React.Component {
     return (
       <section className="hero">
         <div className="hero-body">
+        <hr />
           <div className="container has-text-centered">
             <div className="box is-light">
               <form onSubmit={this.handleSubmit}>
                 <h3 className="title"> New Space </h3>
 
                 <div className="columns">
-                  <div className="column is-4">
-                    <div className="box is-light">
-                      
-                    </div>
-                  </div>
                   <div className="column is-4">
                     <div className="field">
                       <label className="label">Name</label>
@@ -155,6 +151,8 @@ class WorkspacesNew extends React.Component {
                       />
                       {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
                     </div>
+                  </div>
+                  <div className="column is-4">
                     <div className="field">
                       <label className="label">Opening Times - Monday</label>
                       <input
@@ -177,9 +175,7 @@ class WorkspacesNew extends React.Component {
                       />
                       {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
                     </div>
-                  </div>
 
-                  <div className="column is-4">
 
                     <div className="field">
                       <label className="label">Opening Times - Wednesday</label>
@@ -236,6 +232,88 @@ class WorkspacesNew extends React.Component {
                       />
                       {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
                     </div>
+                  </div>
+
+                  <div className="column is-4">
+                    <div className="field">
+                      <label className="label">Closing Times - Monday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_mon"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_mon && <small className="help is-danger">{this.state.errors.closing_times_mon}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Tuesday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_tue"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_tue && <small className="help is-danger">{this.state.errors.closing_times_tue}</small>}
+                    </div>
+
+
+                    <div className="field">
+                      <label className="label">Closing Times - Wednesday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_wed"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_wed && <small className="help is-danger">{this.state.errors.closing_times_wed}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Thursday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_thur"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_thur && <small className="help is-danger">{this.state.errors.closing_times_thur}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Friday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_fri"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_fri && <small className="help is-danger">{this.state.errors.closing_times_fri}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Saturday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_sat"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_sat && <small className="help is-danger">{this.state.errors.closing_times_sat}</small>}
+                    </div>
+                    <div className="field">
+                      <label className="label">Closing Times - Sunday</label>
+                      <input
+                        className="input"
+                        type="text"
+                        name="closing_times_sun"
+                        placeholder= "08:00 - 22:30"
+                        onChange={this.handleChangeNormal}
+                      />
+                      {this.state.errors.closing_times_sun && <small className="help is-danger">{this.state.errors.closing_times_sun}</small>}
+                    </div>
                     <div className="field">
                       <label className="label">Link</label>
                       <input
@@ -252,7 +330,6 @@ class WorkspacesNew extends React.Component {
                       <label className="label">Genre</label>
                       <Select
                         isMulti
-                        value={selectedGenres}
                         name="genres"
                         options={genreOptions}
                         onChange={this.handleMultiChange}
@@ -274,8 +351,10 @@ class WorkspacesNew extends React.Component {
                       />
                       {this.state.formData.image && <img src={this.state.formData.image} />}
                     </div>
-
                   </div>
+
+
+
                 </div>
 
                 <button className="login-btn">Submit</button>
