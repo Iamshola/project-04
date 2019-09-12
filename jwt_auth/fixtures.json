@@ -1,0 +1,46 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$rfn44XcCqBhV$i5mqhEUytcAIYV1pGoYS50qDOznYCKlgAWXqvpiuXZw=",
+    "last_login": "2019-09-10T21:13:22.722Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "s.oni-shogbonyo@hotmail.co.uk",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-10T21:12:13.583Z",
+    "image": "https://cdn.filestackcontent.com/aNszFM5fSH6XKznOtZnQ",
+    "linked_In_Link": "https://www.linkedin.com/in/adesola-oni-shogbonyo/",
+    "user_city": "London",
+    "interest": "Currently looking to code and learning french. Hence why I'm here!",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$F7RHgt8sGiTJ$7U164JBus+YYi+s0ICmzkbYdOkN96/o0lFekM1yr+r4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Katherine",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@test.test",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-09-12T07:57:10.970Z",
+    "image": "https://cdn.filestackcontent.com/B4kFUW6YS6e0Tm6CURzc",
+    "linked_In_Link": "https://twitter.com/home",
+    "user_city": "London",
+    "interest": "Currently setting up a business and currently trying to find more local spaces to work in.",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
