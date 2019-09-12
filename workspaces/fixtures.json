@@ -156,41 +156,6 @@
 },
 {
   "model": "workspaces.workspace",
-  "pk": 4,
-  "fields": {
-    "name": "Collective Auction Rooms",
-    "address_line_1": "5-7 Buck Street",
-    "address_line_2": "Camden Town",
-    "city": "London",
-    "postcode": "NW1 8NJ",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "opening_times_mon": 24,
-    "opening_times_tue": 24,
-    "opening_times_wed": 24,
-    "opening_times_thur": 24,
-    "opening_times_fri": 24,
-    "opening_times_sat": 24,
-    "opening_times_sun": 24,
-    "closing_times_mon": 24,
-    "closing_times_tue": 24,
-    "closing_times_wed": 24,
-    "closing_times_thur": 24,
-    "closing_times_fri": 24,
-    "closing_times_sat": 24,
-    "closing_times_sun": 24,
-    "link": "https://camdencollective.co.uk/",
-    "image": "https://images.squarespace-cdn.com/content/v1/5c812cd8d86cc958f700f15f/1556704149663-3DSLP3DV5QXYY6FOID0D/ke17ZwdGBToddI8pDm48kNMIMLR5HyT8T-Jl3SGhJah7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yi",
-    "user": 1,
-    "genres": [
-      3,
-      4,
-      5
-    ],
-    "bookmarks": []
-  }
-},
-{
-  "model": "workspaces.workspace",
   "pk": 5,
   "fields": {
     "name": "Starbucks Vauxhall",
@@ -254,73 +219,6 @@
     "genres": [
       2,
       4,
-      5
-    ],
-    "bookmarks": []
-  }
-},
-{
-  "model": "workspaces.workspace",
-  "pk": 7,
-  "fields": {
-    "name": "Barbican",
-    "address_line_1": "Barbican Centre",
-    "address_line_2": "Silk Street",
-    "city": "London",
-    "postcode": "EC2Y 8DS",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "opening_times_mon": 9,
-    "opening_times_tue": 9,
-    "opening_times_wed": 9,
-    "opening_times_thur": 9,
-    "opening_times_fri": 9,
-    "opening_times_sat": 11,
-    "opening_times_sun": 11,
-    "closing_times_mon": 23,
-    "closing_times_tue": 23,
-    "closing_times_wed": 23,
-    "closing_times_thur": 23,
-    "closing_times_fri": 23,
-    "closing_times_sat": 23,
-    "closing_times_sun": 23,
-    "link": "https://www.barbican.org.uk/",
-    "image": "https://www.barbican.org.uk/sites/default/files/styles/hero_constrained_small/public/images/2017-08/DSC_0839.jpg?h=a0bac5fd&itok=UPOz9-6x",
-    "user": 1,
-    "genres": [
-      4,
-      5
-    ],
-    "bookmarks": []
-  }
-},
-{
-  "model": "workspaces.workspace",
-  "pk": 8,
-  "fields": {
-    "name": "Ace Hotel",
-    "address_line_1": "100 Shoreditch High St",
-    "address_line_2": "Hackney",
-    "city": "London",
-    "postcode": "E1 6JQ",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "opening_times_mon": 24,
-    "opening_times_tue": 24,
-    "opening_times_wed": 24,
-    "opening_times_thur": 24,
-    "opening_times_fri": 24,
-    "opening_times_sat": 24,
-    "opening_times_sun": 24,
-    "closing_times_mon": 24,
-    "closing_times_tue": 24,
-    "closing_times_wed": 24,
-    "closing_times_thur": 24,
-    "closing_times_fri": 24,
-    "closing_times_sat": 24,
-    "closing_times_sun": 24,
-    "link": "https://www.acehotel.com/london/",
-    "image": "https://q-cf.bstatic.com/images/hotel/max1024x768/117/117714822.jpg",
-    "user": 1,
-    "genres": [
       5
     ],
     "bookmarks": []
@@ -488,7 +386,7 @@
     "closing_times_sat": 12,
     "closing_times_sun": 18,
     "link": "https://ridinghouse.cafe/",
-    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFhUXGRcaGBgWGRgdIBsgGCAgGBsfHiAfHSogGholGyAXITEhJSkrLi4uHR8zODMtNygtLisBCgoKDg0OGxAQGzAmHyUtLS8tLS0tLS0tLS0tLS0tLS0vLS0tLS0tLS0tL",
+    "image": "https://secure.i.telegraph.co.uk/multimedia/archive/02068/041211STERest04_2068962c.jpg",
     "user": 1,
     "genres": [
       4,
@@ -540,7 +438,7 @@
     "address_line_2": "Lambeth",
     "city": "London",
     "postcode": "SE1 8XT",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     "opening_times_mon": 11,
     "opening_times_tue": 11,
     "opening_times_wed": 11,
@@ -636,39 +534,6 @@
 },
 {
   "model": "workspaces.workspace",
-  "pk": 18,
-  "fields": {
-    "name": "The Counting Horse",
-    "address_line_1": "50 Cornhill",
-    "address_line_2": "City",
-    "city": "London",
-    "postcode": "EC3V 3PD",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "opening_times_mon": 8,
-    "opening_times_tue": 8,
-    "opening_times_wed": 8,
-    "opening_times_thur": 8,
-    "opening_times_fri": 8,
-    "opening_times_sat": 11,
-    "opening_times_sun": 11,
-    "closing_times_mon": 23,
-    "closing_times_tue": 23,
-    "closing_times_wed": 23,
-    "closing_times_thur": 23,
-    "closing_times_fri": 23,
-    "closing_times_sat": 23,
-    "closing_times_sun": 17,
-    "link": "https://www.the-counting-house.com/",
-    "image": "https://www.the-counting-house.com/-/media/sites/microsites/c/the-counting-house-_-p023/images/counting-house-sept-2017/carousel/24-08-17_countingh__mg_0769.jpg?w=1366",
-    "user": 1,
-    "genres": [
-      5
-    ],
-    "bookmarks": []
-  }
-},
-{
-  "model": "workspaces.workspace",
   "pk": 19,
   "fields": {
     "name": "The Reading Rooms - Wellcome Collection",
@@ -714,20 +579,20 @@
 },
 {
   "model": "workspaces.comment",
-  "pk": 2,
+  "pk": 3,
   "fields": {
-    "content": "hheee",
-    "created_at": "2019-09-11T11:18:35.795Z",
+    "content": "eee",
+    "created_at": "2019-09-11T11:18:37.986Z",
     "user": 1,
     "workspace": 2
   }
 },
 {
   "model": "workspaces.comment",
-  "pk": 3,
+  "pk": 5,
   "fields": {
-    "content": "eee",
-    "created_at": "2019-09-11T11:18:37.986Z",
+    "content": "fkmf",
+    "created_at": "2019-09-11T20:31:34.467Z",
     "user": 1,
     "workspace": 2
   }

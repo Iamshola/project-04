@@ -103,7 +103,7 @@ class Show extends React.Component{
 
   render(){
 
-    console.log(this.state.workspaces)
+    console.log(this.state.workspace)
 
     if(!this.state.workspace) return null
 
@@ -126,76 +126,70 @@ class Show extends React.Component{
                   {workspace.name}  </li>
               )}
 
-              {Auth.isAuthenticated() && <div className="buttons">
+              {Auth.isCurrentUser() === this.state.workspace.user.id && <div className="buttons">
                 <Link className="title is-6 heading button show edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
                 <Link to="" className="button show erase title is-6 heading" onClick={this.handleDelete}>Delete</Link>
                 <button onClick={this.handleBookmark} className="button show title is-6 heading">Bookmark this location</button>
               </div>}
-
               <hr />
-            </div>
-
-
-            <div className="columns">
-              <div className="column">
-                <h2 className="title is-4">Opening Times:</h2>
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th><abbr title="Position">Day</abbr></th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th>Monday</th>
-                      <td>{this.state.workspace.opening_times_mon}:00 - {this.state.workspace.closing_times_mon}:00 </td>
-                    </tr>
-                    <tr>
-                      <th>Tuesday</th>
-                      <td>{this.state.workspace.opening_times_tue}:00 - {this.state.workspace.closing_times_tue}:00</td>
-                    </tr>
-                    <tr>
-                      <th>Wednesday</th>
-                      <td>{this.state.workspace.opening_times_wed}:00 - {this.state.workspace.closing_times_wed}:00</td>
-                    </tr>
-                    <tr>
-                      <th>Thursday</th>
-                      <td>{this.state.workspace.opening_times_thur}:00 - {this.state.workspace.closing_times_thur}:00</td>
-                    </tr>
-                    <tr>
-                      <th>Friday</th>
-                      <td>{this.state.workspace.opening_times_fri}:00 - {this.state.workspace.closing_times_fri}:00</td>
-                    </tr>
-                    <tr>
-                      <th>Saturday</th>
-                      <td>{this.state.workspace.opening_times_sat}:00 - {this.state.workspace.closing_times_sat}:00</td>
-                    </tr>
-                    <tr>
-                      <th>Sunday</th>
-                      <td>{this.state.workspace.opening_times_sun}:00 - {this.state.workspace.closing_times_sun}:00</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
 
+
+
+
           <div className="columns">
-            <div className="column is-6 is-offset-3">
+            <div className="column is-6 is-offset-2">
               <div className="media-left">
                 <figure className="image display">
                   <img src={this.state.workspace.image} alt="Placeholder image" />
                 </figure>
               </div>
             </div>
-
-
-
-
-
+            <div className="column">
+              <h2 className="title is-4">Opening Times:</h2>
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th><abbr title="Position">Day</abbr></th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Monday</th>
+                    <td>{this.state.workspace.opening_times_mon}:00 - {this.state.workspace.closing_times_mon}:00 </td>
+                  </tr>
+                  <tr>
+                    <th>Tuesday</th>
+                    <td>{this.state.workspace.opening_times_tue}:00 - {this.state.workspace.closing_times_tue}:00</td>
+                  </tr>
+                  <tr>
+                    <th>Wednesday</th>
+                    <td>{this.state.workspace.opening_times_wed}:00 - {this.state.workspace.closing_times_wed}:00</td>
+                  </tr>
+                  <tr>
+                    <th>Thursday</th>
+                    <td>{this.state.workspace.opening_times_thur}:00 - {this.state.workspace.closing_times_thur}:00</td>
+                  </tr>
+                  <tr>
+                    <th>Friday</th>
+                    <td>{this.state.workspace.opening_times_fri}:00 - {this.state.workspace.closing_times_fri}:00</td>
+                  </tr>
+                  <tr>
+                    <th>Saturday</th>
+                    <td>{this.state.workspace.opening_times_sat}:00 - {this.state.workspace.closing_times_sat}:00</td>
+                  </tr>
+                  <tr>
+                    <th>Sunday</th>
+                    <td>{this.state.workspace.opening_times_sun}:00 - {this.state.workspace.closing_times_sun}:00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
           </div>
+
 
           <div className="columns">
             <div className="column">

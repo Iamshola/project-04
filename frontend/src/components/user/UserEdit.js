@@ -57,12 +57,19 @@ class UserEdit extends React.Component {
     console.log(this.state.formData)
     console.log(this.state.errors, 'errors')
     return (
-      <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <section className="hero">
-            <div className="hero-body user-edit">
-              <h1 className="title is-2 has-text-centered">{this.state.formData.username}'s Profile</h1>
-              <hr />
+      <section className="hero">
+        <div className="hero-body user-edit">
+          <div className="container">
+            <section className="hero new">
+              <div className="hero-body">
+                <div className="container">
+                  <h1 className="title is-2 heading has-text-centered">My Space</h1>
+                  <h1 className="subtitle is-2 has-text-centered">{this.state.formData.username}'s Profile</h1>
+                </div>
+              </div>
+            </section>
+            <hr />
+            <form onSubmit={this.handleSubmit}>
               <div className="columns">
                 <div className="column is-3">
                   <div className="field">
@@ -128,10 +135,10 @@ class UserEdit extends React.Component {
                 </div>
               </div>
 
-            </div>
-          </section>
-        </form>
-      </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
 
     )

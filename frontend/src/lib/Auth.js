@@ -35,9 +35,9 @@ class Auth {
     return payload && now < payload.exp
   }
 
-  static isCurrentUser(user) {
+  static isCurrentUser() {
     const payload = this.getPayload()
-    return payload && user._id === payload.sub
+    return payload.sub
   }
 }
 
