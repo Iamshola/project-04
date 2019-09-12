@@ -1,5 +1,5 @@
-# Project 4: SPACE.
 ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png)
+# Project 4: SPACE.
 
 
 ## Overview
@@ -69,3 +69,82 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
   - Make comments on workspaces and delete their comments
   - The Profile page show the workspace the user has contributed
   - View other user profiles
+
+
+### Planning Process
+![image](https://user-images.githubusercontent.com/43203736/64778972-d8a26000-d554-11e9-8605-929af37d07d8.png)
+
+
+### Preview of site
+
+
+
+
+
+
+
+
+### Wins, Blockers, Snippet of Code
+
+
+
+
+
+### Course Curriculum
+  Details of my training and links to more projects whlist at General Assembly -  12 Week Immersive.
+
+> **Week 1-3 | Module One - Fundamentals**
+
+  - HTML5
+  - CSS3
+  - Sass
+  - JavaScript
+
+
+> **Week 4**
+
+  Project 1 : Frogger  | [GitHub](https://github.com/Iamshola/project-01) | [GH-Pages](https://iamshola.github.io/project-01/)
+
+>**Week 5 | Module Two - React**
+
+  - React.js
+  - Routing
+  - RESTFUL API
+  - Third-party APIs
+
+>**Week 6**
+
+  Project 2 : CocktailBored  | [GitHub](https://github.com/Iamshola/Project3) | [GH-Pages](https://iamshola.github.io/Project-2/#/)
+
+>**Week 7-8 | Module Three - Node and Express**
+
+  - RESTFUL Routing
+  - Node.js
+  - Express
+  - Token Authentication & Session Authentication
+  - API Creation
+  - Mocha and Chai
+
+>**Week 9**
+
+  Project 3 : Date-a-base | [GitHub](https://github.com/Iamshola/Project3) | [GH-Pages](https://iamshola.github.io/Project-2/#/)
+
+>**Week 10-11 | Module Four - Python and Django**
+
+  - Python
+  - SQL
+  - Django
+  - Token Authentication
+
+>**Week 12**
+
+  Project 4 : Space | [GitHub](https://github.com/Iamshola/project-04) | [Herouku](https://date-a-base-aos.herokuapp.com/#/)
+
+
+  Contact:
+
+  Adesola Oni-Shogbonyo
+
+  Email : s.oni-shogbonyo@hotmail.co.uk
+
+  Portfolio | [Linkedin](https://www.linkedin.com/in/adesola-oni-shogbonyo/) | [GitHub](https://github.com/Iamshola)
