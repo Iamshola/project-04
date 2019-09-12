@@ -17,7 +17,7 @@ class About extends React.Component{
         </section>
         <div className="container">
           <div className="section">
-            <p>Space was birthed from the lack of free spaces available to be entrepreneur and student looking for space. During this app developement, I used the following langauges and libraries: </p>
+            <p>Space was birthed from the lack of free spaces available to be entrepreneur and student looking for space. This tool helps to support individuals find free workspaces in pme place rather than having to search the internet for hours whlist developing a community of like minded people. During this app developement, I used the following langauges and libraries: </p>
             <br />
             <ul className="has-text-centered">
               <li> - React</li>

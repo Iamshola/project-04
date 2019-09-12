@@ -56,23 +56,23 @@ class Register extends React.Component {
 
   render() {
     return (
-      <section className="login is-fullheight">
-        <div className="login-body">
+      <section className="register is-fullheight">
+        <div className="register-body">
           <div className="column is-white">
             <div className="container v-middle">
-              <div className="columns login-page">
-                <div className="column is-5 login-sidebar is-hidden-mobile">
-                  <div className="login-gradient-background">
+              <div className="columns register-page">
+                <div className="column is-5 register-sidebar is-hidden-mobile">
+                  <div className="register-gradient-background">
 
                   </div>
                 </div>
-                <div className="column is-7 login-form-wrapper">
+                <div className="column is-7 register-form-wrapper">
 
                   <div className="column is-12 field-box">
                     <div className="column is-7 is-offset-1">
                       <h1 className="title is-3 heading has-text-centered">Register</h1>
-                      <h1 className="login-heading has-text-centered">Welcome to the Site</h1>
-                      <p className="login-subheading has-text-centered">Fill out thisto access super awesome imaginary control panel</p>
+                      <h1 className="register-heading has-text-centered">Welcome to the Site</h1>
+                      <p className="register-subheading has-text-centered">Fill out thisto access super awesome imaginary control panel</p>
 
                       <form onSubmit={this.handleSubmit}>
                         <div className="field">
@@ -167,9 +167,9 @@ class Register extends React.Component {
                         <br />
                         <br />
 
-                        <div className="field is-grouped is-grouped-centered login-btn-group">
+                        <div className="field is-grouped is-grouped-centered register-btn-group">
                           <p className="control">
-                            <button className="login-btn">
+                            <button className="register-btn">
                           Register!
                             </button>
                           </p>

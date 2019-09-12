@@ -113,9 +113,10 @@ class Show extends React.Component{
 
           <div className="columns">
             <div className="column">
-              <h1 className="title">  {this.state.workspace.name} </h1>
+              <h1 className="title is-1">  {this.state.workspace.name} </h1>
               <h2 className="subtitle"> {this.state.workspace.address_line_1}, {this.state.workspace.address_line_2}, {this.state.workspace.city} </h2>
-              <a href={this.state.workspace.link}><p className="subtitle is-6">Visit {this.state.workspace.name}'s link  </p></a>
+              <a href={this.state.workspace.link}><p className="button title is-6 heading">Visit {this.state.workspace.name}'s link  </p></a>
+              <br />
               <br />
               <div className="subtitle is-6">{this.state.workspace.description}  </div>
 
@@ -126,10 +127,9 @@ class Show extends React.Component{
               )}
 
               {Auth.isAuthenticated() && <div className="buttons">
-                <Link className="button edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
-                <Link to="" className="button erase" onClick={this.handleDelete}>Delete</Link>
-                <button onClick={this.handleBookmark} className="button">Bookmark this location</button>
-
+                <Link className="title is-6 heading button show edit" to={`/workspaces/${this.state.workspace.id}/edit/`}>Edit</Link>
+                <Link to="" className="button show erase title is-6 heading" onClick={this.handleDelete}>Delete</Link>
+                <button onClick={this.handleBookmark} className="button show title is-6 heading">Bookmark this location</button>
               </div>}
 
               <hr />
@@ -220,7 +220,7 @@ class Show extends React.Component{
                         value={this.state.formData.content}
                       />
                     </div>
-                    <button className="button"> Submit</button>
+                    <button className="button title is-6 heading submit"> Submit</button>
                   </form>}
                 </div>
               </div>

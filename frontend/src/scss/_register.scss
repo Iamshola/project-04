@@ -1,15 +1,14 @@
-
-.login{
+.register{
   min-height: 100vh;
   background-color: #f7f7f7;
 }
-.login .login-page{
+.register .register-page{
   height: 100vh;display: flex;align-items: center;
 }
-.login .login-sidebar, .login-form-wrapper{
+.register .register-sidebar, .register-form-wrapper{
   background: #fff;height: 80vh;
 }
-.login .login-sidebar{
+.register .register-sidebar{
   background:  url('./img/logo.png')center center no-repeat;
   background-size: cover;
   display: flex;
@@ -17,7 +16,7 @@
   justify-content: center;
   position: relative;
 }
-.login .login-sidebar::before{
+.register .register-sidebar::before{
   content: '';
 	position: absolute;
 	top: 0;
@@ -25,41 +24,41 @@
 	bottom: 0;
 	left: 0;
   z-index: 1;
-	background-color: #b3edfc;
+	background-color: #ff9694;
 	opacity: .5;
 }
-.login .login-sidebar .login-gradient-background{
+.register .register-sidebar .register-gradient-background{
   position: absolute;z-index: 2;
 }
-.login .login-sidebar .login-gradient-background h1{
+.register .register-sidebar .register-gradient-background h1{
   font-size: 2em;font-weight: 600;text-transform: uppercase;color: #bed9e0;
 }
 
-.login-form-wrapper .register-btn a{
+.register-form-wrapper .register-btn a{
   color: #ffffff;border-radius: 18px;padding: 0.57em 2em;background: #bed9e0;
 }
-.login-form-wrapper .register-btn a:hover{
+.register-form-wrapper .register-btn a:hover{
   opacity: .8;
 }
 .field-box .field{margin-bottom: 2.1em;}
-.login-form-wrapper .field-box{
+.register-form-wrapper .field-box{
   display: flex;
   height: 80%;
   align-items: center;
 }
-.login-form-wrapper .field-box .login-heading{
+.register-form-wrapper .field-box .register-heading{
   font-size: 1.95em;
 }
-.login-form-wrapper .field-box .login-subheading{
+.register-form-wrapper .field-box .register-subheading{
   margin-bottom: 2em;font-size: 0.85em;color: #787877;
 }
 
-.login-form-wrapper .field-box .login-btn-group .login-btn{
+.register-form-wrapper .field-box .register-btn-group .register-btn{
   background: #6472A5;color: #ffffff;border-radius: 18px;padding: 0.57em 2em;
 }
-.login-form-wrapper .field-box .login-btn-group .forgot-link{
+.register-form-wrapper .field-box .register-btn-group .forgot-link{
   color: #777777;font-size: 0.85em;
 }
-.login-form-wrapper .field-box .login-btn-group .forgot-link:hover{
+.register-form-wrapper .field-box .register-btn-group .forgot-link:hover{
   color: #444444;font-size: 0.85em;
 }

@@ -82,15 +82,20 @@ class WorkspacesEdit extends React.Component {
 
 
     return (
-      <section className="hero">
+      <section className="hero is-medium">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <div className="box is-light edit-page">
-
+            <section className="hero new">
+              <div className="hero-body">
+                <div className="container">
+                  <h1 className="title is-2 heading">~Edit Space</h1>
+                </div>
+              </div>
+            </section>
+            <div className="box is-light">
               <form onSubmit={this.handleSubmit}>
-                <h3 className="title is-2">Edit</h3>
                 <div className="columns">
-                  <div className="column is-4">
+                  <div className="column is-5">
                     <div className="field">
                       <label className="label">Name</label>
                       <input
@@ -170,7 +175,6 @@ class WorkspacesEdit extends React.Component {
                       />
                       {this.state.errors.link && <small className="help is-danger">{this.state.errors.link}</small>}
                     </div>
-
                     <div className="field">
                       <label className="label">Genre</label>
                       <Select
@@ -183,204 +187,240 @@ class WorkspacesEdit extends React.Component {
                       {this.state.errors.genres && <small className="help is-danger">{this.state.errors.genres}</small>}
                     </div>
                   </div>
-                  <div className="column is-4">
-                    <div className="field">
-                      <label className="label">Opening Times - Monday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_mon"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_mon || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Tuesday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_tue"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_tue || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
-                    </div>
+                  <div className="columns">
+                    <div className="column is-offset-3">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th><abbr title="Position"></abbr></th>
+                            <th>Opening Times</th>
+                            <th>Closed Times</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Monday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_mon"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_mon || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_mon && <small className="help is-danger">{this.state.errors.opening_times_mon}</small>}
+                            </td>
+                            <td>
+                              <div className="field">
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_mon"
+                                  placeholder= "22:00"
+                                  value={this.state.formData.closing_times_mon || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_mon && <small className="help is-danger">{this.state.errors.closing_times_mon}</small>}
+                              </div>
+                            </td>
 
-                    <div className="field">
-                      <label className="label">Opening Times - Wednesday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_wed"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_wed || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_wed && <small className="help is-danger">{this.state.errors.opening_times_wed}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Thursday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_thur"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_thur || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_thur && <small className="help is-danger">{this.state.errors.opening_times_thur}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Friday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_fri"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_fri || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_fri && <small className="help is-danger">{this.state.errors.opening_times_fri}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Saturday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_sat"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_sat || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_sat && <small className="help is-danger">{this.state.errors.opening_times_sat}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Opening Times - Sunday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="opening_times_sun"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.opening_times_sun || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
+                          </tr>
+                          <tr>
+                            <th>Tuesday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_tue"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_tue || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_tue && <small className="help is-danger">{this.state.errors.opening_times_tue}</small>}
+                            </td>
+                            <td>
+                              <div className="field">
+
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_tue"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_tue || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_tue && <small className="help is-danger">{this.state.errors.closing_times_tue}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Wednesday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_wed"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_wed || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_wed && <small className="help is-danger">{this.state.errors.opening_times_wed}</small>}
+                            </td>
+
+
+                            <td>
+                              <div className="field">
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_wed"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_wed || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_wed && <small className="help is-danger">{this.state.errors.closing_times_wed}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Thursday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_thur"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_thur || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_thur && <small className="help is-danger">{this.state.errors.opening_times_thur}</small>}
+                            </td>
+                            <td>
+                              <div className="field">
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_thur"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_thur || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_thur && <small className="help is-danger">{this.state.errors.closing_times_thur}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Friday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_fri"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_fri || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_fri && <small className="help is-danger">{this.state.errors.opening_times_fri}</small>}
+                            </td>
+
+
+                            <td>
+                              <div className="field">
+
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_fri"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_thur || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_fri && <small className="help is-danger">{this.state.errors.closing_times_fri}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Saturday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_sat"
+                                placeholder= "08:00"
+                                value={this.state.formData.opening_times_sat || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_sat && <small className="help is-danger">{this.state.errors.opening_times_sat}</small>}
+                            </td>
+
+
+                            <td>
+                              <div className="field">
+
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_sat"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_sat|| ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_sat && <small className="help is-danger">{this.state.errors.closing_times_sat}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Sunday</th>
+                            <td>
+                              <input
+                                className="input"
+                                type="number"
+                                name="opening_times_sun"
+                                placeholder= "08:00 "
+                                value={this.state.formData.opening_times_sun || ''}
+                                onChange={this.handleChangeNormal}
+                              />
+                              {this.state.errors.opening_times_sun && <small className="help is-danger">{this.state.errors.opening_times_sun}</small>}
+                            </td>
+
+
+                            <td>
+                              <div className="field">
+                                <input
+                                  className="input"
+                                  type="number"
+                                  name="closing_times_sun"
+                                  placeholder= "22:30"
+                                  value={this.state.formData.closing_times_sun || ''}
+                                  onChange={this.handleChangeNormal}
+                                />
+                                {this.state.errors.closing_times_sun && <small className="help is-danger">{this.state.errors.closing_times_sun}</small>}
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div className="field">
+                        <label className="label">Image</label>
+                        <ReactFilestack
+                          mode="transform"
+                          apikey={FilestackToken}
+                          buttonText="Upload Photo"
+                          buttonClass="button"
+                          className="upload-image"
+                          options={options}
+                          onSuccess={(result) => this.handleUploadImages(result)}
+                          preload={true}
+                        />
+                        {this.state.formData.image && <img src={this.state.formData.image} />}
+                      </div>
                     </div>
                   </div>
-
-                  <div className="column is-4">
-                    <div className="field">
-                      <label className="label">Closing Times - Monday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_mon"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_mon || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_mon && <small className="help is-danger">{this.state.errors.closing_times_mon}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Closing Times - Tuesday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_tue"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_tue || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_tue && <small className="help is-danger">{this.state.errors.closing_times_tue}</small>}
-                    </div>
-
-                    <div className="field">
-                      <label className="label">Closing Times - Wednesday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_wed"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_wed || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_wed && <small className="help is-danger">{this.state.errors.closing_times_wed}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Closing Times - Thursday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_thur"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_thur || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_thur && <small className="help is-danger">{this.state.errors.closing_times_thur}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Closing Times - Friday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_fri"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_fri || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_fri && <small className="help is-danger">{this.state.errors.closing_times_fri}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Closing Times - Saturday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_sat"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_sat || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_sat && <small className="help is-danger">{this.state.errors.closing_times_sat}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Closing Times - Sunday</label>
-                      <input
-                        className="input"
-                        type="text"
-                        name="closing_times_sun"
-                        placeholder= "08:00 - 22:30"
-                        value={this.state.formData.closing_times_sun || ''}
-                        onChange={this.handleChangeNormal}
-                      />
-                      {this.state.errors.closing_times_sun && <small className="help is-danger">{this.state.errors.closing_times_sun}</small>}
-                    </div>
-                    <div className="field">
-                      <label className="label">Image</label>
-                      <ReactFilestack
-                        mode="transform"
-                        apikey={FilestackToken}
-                        buttonText="Upload Photo"
-                        buttonClass="button"
-                        className="upload-image"
-                        options={options}
-                        onSuccess={(result) => this.handleUploadImages(result)}
-                        preload={true}
-                      />
-                      {this.state.formData.image && <img src={this.state.formData.image} />}
-                    </div>
-                  </div>
-
-
                 </div>
-
                 <button className="login-btn">
                 Submit
                 </button>
-
-
               </form>
             </div>
           </div>
