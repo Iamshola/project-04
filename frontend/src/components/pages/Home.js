@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import Footer from '../common/Footer'
 
@@ -11,9 +12,9 @@ const Home = ()=> {
             <div className="columns">
               <div className="column"></div>
               <div className="column"></div>
-              <div className="column">
-
-
+              <div className="column homepage">
+                <h1 className="title is-1 heading"> SPACE</h1>
+                <Link to="/about/" className="button title is-4 heading">Find out what it's all about.</Link>
               </div>
             </div>
           </div>

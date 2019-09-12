@@ -169,11 +169,11 @@ class Register extends React.Component {
 
                         <div className="field is-grouped is-grouped-centered register-btn-group">
                           <p className="control">
-                            <button className="register-btn">
+                            <button className="register-btn title is-6 heading">
                           Register!
                             </button>
                           </p>
-                          <p className="control">
+                          <p className="control ">
                             <Link to="/login" className="">Already a member? Sign in! </Link>
                           </p>
                         </div>

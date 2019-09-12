@@ -105,7 +105,7 @@ class Login extends React.Component {
                         {this.state.error && <small className="help is-danger">{this.state.error}</small>}
                         <div className="field is-grouped is-grouped-centered login-btn-group">
                           <p className="control">
-                            <button className="login-btn">
+                            <button className="login-btn title is-6 heading">
                           Login
                             </button>
                           </p>
