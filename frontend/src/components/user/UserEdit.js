@@ -121,7 +121,7 @@ class UserEdit extends React.Component {
                   <hr />
                   <div className="field">
 
-                    <label className="label title is-6 heading">Linkedin Link</label>
+                    <label className="label title is-6 heading">Link</label>
                     <input
                       className="input"
                       name="linked_In_Link"

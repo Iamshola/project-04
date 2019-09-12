@@ -47,13 +47,13 @@ class ShowUser extends React.Component {
                         <img className="is-rounded" src={this.state.user.image} alt={this.state.user.username}/>
                       </figure>
                       <br />
-                      {Auth.getUser() && <div className="buttons">
+                      {Auth.isCurrentUser() === this.state.user.id && <div className="buttons">
                         <Link
                           className="button" to={`/users/${this.state.user.id}/edit`}>Edit</Link>
                         <Link to="/workspaces/new/" className="button">Any More Spaces to Recommend?</Link>
                       </div>}
                       <br />
-                      <h1 className="title is-6 heading">Linkedin: <a href={this.state.user.linked_In_Link}> {this.state.user.username}</a></h1>
+                      <h1 className="title is-6 heading">Link: <a href={this.state.user.linked_In_Link}> {this.state.user.username}</a></h1>
                       <h1 className="title is-6 heading">Interests:</h1> <p>{this.state.user.interest}</p>
                       <br/>
                       <div className="column">

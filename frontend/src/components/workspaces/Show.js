@@ -204,6 +204,7 @@ class Show extends React.Component{
                       {...comment}
                       handleDeleteComment={this.handleDeleteComment} />
                   )}
+                  <br />
                   {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
                     <div className="field">
                       <textarea
