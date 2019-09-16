@@ -1,6 +1,6 @@
 ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) X ![logo copy](https://user-images.githubusercontent.com/43203736/64976059-55607180-d8a8-11e9-8504-8f64563a818d.png)
 
-# Project 4: SPACE.
+# Project 4: SPACE
 
 ## Overview
 SPACE is a community aimed at entrepreneurs and student looking for space to work. It is a platform which enable users to find suitable venues to work based on various specifications. Users are able to comment on the posts and advise other users based on experiences. The repo can be accessed on [GitHub](https://github.com/Iamshola/project-04) and the deployed site can be viewed on [Heroku](https://space-project04.herokuapp.com/).
@@ -18,7 +18,7 @@ SPACE is a community aimed at entrepreneurs and student looking for space to wor
 * **Be deployed online** so it's publicly accessible.
 * **Have automated tests** for _at least_ one RESTful resource on the back-end. Improve your employability by demonstrating a good understanding of testing principals.
 
-### Languages and Technologies Used
+### Languages and Technologies Used:
 * HTML5
 * CSS3
 * SASS
@@ -26,27 +26,27 @@ SPACE is a community aimed at entrepreneurs and student looking for space to wor
 * JavaScript (ES6)
 * Git
 * GitHub
-* External API
 * React and React extensions
 * Webpack
 * Bulma
 * Yarn
 * Babel
 * Insomnia
-* Filestack-react
+* Python 3
 * Django
 * Heroku
+* External API
 
-### Timeframe
+### Timeframe:
 7 days
 
 
-## Approach Taken
+### Approach Taken:
 
  Project plan
 
 | Time      | Task         |
-| ------------- |:-------------:|
+| ------------- |-------------|
 | **1.5 days**    | Database design, brainstorming ideas, planning project days   |
 | **2  days**     | Backend Initial set up      |
 | **1.5 day**  | Frontend set and mapping      |
@@ -86,8 +86,56 @@ SPACE is a community aimed at entrepreneurs and student looking for space to wor
 
 
 ### Wins, Blockers, Snippet of Code
+##### Wins
+* Prior to building this app, I had only been exposed to Django and Python for less than a week.
+
+``` Python
+from django.db import models
+from django.contrib.auth.models import AbstractUser, UserManager
+
+class User(AbstractUser):
+    image = models.CharField(max_length=200, blank=True)
+    linked_In_Link = models.CharField(max_length=500, blank=True)
+    user_city = models.CharField(max_length=60, blank=True)
+    interest = models.CharField(max_length=600, blank=True)
+    objects = UserManager()
+```
+``` Python
+from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models import User
+
+class UserAdmin(BaseUserAdmin):
+    fieldsets = (
+        (None, {
+            'fields': ('username', 'password')
+        }),
+        (_('Personal info'), {
+            'fields': ('first_name', 'last_name', 'email', 'image', 'linked_In_Link', 'user_city')
+        }),
+        (_('Permissions'), {
+            'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
+        }),
+        (_('Important dates'), {
+            'fields': ('last_login', 'date_joined')
+        }),
+    )
+
+admin.site.register(User, UserAdmin)
+```
+* Incorporating relevant filters
+* Using Bulma and sass as a tool to compliment my styling ideas.
+
+##### Blockers
+* Extending User Profiles
+* Creating comments
 
 
+### Future Features
+* I would have loved to have included an app communication system so users can also share skills.
+* Allowing users to save workspaces to be reviewed later.
+* Adding Maps or Journey planner from current location to workspace.
 
 
 
@@ -142,10 +190,7 @@ SPACE is a community aimed at entrepreneurs and student looking for space to wor
   Project 4 : Space | [GitHub](https://github.com/Iamshola/project-04) | [Herouku](https://date-a-base-aos.herokuapp.com/#/)
 
 
-  Contact:
-
-  Adesola Oni-Shogbonyo
-
-  Email : s.oni-shogbonyo@hotmail.co.uk
-
+  ### Contact
+  Adesola Oni-Shogbonyo\
+  Email : s.oni-shogbonyo@hotmail.co.uk\
   [Portfolio](https://iamshola.github.io/) | [Linkedin](https://www.linkedin.com/in/adesola-oni-shogbonyo/) | [GitHub](https://github.com/Iamshola)

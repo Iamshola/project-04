@@ -9,7 +9,7 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('username', 'password')
         }),
         (_('Personal info'), {
-            'fields': ('first_name', 'last_name', 'email', 'image', 'linked_In_Link', 'user_city') # add extra fields here...
+            'fields': ('first_name', 'last_name', 'email', 'image', 'linked_In_Link', 'user_city')
         }),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
