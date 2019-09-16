@@ -1,9 +1,9 @@
-![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png)
+![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) X ![logo copy](https://user-images.githubusercontent.com/43203736/64976059-55607180-d8a8-11e9-8504-8f64563a818d.png)
+
 # Project 4: SPACE.
 
-
 ## Overview
-Date-a-Base is a community aimed at entrepreneurs and student looking for space to work. It is a platform which enable users to find suitable venues to work based on various specifications. Users are able to comment on the posts and advise other users based on experiences. The repo can be accessed on [GitHub](https://github.com/Iamshola/project-04) and the depoloyed site can be viewed on [Heroku](https://github.com/Iamshola/project-04).
+SPACE is a community aimed at entrepreneurs and student looking for space to work. It is a platform which enable users to find suitable venues to work based on various specifications. Users are able to comment on the posts and advise other users based on experiences. The repo can be accessed on [GitHub](https://github.com/Iamshola/project-04) and the deployed site can be viewed on [Heroku](https://space-project04.herokuapp.com/).
 
 ## Project Brief
 
@@ -18,7 +18,7 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
 * **Be deployed online** so it's publicly accessible.
 * **Have automated tests** for _at least_ one RESTful resource on the back-end. Improve your employability by demonstrating a good understanding of testing principals.
 
-### Technologies Used
+### Languages and Technologies Used
 * HTML5
 * CSS3
 * SASS
@@ -36,6 +36,9 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
 * Filestack-react
 * Django
 * Heroku
+
+### Timeframe
+7 days
 
 
 ## Approach Taken
@@ -77,11 +80,9 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
 
 ### Preview of site
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/43203736/64976881-3c58c000-d8aa-11e9-86a0-a22b358c4cb2.gif)
 
-
-
-
-
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/43203736/64978066-8b9ff000-d8ac-11e9-8af5-3a69c68a05c1.gif)
 
 
 ### Wins, Blockers, Snippet of Code
@@ -91,7 +92,7 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
 
 
 ### Course Curriculum
-  Details of my training and links to more projects whlist at General Assembly -  12 Week Immersive.
+  Details of my training and links to more projects whilst at General Assembly -  12 Week Immersive.
 
 > **Week 1-3 | Module One - Fundamentals**
 
@@ -147,4 +148,4 @@ Date-a-Base is a community aimed at entrepreneurs and student looking for space 
 
   Email : s.oni-shogbonyo@hotmail.co.uk
 
-  Portfolio | [Linkedin](https://www.linkedin.com/in/adesola-oni-shogbonyo/) | [GitHub](https://github.com/Iamshola)
+  [Portfolio](https://iamshola.github.io/) | [Linkedin](https://www.linkedin.com/in/adesola-oni-shogbonyo/) | [GitHub](https://github.com/Iamshola)
