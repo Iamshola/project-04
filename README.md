@@ -73,17 +73,17 @@ SPACE is a community aimed at entrepreneurs and student looking for space to wor
 
 > **All Features:**
 
-  - view the workspaces and view nearby workspaces in that area
-  - filter through an index of workspaces to suit their requirements
-  - register to create a workspace
+  - Register an account
+  - Understand what SPACE is about
 
 > **Registered Users can:**
 
-  - Add more workspaces
-  - Create a user profile and update their profile
+  - View all workspaces and nearby workspaces
+  - Filter through an index of workspaces to suit their requirements
   - Create a new workspace
+  - Create a user profile and update their profile
   - Log in and out
-  - Make comments on workspaces and delete their comments
+  - Make and delete their comments
   - The Profile page show the workspace the user has contributed
   - View other user profiles
 
@@ -168,7 +168,7 @@ class CommentList(APIView):
         return Response(serializer.errors, status=422)
 ```
 
-* I decided to complete this project on my own as I wanted to develop my knowledge of Django and Python as we had only learnt it a week prior to completing the course. I found this aspect quite tough as it should loop holes in my knowledge additionally I did not manage to implement as many features as I hoped.
+* I decided to complete this project on my own as I wanted to develop my knowledge of Django and Python as we had only learnt it a week prior to completing the project. I found this aspect quite tough as it showed loop holes in my knowledge but this project helped me develop a better understanding. 
 
 
 ### Future Features
