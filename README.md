@@ -1,6 +1,7 @@
 ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) X ![logo copy](https://user-images.githubusercontent.com/43203736/64976059-55607180-d8a8-11e9-8504-8f64563a818d.png)
 
 # Project 4: SPACE
+###### View Site here [Heroku](https://space-project04.herokuapp.com/)
 
 ### Installation
 
@@ -168,7 +169,7 @@ class CommentList(APIView):
         return Response(serializer.errors, status=422)
 ```
 
-* I decided to complete this project on my own as I wanted to develop my knowledge of Django and Python as we had only learnt it a week prior to completing the project. I found this aspect quite tough as it showed loop holes in my knowledge but this project helped me develop a better understanding. 
+* I decided to complete this project on my own as I wanted to develop my knowledge of Django and Python as we had only learnt it a week prior to completing the project. I found this aspect quite tough as it showed loop holes in my knowledge but this project helped me develop a better understanding.
 
 
 ### Future Features
